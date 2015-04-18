@@ -1,0 +1,145 @@
+% Math symbols and examples: http://en.wikibooks.org/wiki/LaTeX/Mathematics
+% Also useful link: http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
+
+\input{../template.tex}
+
+\begin{document}
+	\maketitle
+	\section*{Vertiefung:}
+	\begin{enumerate}[label=(\alph*)]
+		% Task (a)
+		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 10) $.
+		\begin{align*}
+			% part 1
+			\bmod(5^{31},10) &= \bmod(5^{30}\cdot5,10) 
+			\\&= 5 \\\\
+			% part 2
+			\bmod(2^{789},10) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,10) 
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 2, 10) 
+			\\&= \bmod(432,10) 
+			\\&= 2 \\\\
+			% part 3
+			\bmod(-23^{23},10) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,11) 
+			\\&= \bmod(9\cdot 7, 10) 
+			\\&= \bmod(63,10) 
+			\\&= 3 \\\\
+			% result
+			\bmod(5^{31} \cdot 2^{789}-23^{23}, 10) &= \bmod(5 \cdot 2 + 3,10)	
+			\\&= \bmod(13,10) 
+			\\&= 3
+			% comment
+		 	&\textrm{(nach Theorem 1.2 (BM))}
+		\end{align*}
+
+		% Task (b)
+		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $.
+		\begin{align*}
+			% part 1
+			\bmod(5^{31},11) &= \bmod(5^{30}\cdot5,11)
+			\\&= 5 \\\\
+			% part 2
+			\bmod(2^{789},11) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,11)
+			\\&= \bmod(9\cdot 9\cdot 9\cdot 2, 11)
+			\\&= \bmod(432,11)
+			\\&= 6 \\\\
+			% part 3
+			\bmod(-23^{23},11) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,11)
+			\\&= \bmod(4\cdot 3\cdot 5\cdot 7, 11)
+			\\&= \bmod(420,11)
+			\\&= 9 \\\\ 
+			% result
+			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 + 9,11)
+			\\&= \bmod(39,11)
+			\\&= 6 
+			% comment
+		 	&\textrm{(nach Theorem 1.2 (BM))}
+		\end{align*}
+
+		% Task (c)
+		\item  Bestimmen Sie $ \bmod(7^{31} \cdot 2^{789}, 10) $.
+		\begin{align*}
+			% part 1
+			\bmod(7^{31},10) &= \bmod(7^{16}\cdot7^{8}\cdot7^{4}\cdot7^{2}\cdot7^{1},10)
+			\\&= \bmod(1\cdot1\cdot1\cdot9\cdot7,10)
+			\\&= \bmod(63,10)
+			\\&= 3 \\\\
+			% part 2
+			\bmod(2^{789},10) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,10)
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 2, 10)
+			\\&= \bmod(432,10)
+			\\&= 2 \\\\
+			% result
+			\bmod(7^{31} \cdot 2^{789}, 10) &= \bmod(3 \cdot 2,10)
+			\\&= \bmod(6,10)
+			\\&= 6 
+			% comment
+		 	&\textrm{(nach Theorem 1.2 (BM))}
+		\end{align*}
+
+		% Task (d)
+		\item Bestimmen Sie kgV(178, 144).
+		\begin{align*}
+			& 178 = 2\cdot89 \\
+			& 144 = 2^4\cdot3^2 \\
+			&\kgV(178, 144) = 2^4\cdot3^2\cdot89 = 12816
+			% comment
+		 	&\textrm{(nach Lemma 1.5 (BM))}
+		\end{align*}
+
+		% Task (e)
+		\item Bestimmen Sie ggT(12877480, 24145275).
+		\begin{align*}
+			\ggT(12877480, 24145275) &= \ggT(24145275-12877480, 12877480)
+			\\& = \ggT(12877480-11267795,11267795)
+			\\& = \ggT(11267795-1609685,1609685)
+			\\& = 1609685
+			% comment
+		 	&\textrm{(nach Lemma 1.8 (BM))}
+		\end{align*}
+		
+	\end{enumerate} 
+	
+	\stepcounter{taskCounter}
+	\section*{Aufgabe \arabic{taskCounter}: \textnormal{\textit{IEEE 754 - Part I}}}
+	\begin{enumerate}[label=(\alph*)]
+		\item % Binär: $01000000010010010000111111011010_2$ \\
+		IEEE 754-Darstellung: \\
+		$0|10000000|10010010000111111011010_2$ \\
+		Vorzeichen \textit s: 0 $\Rightarrow$ Positive Zahl\\
+		Exponent \textit e: $1000 0000_2 = 128_{10} = 127_{10}+1_{10} \Rightarrow e = 1$ \\
+		Mantisse \textit m = 1 + 0.5 + 0.0625 + 0.0078125 + 0.000488281 + 0.000244141 + 0.00012207 + 0.000061035 + 0.000030518 + 0.000015259 + 0.000007629 + 0.000001907 + 0.000000954 + 0.000000238 = \textbf{1.571284532}\\
+		\textbf{Ergebnis:} $1.571284532_{10} \cdot 2^1 = 3.142569064$
+		\item Dezimalzahl: $44.5390625_{10}$\\
+		Binärzahl: $101100,1000101_2$\\
+		Normalisieren: $101100,1000101_2 \cdot 2^0 = 1,011001000101 \cdot 2^5$\\
+		Exponent \textit e = $5_{10} + 127_{10} = 132_{10} =  1000 0100_2$\\
+		Vorzeichen \textit s = 0\\
+		\textbf{Ergebnis:} $0|1000 0100|01100100010100000000000$
+	\end{enumerate} 
+	
+	\stepcounter{taskCounter}
+	\section*{Aufgabe \arabic{taskCounter}: \textnormal{\textit{IEEE 754 - Part II}}}
+	Spezielle Darstellungen:\\
+		\[
+		\begin{array}{rcl}
+		0 &=& 0|00000000|00000000000000000000000\\
+		-0 &=& 1|00000000|00000000000000000000000\\
+		+\infty &=& 0|11111111|00000000000000000000000\\
+		-\infty &=& 1|11111111|00000000000000000000000\\
+		Nan &=& X|11111111|XXXXXXXXXXXXXXXXXXXXXXX\\
+		denormalisierte\ Zahl &=& X|00000000|XXXXXXXXXXXXXXXXXXXXXXX\\
+		\end{array}
+		\]
+	
+	\stepcounter{taskCounter} 
+	\section*{Aufgabe \arabic{taskCounter}: \textnormal{\textit{Typkonversionen}}}
+		\begin{enumerate}[label=(\alph*)]
+			\item Integer 2 
+			\item Infinity (Die Zahl ist zu lang für \textbf float)
+			\item 1.0000000000000001E39
+			\item double 1.25
+		\end{enumerate}
+	
+
+
+\end{document}

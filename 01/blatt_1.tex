@@ -178,7 +178,17 @@
 				& 22\cdot2=44 \\
 				& 82913725440\cdot44 = 3648203919360
 			\end{align*}
-
 		\end{enumerate}
+		\rule{14cm}{0.4pt} \\
+		Da in diese Aufgabe \"andert sich nur der Zahl der Symbole, kann man dazu ein Formel vervenden. 
+		Anzahl der Kombinationen in Schritt 4 kann man so berechnen:
+			\[k = \Big(\frac{n}{2}\Big)^2+n-1 \text{, wo n ist Anzahl der Symbole in Passwort minus 4.}\]
+		Dann gem\"as der Informaton aus Schritten in (a) 1-6 bauen wir solche Funktion:
+			\[f(n) = 52^n\cdot10\cdot9\cdot\Big(\Big(\frac{n}{2}\Big)^2+n-1\Big)\cdot18\cdot44\]
+		\rule{14cm}{0.4pt} \\
+		\item 10 Symbole: f(6) = 19729486795898880
+		\item 12 Symbole: f(8) = 87644017343610224640
+		\item 14 Symbole: f(10) = 350332190369658678804480
+		\item 16 Symbole: f(12) = 1309500512049975946232463360
 	\end{enumerate}
 \end{document}

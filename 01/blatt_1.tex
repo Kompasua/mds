@@ -12,8 +12,7 @@
 		Bemerkung: die h\"ohere Potenzen werden in Potenzen von 2 augeteilt. F\"ur Modulus Rechnenregeln wird Theorem 1.2 (BM) benutzt. 
 		\begin{align*}
 			% part 1
-			\bmod(5^{31},10) &= 5  \textrm{\qquad da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1
-			\\\\
+			\bmod(5^{31},10) &= 5  \textrm{\qquad (da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1) \\\\
 			% part 2
 			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10) 
 			\\&= \bmod(\bmod(2^{512},10)\cdot\bmod(2^{256},10)\cdot\bmod(2^{16},10)\cdot\bmod(2^4,10)\cdot\bmod(2^1,10),10)
@@ -130,9 +129,9 @@
 			\end{align*}
 
 			% Schritt 3
-			\item Wenn jede kleine Buchstabe eventuell auch gr\"osse sein kann, k\"onnen wir von 4 kleine und grosse Buchstaben so viel Kombinationen machen:
+			\item Wenn eine halbe gr\"oss sein kann, dann verdoppelt unsere Zahl der Kombinationen:
 			\begin{align*}
-				(26\cdot2)^4=7311616
+				(26)^4\cdot2=456976\cdot2=913952
 			\end{align*}
 
 			% Schritt 4
@@ -143,25 +142,25 @@
 				& \{ab|cd\} \to \{Xab|Xcd\},\{aXb|cXd\}, \{abX|cdX\} \\
 				& \{abc|d\} \to \{Xabc|Xd\},\{abcX|dX\}
 			\end{align*}
-			Erster Zahl kann 10 Ziffer sein und zweite 9 Ziffern. Also haben wir so viele Varianten f\"ur 2 Verschiedene 
+			Erste und zweite Zahlen kann 10 Ziffer sein. Also haben wir so viele Varianten f\"ur 2 Verschiedene 
 			Ziffern und 7 Satz Kombinazionen:
 			\begin{align*}
-				& 10\cdot9\cdot7 = 630 \\
-				& 7311616\cdot630 = 4606318080
+				& 10\cdot10\cdot7 = 700 \\
+				& 913952\cdot700 = 639766400
 			\end{align*}
 
 			% Schritt 5
 			\item N\"achstens haben wir 3 M\"oglichkeiten 6 Symbolen zu stellen:
 			\begin{align*}
 				& 3\cdot6=18 \\
-				& 4606318080\cdot18 = 82913725440
+				& 639766400\cdot18 = 11515795200
 			\end{align*}
 
 			% Schritt 6
 			\item Dann haben wir 22 Symbole am Anfang oder am Ende:
 			\begin{align*}
 				& 22\cdot2=44 \\
-				& 82913725440\cdot44 = 3648203919360
+				& 11515795200\cdot44 = 506694988800
 			\end{align*}
 		\end{enumerate}
 		\rule{14cm}{0.4pt} \\
@@ -169,11 +168,11 @@
 		Anzahl der Kombinationen in Schritt 4 kann man so berechnen:
 			\[k = \Big(\frac{n}{2}\Big)^2+n-1 \text{, wo n ist Anzahl der Symbole in Passwort minus 4.}\]
 		Dann gem\"as der Informaton aus Schritten in (a) 1-6 bauen wir solche Funktion:
-			\[f(n) = 52^n\cdot10\cdot9\cdot\Big(\Big(\frac{n}{2}\Big)^2+n-1\Big)\cdot18\cdot44\]
+			\[f(n) = 26^n\cdot2\cdot10\cdot10\cdot\Big(\Big(\frac{n}{2}\Big)^2+n-1\Big)\cdot18\cdot44\]
 		\rule{14cm}{0.4pt} \\
-		\item 10 Symbole: f(6) = 19729486795898880
-		\item 12 Symbole: f(8) = 87644017343610224640
-		\item 14 Symbole: f(10) = 350332190369658678804480
-		\item 16 Symbole: f(12) = 1309500512049975946232463360
+		\item 10 Symbole: f(6) = 685051624857600
+		\item 12 Symbole: f(8) = 760798761663283200
+		\item 14 Symbole: f(10) = 760269510350821785600
+		\item 16 Symbole: f(12) = 710449496554891463884800
 	\end{enumerate}
 \end{document}

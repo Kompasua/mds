@@ -8,38 +8,39 @@
 	\section*{Vertiefung:}
 	\begin{enumerate}[label=(\alph*)]
 		% Task (a)
-		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 10) $.
+		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 10) $. \\
+		Bemerkung: die h\"ohere Potenzen werden in Potenzen von 2 augeteilt. F\"ur Modulus Rechnenregeln wird Theorem 1.2 (BM) benutzt. 
 		\begin{align*}
 			% part 1
-			\bmod(5^{31},10) &= \bmod(5^{30}\cdot5,10) 
-			\\&= 5 \\\\
+			\bmod(5^{31},10) &= 5  \textrm{\qquad da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1
+			\\\\
 			% part 2
-			\bmod(2^{789},10) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,10) 
-			\\&= \bmod(6\cdot 6\cdot 6\cdot 2, 10) 
-			\\&= \bmod(432,10) 
+			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10) 
+			\\&= \bmod(\bmod(2^{512},10)\cdot\bmod(2^{256},10)\cdot\bmod(2^{16},10)\cdot\bmod(2^4,10)\cdot\bmod(2^1,10),10)
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10) \textrm{\qquad da} \bmod(2^4,10)=6
+			\\&= \bmod(6\cdot2,10) 
 			\\&= 2 \\\\
 			% part 3
-			\bmod(-23^{23},10) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,11) 
-			\\&= \bmod(9\cdot 7, 10) 
+			\bmod(-23^{23},10) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,10) 
+			\\&= \bmod(9\cdot 7, 10) \textrm{\qquad da} \bmod(23^2,10)=9 \textrm{ und } \bmod(23^4,10)=1
 			\\&= \bmod(63,10) 
 			\\&= 3 \\\\
 			% result
 			\bmod(5^{31} \cdot 2^{789}-23^{23}, 10) &= \bmod(5 \cdot 2 + 3,10)	
 			\\&= \bmod(13,10) 
 			\\&= 3
-			% comment
-		 	&\textrm{(nach Theorem 1.2 (BM))}
 		\end{align*}
 
 		% Task (b)
-		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $.
+		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \\
+		Bemerkung: Rechnenweg ist gleich wie in Punkt a.
 		\begin{align*}
 			% part 1
 			\bmod(5^{31},11) &= \bmod(5^{30}\cdot5,11)
 			\\&= 5 \\\\
 			% part 2
-			\bmod(2^{789},11) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,11)
-			\\&= \bmod(9\cdot 9\cdot 9\cdot 2, 11)
+			\bmod(2^{789},11) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,11)
+			\\&= \bmod(9\cdot 9\cdot 9\cdot 9\cdot 2, 11)
 			\\&= \bmod(432,11)
 			\\&= 6 \\\\
 			% part 3
@@ -51,12 +52,11 @@
 			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 + 9,11)
 			\\&= \bmod(39,11)
 			\\&= 6 
-			% comment
-		 	&\textrm{(nach Theorem 1.2 (BM))}
 		\end{align*}
 
 		% Task (c)
-		\item  Bestimmen Sie $ \bmod(7^{31} \cdot 2^{789}, 10) $.
+		\item  Bestimmen Sie $ \bmod(7^{31} \cdot 2^{789}, 10) $. \\
+		Bemerkung: Rechnenweg ist gleich wie in Punkt a.
 		\begin{align*}
 			% part 1
 			\bmod(7^{31},10) &= \bmod(7^{16}\cdot7^{8}\cdot7^{4}\cdot7^{2}\cdot7^{1},10)
@@ -64,16 +64,14 @@
 			\\&= \bmod(63,10)
 			\\&= 3 \\\\
 			% part 2
-			\bmod(2^{789},10) &= \bmod(2^{516}\cdot2^{256}\cdot2^{16}\cdot2^1,10)
-			\\&= \bmod(6\cdot 6\cdot 6\cdot 2, 10)
-			\\&= \bmod(432,10)
+			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10)
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10)
+			\\&= \bmod(12,10)
 			\\&= 2 \\\\
 			% result
 			\bmod(7^{31} \cdot 2^{789}, 10) &= \bmod(3 \cdot 2,10)
 			\\&= \bmod(6,10)
 			\\&= 6 
-			% comment
-		 	&\textrm{(nach Theorem 1.2 (BM))}
 		\end{align*}
 
 		% Task (d)
@@ -105,27 +103,11 @@
 		% Task (g)
 		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau einmal den Funktionswert 0 annehmen?
 		\begin{align*}
-			\intertext{
-				F\"ur erste Stelle nehmen wir 0. Dann f\"ur die Reste (3 Stellen) sind nur zwei Kugeln \{1,2\} m\"oglich.
-				Dann haben wir:
-			} 
-			1\cdot2\cdot2\cdot2 = 8
-			\intertext{
-				Also wenn 0 an die erste Stelle ist, haben wir 8 Varianten. 
-				Da es ist auch M\"oglich 0 an zweite, dritte und vierte Stelle stellen, haben wir:
-			}
-			8\cdot4 = 32
 		\end{align*}
 
 		% Task (h)
 		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau zweimal den Funktionswert 0 annehmen?
 		\begin{align*}
-			\intertext{
-				Es gibt 6 Moeglichkeiten zwei 0 an 4 Stellen zu stellen. Da fuer jede diese Moeglichkeit gibt es auch 4 Moeglichkeiten \{1,2\} zu stellen. Dan haben wir:
-				%In diesem Fall wir nehmen 4 Kugeln aus \{0,1,2\}. Da wir ungeordnete Reihe ohne zur\"uckliegen brauchen, 
-				%benutzen wir Kombination Formel (Theorem 1.6 (MDS)) 
-			}
-			6\cdot4 = 24
 		\end{align*}
 		
 	\end{enumerate} 

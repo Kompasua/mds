@@ -17,12 +17,13 @@
 			% part 2
 			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10) 
 			\\&= \bmod(\bmod(2^{512},10)\cdot\bmod(2^{256},10)\cdot\bmod(2^{16},10)\cdot\bmod(2^4,10)\cdot\bmod(2^1,10),10)
-			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10) \textrm{\qquad da} \bmod(2^4,10)=6
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10) \textrm{\qquad (da} \bmod(2^4,10)=6)
 			\\&= \bmod(6\cdot2,10) 
 			\\&= 2 \\\\
 			% part 3
 			\bmod(-23^{23},10) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,10) 
-			\\&= \bmod(9\cdot 7, 10) \textrm{\qquad da} \bmod(23^2,10)=9 \textrm{ und } \bmod(23^4,10)=1
+			\\&= \bmod(\bmod(23^{16},10)\cdot\bmod(23^{4},10)\cdot\bmod(23^{2},10)\cdot\bmod((-23)^1,10),10)
+			\\&= \bmod(9\cdot 7, 10) \textrm{\qquad (da} \bmod(23^2,10)=9 \textrm{ und }\bmod(23^4,10)=1)
 			\\&= \bmod(63,10) 
 			\\&= 3 \\\\
 			% result
@@ -98,6 +99,8 @@
 		% Task (f)
 		\item Wie sieht der $\frac{12877480}{24145275}$ zu äquivalente teilerfremde Bruch aus?
 		\begin{align*}
+			& \frac{12877480}{24145275} = \frac{2^3 \cdot 5 \cdot 7 \cdot 11 \cdot 37 \cdot 113}
+			{3 \cdot 5^2 \cdot 7 \cdot 11 \cdot 37 \cdot 113} = \frac{2^3}{3 \cdot 5}
 		\end{align*}
 
 		% Task (g)

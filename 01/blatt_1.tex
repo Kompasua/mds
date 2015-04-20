@@ -96,6 +96,99 @@
 			% comment
 		 	&\textrm{(nach Lemma 1.8 (BM))}
 		\end{align*}
+
+		% Task (f)
+		\item Wie sieht der $\frac{12877480}{24145275}$ zu äquivalente teilerfremde Bruch aus?
+		\begin{align*}
+		\end{align*}
+
+		% Task (g)
+		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau einmal den Funktionswert 0 annehmen?
+		\begin{align*}
+			\intertext{
+				F\"ur erste Stelle nehmen wir 0. Dann f\"ur die Reste (3 Stellen) sind nur zwei Kugeln \{1,2\} m\"oglich.
+				Dann haben wir:
+			} 
+			1\cdot2\cdot2\cdot2 = 8
+			\intertext{
+				Also wenn 0 an die erste Stelle ist, haben wir 8 Varianten. 
+				Da es ist auch M\"oglich 0 an zweite, dritte und vierte Stelle stellen, haben wir:
+			}
+			8\cdot4 = 32
+		\end{align*}
+
+		% Task (h)
+		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau zweimal den Funktionswert 0 annehmen?
+		\begin{align*}
+			\intertext{
+				Es gibt 6 Moeglichkeiten zwei 0 an 4 Stellen zu stellen. Da fuer jede diese Moeglichkeit gibt es auch 4 Moeglichkeiten \{1,2\} zu stellen. Dan haben wir:
+				%In diesem Fall wir nehmen 4 Kugeln aus \{0,1,2\}. Da wir ungeordnete Reihe ohne zur\"uckliegen brauchen, 
+				%benutzen wir Kombination Formel (Theorem 1.6 (MDS)) 
+			}
+			6\cdot4 = 24
+		\end{align*}
 		
 	\end{enumerate} 
+	
+	\section*{Transfer:}
+	\begin{enumerate}[label=(\alph*)]
+		\item 8 Symbole
+		\begin{enumerate}[label=\bfseries Schritt \arabic*:]
+			% Schritt 1
+			\item Wir w\"ahlen beliebig zwei S\"atze. Um L\"ange 8 zu bekommen mu\"ssen wir insgesamt 4 W\"ortern haben,
+			weil andere 4 Symbolen zus\"atzliche Zeichen sind.
+
+			% Schritt 2
+			\item Da es in Alphabet 26 Buchstaben gibt, k\"onnen wir von 4 kleine Buchstaben so viel Kombinationen machen:
+			\begin{align*}
+				26^4=456976
+			\end{align*}
+
+			% Schritt 3
+			\item Wenn jede kleine Buchstabe eventuell auch gr\"osse sein kann, k\"onnen wir von 4 kleine und grosse Buchstaben so viel Kombinationen machen:
+			\begin{align*}
+				(26\cdot2)^4=7311616
+			\end{align*}
+
+			% Schritt 4
+			\item In Reihe von 4 Buchstaben k\"onnen wir Ziffern in 7 Varianten stellen:
+			\begin{align*}
+				& X \in {0,1,...,9} \\
+				& \{a|bcd\} \to \{Xa|Xbcd\},\{aX|bcdX\} \\
+				& \{ab|cd\} \to \{Xab|Xcd\},\{aXb|cXd\}, \{abX|cdX\} \\
+				& \{abc|d\} \to \{Xabc|Xd\},\{abcX|dX\}
+			\end{align*}
+			Erster Zahl kann 10 Ziffer sein und zweite 9 Ziffern. Also haben wir so viele Varianten f\"ur 2 Verschiedene 
+			Ziffern und 7 Satz Kombinazionen:
+			\begin{align*}
+				& 10\cdot9\cdot7 = 630 \\
+				& 7311616\cdot630 = 4606318080
+			\end{align*}
+
+			% Schritt 5
+			\item N\"achstens haben wir 3 M\"oglichkeiten 6 Symbolen zu stellen:
+			\begin{align*}
+				& 3\cdot6=18 \\
+				& 4606318080\cdot18 = 82913725440
+			\end{align*}
+
+			% Schritt 6
+			\item Dann haben wir 22 Symbole am Anfang oder am Ende:
+			\begin{align*}
+				& 22\cdot2=44 \\
+				& 82913725440\cdot44 = 3648203919360
+			\end{align*}
+		\end{enumerate}
+		\rule{14cm}{0.4pt} \\
+		Da in diese Aufgabe \"andert sich nur der Zahl der Symbole, kann man dazu ein Formel vervenden. 
+		Anzahl der Kombinationen in Schritt 4 kann man so berechnen:
+			\[k = \Big(\frac{n}{2}\Big)^2+n-1 \text{, wo n ist Anzahl der Symbole in Passwort minus 4.}\]
+		Dann gem\"as der Informaton aus Schritten in (a) 1-6 bauen wir solche Funktion:
+			\[f(n) = 52^n\cdot10\cdot9\cdot\Big(\Big(\frac{n}{2}\Big)^2+n-1\Big)\cdot18\cdot44\]
+		\rule{14cm}{0.4pt} \\
+		\item 10 Symbole: f(6) = 19729486795898880
+		\item 12 Symbole: f(8) = 87644017343610224640
+		\item 14 Symbole: f(10) = 350332190369658678804480
+		\item 16 Symbole: f(12) = 1309500512049975946232463360
+	\end{enumerate}
 \end{document}

@@ -9,14 +9,25 @@
 	\begin{enumerate}[label=(\alph*)]
 		% Task (a)
 		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 10) $. \\
-		Bemerkung: die h\"ohere Potenzen werden in Potenzen von 2 augeteilt. F\"ur Modulus Rechnenregeln wird Theorem 1.2 (BM) benutzt. 
+		\textbf{Bemerkung:} die h\"ohere Potenzen werden in Potenzen von 2 ausgeteilt.\\ Ein Beispiel f\"ur $2^{2^n}$:
+		\begin{align*}
+			&\bmod(2,10)=2\\
+			&\bmod(2^2,10)=4\\
+			&\bmod(2^4,10)=\bmod(2^2\cdot2^2,10)=\bmod(\bmod(4,10)\cdot2(4,10),10)=\bmod(16,10)=6\\
+			&\bmod(2^8,10)=\bmod(2^4\cdot2^4,10)=\bmod(6\cdot6,10)=6\\
+			&\bmod(2^{16},10)=\bmod(2^8\cdot2^8,10)=\bmod(6\cdot6,10)=6\\
+			&\cdots \\
+			&\bmod(2^{512},10)=\bmod(2^{256}\cdot2^{256},10)=\bmod(6\cdot6,10)=6
+		\end{align*}
+		Also auf solche Weise kann man rekursiv Modulus f\"ur Zahlen mit h\"ohe Potenzen berechnen.\\
+		F\"ur Modulus Rechnenregeln wird Theorem 1.2 (BM) benutzt. 
 		\begin{align*}
 			% part 1
 			\bmod(5^{31},10) &= 5  \textrm{\qquad (da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1) \\\\
 			% part 2
 			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10) 
 			\\&= \bmod(\bmod(2^{512},10)\cdot\bmod(2^{256},10)\cdot\bmod(2^{16},10)\cdot\bmod(2^4,10)\cdot\bmod(2^1,10),10)
-			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10) \textrm{\qquad (da} \bmod(2^4,10)=6)
+			\\&= \bmod(6\cdot 6\cdot 6\cdot 6\cdot 2, 10)
 			\\&= \bmod(6\cdot2,10) 
 			\\&= 2 \\\\
 			% part 3
@@ -33,7 +44,7 @@
 
 		% Task (b)
 		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \\
-		Bemerkung: Rechnenweg ist gleich wie in Punkt a.
+		\textbf{Bemerkung:} Rechnenweg ist gleich wie in Punkt (a).
 		\begin{align*}
 			% part 1
 			\bmod(5^{31},11) &= \bmod(5^{30}\cdot5,11)
@@ -56,7 +67,7 @@
 
 		% Task (c)
 		\item  Bestimmen Sie $ \bmod(7^{31} \cdot 2^{789}, 10) $. \\
-		Bemerkung: Rechnenweg ist gleich wie in Punkt a.
+		\textbf{Bemerkung:} Rechnenweg ist gleich wie in Punkt (a).
 		\begin{align*}
 			% part 1
 			\bmod(7^{31},10) &= \bmod(7^{16}\cdot7^{8}\cdot7^{4}\cdot7^{2}\cdot7^{1},10)
@@ -116,7 +127,7 @@
 	
 	\section*{Transfer:}
 	\begin{enumerate}[label=(\alph*)]
-		\item 8 Symbole
+		\item 8 Symbole:
 		\begin{enumerate}[label=\bfseries Schritt \arabic*:]
 			% Schritt 1
 			\item Wir w\"ahlen beliebig zwei S\"atze. Um L\"ange 8 zu bekommen mu\"ssen wir insgesamt 4 W\"ortern haben,
@@ -129,7 +140,7 @@
 			\end{align*}
 
 			% Schritt 3
-			\item Wenn eine halbe gr\"oss sein kann, dann verdoppelt unsere Zahl der Kombinationen:
+			\item Wenn eine halbe der Buchstaben gr\"oss sein kann, dann verdoppelt unsere Zahl der Kombinationen:
 			\begin{align*}
 				(26)^4\cdot2=456976\cdot2=913952
 			\end{align*}
@@ -148,7 +159,9 @@
 				& 10\cdot10\cdot7 = 700 \\
 				& 913952\cdot700 = 639766400
 			\end{align*}
-
+			\textbf{Bemerkung:} In dieser Schritt "eine Ziffer mit Bedeutung in die beiden Satzbereiche" gem\"ass 
+			Beispiel "LK1psDsIH2MG" war Interpretiert so, dass die Ziffern m\"ussen "symmetrisch" in der Satz stehen
+			(gleiche Stelle an beide Satzen haben). 
 			% Schritt 5
 			\item N\"achstens haben wir 3 M\"oglichkeiten 6 Symbolen zu stellen:
 			\begin{align*}

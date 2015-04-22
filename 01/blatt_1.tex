@@ -13,7 +13,7 @@
 		\begin{align*}
 			&\bmod(2,10)=2\\
 			&\bmod(2^2,10)=4\\
-			&\bmod(2^4,10)=\bmod(2^2\cdot2^2,10)=\bmod(\bmod(4,10)\cdot2(4,10),10)=\bmod(16,10)=6\\
+			&\bmod(2^4,10)=\bmod(2^2\cdot2^2,10)=\bmod(\bmod(4,10)\cdot\bmod(4,10),10)=\bmod(16,10)=6\\
 			&\bmod(2^8,10)=\bmod(2^4\cdot2^4,10)=\bmod(6\cdot6,10)=6\\
 			&\bmod(2^{16},10)=\bmod(2^8\cdot2^8,10)=\bmod(6\cdot6,10)=6\\
 			&\cdots \\
@@ -47,8 +47,7 @@
 		\textbf{Bemerkung:} Rechnenweg ist gleich wie in Punkt (a).
 		\begin{align*}
 			% part 1
-			\bmod(5^{31},11) &= \bmod(5^{30}\cdot5,11)
-			\\&= 5 \\\\
+			\bmod(5^{31},11) &= 5 \\\\
 			% part 2
 			\bmod(2^{789},11) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,11)
 			\\&= \bmod(9\cdot 9\cdot 9\cdot 9\cdot 2, 11)
@@ -56,13 +55,13 @@
 			\\&= 6 \\\\
 			% part 3
 			\bmod(-23^{23},11) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,11)
-			\\&= \bmod(4\cdot 3\cdot 5\cdot 7, 11)
-			\\&= \bmod(420,11)
-			\\&= 9 \\\\ 
+			\\&= \bmod(1\cdot 1\cdot 1\cdot 10, 11) \textrm{\qquad (da} \bmod(-23,11)=10 \textrm{ und }\bmod(23^2,11)=1)
+			\\&= \bmod(10,11)
+			\\&= 1 \\\\ 
 			% result
-			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 + 9,11)
-			\\&= \bmod(39,11)
-			\\&= 6 
+			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 +1,11)
+			\\&= \bmod(31,11)
+			\\&= 7 
 		\end{align*}
 
 		% Task (c)

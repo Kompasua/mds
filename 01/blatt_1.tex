@@ -20,7 +20,7 @@
 			&\bmod(2^{512},10)=\bmod(2^{256}\cdot2^{256},10)=\bmod(6\cdot6,10)=6
 		\end{align*}
 		Also auf solche Weise kann man rekursiv Modulus f\"ur Zahlen mit h\"ohe Potenzen berechnen.\\
-		F\"ur Modulus Rechnenregeln wird Theorem 1.2 (BM) benutzt. 
+		F\"ur Modulus Rechenregeln wird Theorem 1.2 (BM) benutzt. 
 		\begin{align*}
 			% part 1
 			\bmod(5^{31},10) &= 5  \textrm{\qquad (da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1) \\\\
@@ -44,10 +44,16 @@
 
 		% Task (b)
 		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \\
-		\textbf{Bemerkung:} Rechnenweg ist gleich wie in Punkt (a).
 		\begin{align*}
 			% part 1
-			\bmod(5^{31},11) &= 5 \\\\
+			\\
+			\\ \bmod(5^{1},11) &= 5
+			\\ \bmod(5^{2},11) &= \bmod(5 \cdot 5, 11) = 3
+			\\ \bmod(5^{3},11) &= \bmod(3 \cdot 5, 11) = 4
+			\\ \bmod(5^{4},11) &= \bmod(3 \cdot 3, 11) = 9
+			\\ \bmod(5^{5},11) &= \bmod(3 \cdot 4, 11) = 1
+			\\ \bmod(5^{31},11) &= \bmod(5^ \cdot 4, 11) = 1
+			 \\\\
 			% part 2
 			\bmod(2^{789},11) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,11)
 			\\&= \bmod(9\cdot 9\cdot 9\cdot 9\cdot 2, 11)
@@ -66,7 +72,7 @@
 
 		% Task (c)
 		\item  Bestimmen Sie $ \bmod(7^{31} \cdot 2^{789}, 10) $. \\
-		\textbf{Bemerkung:} Rechnenweg ist gleich wie in Punkt (a).
+		\textbf{Bemerkung:} Rechenweg ist gleich wie in Punkt (a).
 		\begin{align*}
 			% part 1
 			\bmod(7^{31},10) &= \bmod(7^{16}\cdot7^{8}\cdot7^{4}\cdot7^{2}\cdot7^{1},10)

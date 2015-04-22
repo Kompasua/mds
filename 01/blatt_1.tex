@@ -41,32 +41,44 @@
 			\\&= \bmod(13,10) 
 			\\&= 3
 		\end{align*}
-
+\\
+\\
+\\
 		% Task (b)
-		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \\
+		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \
 		\begin{align*}
 			% part 1
-			\\
 			\\ \bmod(5^{1},11) &= 5
 			\\ \bmod(5^{2},11) &= \bmod(5 \cdot 5, 11) = 3
 			\\ \bmod(5^{3},11) &= \bmod(3 \cdot 5, 11) = 4
 			\\ \bmod(5^{4},11) &= \bmod(3 \cdot 3, 11) = 9
 			\\ \bmod(5^{5},11) &= \bmod(3 \cdot 4, 11) = 1
-			\\ \bmod(5^{31},11) &= \bmod(5^ \cdot 4, 11) = 1
+			\\ \bmod(5^{31},11) &= \bmod(\bmod(5^5,11)^6 \cdot \bmod(5,11), 11)  \\
+			&=5;
 			 \\\\
 			% part 2
-			\bmod(2^{789},11) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,11)
-			\\&= \bmod(9\cdot 9\cdot 9\cdot 9\cdot 2, 11)
-			\\&= \bmod(432,11)
-			\\&= 6 \\\\
+			\bmod(2^1,11) &= 2 \\
+			\bmod(2^2,11) &= 4 \\
+			\bmod(2^3,11) &= 8 \\
+			\bmod(2^4,11) &= 5 \\
+			\bmod(2^5,11) &= 10 \\
+			\bmod(2^6,11) &= 9 \\
+			\bmod(2^7,11) &= 7 \\
+			\bmod(2^8,11) &= 3 \\
+			\bmod(2^9,11) &= 6 \\
+			\bmod(2^{10},11) &= 1 \\
+			\bmod(2^{789},11) &= \bmod(\bmod(2^{10},11)^{78} \cdot \bmod(2^9,11),11) \\
+			&= 6;\\
+			 \\\\
 			% part 3
-			\bmod(-23^{23},11) &= \bmod(23^{16}\cdot23^{4}\cdot23^{2}\cdot(-23)^1,11)
-			\\&= \bmod(1\cdot 1\cdot 1\cdot 10, 11) \textrm{\qquad (da} \bmod(-23,11)=10 \textrm{ und }\bmod(23^2,11)=1)
-			\\&= \bmod(10,11)
-			\\&= 1 \\\\ 
+			\bmod(-23^{1},11) &=10\\
+			\bmod(-23^2,11)&= 1 \\
+			\bmod(-23^{23},11) &= \bmod(\bmod(-23^2,11)^{11} \cdot \bmod(-23,11),11) \\ 
+			&= 10;
+			\\\\ 
 			% result
-			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 +1,11)
-			\\&= \bmod(31,11)
+			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 +10,11)
+			\\&= \bmod(40,11)
 			\\&= 7 
 		\end{align*}
 

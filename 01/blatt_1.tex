@@ -55,7 +55,7 @@
 			\\ \bmod(5^{5},11) &= \bmod(3 \cdot 4, 11) = 1
 			\\ \bmod(5^{31},11) &= \bmod(\bmod(5^5,11)^6 \cdot \bmod(5,11), 11)  \\
 			&=5;
-			 \\\\
+			\\\\
 			% part 2
 			\bmod(2^1,11) &= 2 \\
 			\bmod(2^2,11) &= 4 \\
@@ -68,14 +68,14 @@
 			\bmod(2^9,11) &= 6 \\
 			\bmod(2^{10},11) &= 1 \\
 			\bmod(2^{789},11) &= \bmod(\bmod(2^{10},11)^{78} \cdot \bmod(2^9,11),11) \\
-			&= 6;\\
-			 \\\\
+			&= 6;
+			\\\\
 			% part 3
 			\bmod(-23^{1},11) &=10\\
 			\bmod(-23^2,11)&= 1 \\
 			\bmod(-23^{23},11) &= \bmod(\bmod(-23^2,11)^{11} \cdot \bmod(-23,11),11) \\ 
 			&= 10;
-			\\\\ 
+			\\\\
 			% result
 			\bmod(5^{31} \cdot 2^{789}-23^{23}, 11) &= \bmod(5 \cdot 6 +10,11)
 			\\&= \bmod(40,11)
@@ -132,14 +132,43 @@
 
 		% Task (g)
 		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau einmal den Funktionswert 0 annehmen?
-		\begin{align*}
-		\end{align*}
+		\begin{enumerate}
+			\item $\|\{0,1,2,3\}^n\| = 4^n =_{def}m$
+			\item $\|\{0,1,2\}\| = 3 =_{def}n$
+		\end{enumerate}
+		Um 0 zu Stellen haben wir $m$ Moeglichkeiten. Andere Zahlen, also $n-1$, koennen wir
+		an $m-1$ Stellen zu stellen. Also mit so viel Kombinationen: $(n-1)^{m-1}$
+		Dann bekommen wir: 
+		\[m\cdot(n-1)^{m-1} = 4^n\cdot(3-1)^{4^n-1} = 4^n\cdot3^{4^n-1} = 2^{4^n+2\cdot n-1}\]
 
 		% Task (h)
-		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau zweimal den Funktionswert 0 annehmen?
-		\begin{align*}
-		\end{align*}
-		
+		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau zweimal den Funktionswert 0 annehmen? \\
+		\textbf{Bemerkung:} Definitionen (a) und (b) aus die Aufgabe (g) benutzt werden. \\
+		Um erster 0 zu Stellen haben wir $m$ Moeglichkeiten. Fuer zweiter haben wir $m-1$.
+		Also fuer zwei 0: $m\cdot (m-1)$. Andere Zahlen, also $n-1$, koennen wir
+		an $m-2$ Stellen zu stellen. Also mit so viel Kombinationen: $(n-1)^{m-2}$
+		Dann bekommen wir:
+		\[m\cdot(m-1)\cdot(n-1)^{m-2} = 4^n\cdot(4^n-1)\cdot2^{4^n-1}\] 
+
+		% Task (i)
+		\item Wie viele Funktionen $f : \{0, 1, 2, 3\}^n \to \{0, 1, 2\}$ gibt es, die genau os oft die Funktionswerte 0 und 1 annehmen? \\
+		\textbf{Bemerkung:} Definitionen (a) und (b) aus die Aufgabe (g) benutzt werden. \\
+		Schreiben wir eine Falle, wenn 0 und 1 gleich oft gar nicht zu Ergebnnisse kommen, wenn beide einmal, zweimal usw. kommen.
+		\[ \frac{m}{2} \left\{ 
+			\begin{array}{l l}
+		   		0: \quad 1  & \\
+		    	1: \quad m\cdot(m-1) & \\
+		    	2: \quad m\cdot(m-1)\cdot(m-2)\cdot(m-3) & \\
+		    		\vdots \\
+		    	m/2: \quad m\cdot(m-1)\cdot(m-2)\cdot(m-3)\cdot \ldots \cdot(m-(m-1))& 
+		  	\end{array} 
+		\right.\]
+		Dann wenn wir alle diese Faelle summieren - bekommen wir so viele Funktionen, die 0 und 1 genau so oft annehmen. Also:
+		\[1 \cdot m\cdot(m-1) \cdot m\cdot(m-1)\cdot(m-2)\cdot(m-3)\cdot \ldots \cdot m\cdot(m-1)\cdot(m-2)\cdot(m-3)\cdot \ldots \cdot(m-(m-1))\]
+
+		% Task (j)
+		\item Nach Lemma 4. $\|\{ f|f:\{0,1\} \to A \}\| = n^2$. 
+		Nach Korollar 5. $\mathcal{P}(A) = 2^n$. \\ Also haben wir: $\varphi : 2^n \to n^2$. Dann wieder nach Lemma 4. bekommen wir: \[n^{2^{2^n}} = n^{2^{n+1}}\]
 	\end{enumerate} 
 	
 	\section*{Transfer:}

@@ -9,7 +9,7 @@
 	\begin{enumerate}[label=(\alph*)]
 		% Task (a)
 		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 10) $. \\
-		\textbf{Bemerkung:} die h\"ohere Potenzen werden in Potenzen von 2 ausgeteilt.\\ Ein Beispiel f\"ur $2^{2^n}$:
+		\textbf{Bemerkung 1:} die h\"ohere Potenzen werden in Potenzen von 2 ausgeteilt.\\ Ein Beispiel f\"ur $2^{2^n}$:
 		\begin{align*}
 			&\bmod(2,10)=2\\
 			&\bmod(2^2,10)=4\\
@@ -20,10 +20,10 @@
 			&\bmod(2^{512},10)=\bmod(2^{256}\cdot2^{256},10)=\bmod(6\cdot6,10)=6
 		\end{align*}
 		Also auf solche Weise kann man rekursiv Modulus f\"ur Zahlen mit h\"ohe Potenzen berechnen.\\
-		F\"ur Modulus Rechenregeln wird Theorem 1.2 (BM) benutzt. 
+		F\"ur Modulus Rechenregeln wird Theorem 1.2 (BM) benutzt. \\
 		\begin{align*}
 			% part 1
-			\bmod(5^{31},10) &= 5  \textrm{\qquad (da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1) \\\\
+			\bmod(5^{31},10) &= 5  \textrm{\qquad (da} \bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1)  \textrm{ Siehe Bem. 2} \\\\
 			% part 2
 			\bmod(2^{789},10) &= \bmod(2^{512}\cdot2^{256}\cdot2^{16}\cdot2^4\cdot2^1,10) 
 			\\&= \bmod(\bmod(2^{512},10)\cdot\bmod(2^{256},10)\cdot\bmod(2^{16},10)\cdot\bmod(2^4,10)\cdot\bmod(2^1,10),10)
@@ -41,9 +41,12 @@
 			\\&= \bmod(13,10) 
 			\\&= 3
 		\end{align*}
-\\
-\\
-\\
+		\textbf{Bemerkung 2:} Aussage $\bmod(5^n,10)=5, \forall n \in \mathbb{N}, n\geq1$ kann man mit Vollstandige Induktion beweisen:
+		\begin{align*}
+			IA: n=1: \bmod(5&^1,10)=5 \\ % & is for vertical align of IA and IS
+			IS: \bmod(5^{n+1},10)&=\bmod(\bmod(5^n,10)\cdot\bmod(5,10),10) \\&= \bmod(5\cdot5,10) \\&= \bmod(25,10) \\&= 5
+		\end{align*}
+
 		% Task (b)
 		\item  Bestimmen Sie $ \bmod(5^{31} \cdot 2^{789}-23^{23}, 11) $. \
 		\begin{align*}

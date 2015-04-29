@@ -40,12 +40,25 @@
         \item In einer Gruppe von 11 Personen sind 5 Vorstandsposten (ohne Personalunion) für jeweils
         eine Person zu vergeben: Präsidentin, Vizepräsidentin, Geschäftsführerin, stellvertreten-
         de Geschäftsführerin, Schatzmeisterin. Wie viele verschiedene Vorstände sind möglich?\\\\
+        In diesem Fall sollen wir ein Formel aus Satz 6. (geordnet, ohne Zur\"ucklegen) benutzen:
+        \[\frac{n!}{(n-k)!}=\frac{11!}{(11-5)!}
+        =\frac{6!\cdot7\cdot8\cdot9\cdot10\cdot11}{6!}
+        =55440\]
 
         % Task (f)
         \item Wie viele verschiedene Wörter können Sie aus dem Wort PICHICHI bilden?\\\\
         In dieser Wort haben wir 8 Buchstaben. Da aber manche Buchstaben sich viederholen: 
         I=3, C=2, H=2 - Mal. Da wir die Umstellung der gleiche Buchstaben nicht unterscheiden, haben wir:
         \[\frac{n!}{k_1!\cdot k_2!\cdot\ldots\cdot k_n!} = \frac{8!}{3!\cdot2!\cdot2!} = 1680\]
-		
+
+        % Task (g)
+        \item Welcher Faktor B(n, k) erfüllt die Gleichung $\binom{n}{k} = B(n,k)\cdot\binom{n-1}{k-1}$?\\\\
+        \begin{align*}
+        \binom{n}{k} &=_{def} \frac{n!}{k!\cdot(n-k)!}\\
+        B(n,k) &= \frac{\binom{n}{k}}{\binom{n-1}{k-1}}\\
+        &= \frac{n!}{k!\cdot(n-k)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
+        &= \frac{n\cdot(n-1)!}{k\cdot(k-1)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
+        &= \frac{n}{k}
+        \end{align*}
 	\end{enumerate}
 \end{document}

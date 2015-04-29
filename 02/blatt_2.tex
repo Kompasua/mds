@@ -4,32 +4,32 @@
 \input{../template.tex}
 
 \begin{document}
-	\maketitle
-	\section*{Vertiefung:}
-	\begin{enumerate}[label=(\alph*)]
-		% Task (a)
-		\item  Wie viele Verlosungen von 5 identischen Kaffeemaschinen unter 25 Teilnehmern gibt es?\\\\
-		Ziehen ohne Zurücklegen, ohne Reihenfolge.\\	
-		$${n \choose k}= {25 \choose 5}= \frac{25!}{5!(25-5)!}= 
-		\frac{20!\cdot 21 \cdot 22 \cdot 23 \cdot 24 \cdot 25}{5! \cdot 20!} = 53 \; 1230 $$
-		
-		% Task (b)
-		\item Wie viele Möglichkeit gibt es, genau 7 Chips auf die drei Felder 1-12, 13-24, 25-36 
+    \maketitle
+    \section*{Vertiefung:}
+    \begin{enumerate}[label=(\alph*)]
+        % Task (a)
+        \item  Wie viele Verlosungen von 5 identischen Kaffeemaschinen unter 25 Teilnehmern gibt es?\\\\
+        Ziehen ohne Zurücklegen, ohne Reihenfolge.\\    
+        $${n \choose k}= {25 \choose 5}= \frac{25!}{5!(25-5)!}= 
+        \frac{20!\cdot 21 \cdot 22 \cdot 23 \cdot 24 \cdot 25}{5! \cdot 20!} = 53 \; 1230 $$
+        
+        % Task (b)
+        \item Wie viele Möglichkeit gibt es, genau 7 Chips auf die drei Felder 1-12, 13-24, 25-36 
         beim Roulette zu legen?\\\\ 
-		Wir ziehen die Felder ohne Reihenfolge mit Zur\"ucklegen.\\
-		$n=3; \; k=7$ \\
-		$$ \binom{n+k-1}{k}= \binom{3+7-1}{7}= \binom{9}{7}=
-		\frac{9!}{7!(2!)}= \frac{8*9}{2}=36 $$
+        Wir ziehen die Felder ohne Reihenfolge mit Zur\"ucklegen.\\
+        $n=3; \; k=7$ \\
+        $$ \binom{n+k-1}{k}= \binom{3+7-1}{7}= \binom{9}{7}=
+        \frac{9!}{7!(2!)}= \frac{8*9}{2}=36 $$
 
-		% Task (c)
-		\item Wie viele Binärzahlen der Länge 8 beginnen mit einer 0 oder enden mit 11?\\\\
-		Da am Anfang haben wir 0, bleib f\"ur die Reste 7 Stellen, also $2^7 = 128$ Varianten.\\
-		Da am Ende haben wir zwei 1, bleib f\"ur die Reste 6 Stellen, also $2^6 = 64$ Varianten.\\
+        % Task (c)
+        \item Wie viele Binärzahlen der Länge 8 beginnen mit einer 0 oder enden mit 11?\\\\
+        Da am Anfang haben wir 0, bleib f\"ur die Reste 7 Stellen, also $2^7 = 128$ Varianten.\\
+        Da am Ende haben wir zwei 1, bleib f\"ur die Reste 6 Stellen, also $2^6 = 64$ Varianten.\\
         Nach Satz 6. (geordnet, mit Zur\"ucklegen)
 
-		% Task (d)
-		\item Sie haben 5 Informatik-Bücher, 4 Mathematik-Bücher und 3 Philosophie-Bücher zur
-		Auswahl. Wie viele Möglichkeiten gibt es, auf eine Reise zwei Bücher aus verschiedenen
+        % Task (d)
+        \item Sie haben 5 Informatik-Bücher, 4 Mathematik-Bücher und 3 Philosophie-Bücher zur
+        Auswahl. Wie viele Möglichkeiten gibt es, auf eine Reise zwei Bücher aus verschiedenen
         Themenbereichen mitzunehmen?\\\\
         Nach Satz 6. (ungeordnet, ohne Zur\"ucklegen) es gibt 3 Kombinationen von F\"achern und zwar
         Inf. und Mathe, Inf. und Phil., Mathe und Phil.\\
@@ -60,5 +60,5 @@
         &= \frac{n\cdot(n-1)!}{k\cdot(k-1)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
         &= \frac{n}{k}
         \end{align*}
-	\end{enumerate}
+    \end{enumerate}
 \end{document}

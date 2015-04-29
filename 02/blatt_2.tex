@@ -60,5 +60,40 @@
         &= \frac{n\cdot(n-1)!}{k\cdot(k-1)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
         &= \frac{n}{k}
         \end{align*}
+        
+        % Task (h)
+        \item Welchen Koeffizienten besitzt $x^6y^7$ in $(x+y)^{13}$?\\\\
+        Gemass Satz 8.: $(x+y)^{13} = \sum_{k=0}^{13} \binom{13}{k}x^{13-k}y^k$.\\\\
+        Dann $x^6y^7$ besitzt $\binom{13}{7}$.
+
+        % Task (i)
+        \item Welchen Koeffizienten besitzt $x^3y^3z^7$ in $(x+y+z)^{13}$?\\\\
+        Da wir hier drei Variablen haben, sollen wir kombinatorisches Beweis modifizieren, um 
+        brauchende Formel zu bekommen.\\
+        Insofern jeder Summant besteht aus $n$ Faktoren, sind $j$ davon $z$, so sind $(k-j)$ davon $y$ 
+        und $(n-k)$ davon $x$. Dies entspricht $x^{n-k}y^{k-j}z^7$
+        Somit gilt:
+        \[(x+y+z)^{n} = \sum_{k=0}^{n} \binom{n}{k}x^{n-k}y^{k-j}z^j\]
+        Dann nach Voraussetzung: 
+        \[(x+y+z)^{13} = \sum_{k=0}^{13} \binom{13}{10}x^{13-10}y^{10-7}z^7\]
+        Folglich $x^3y^3z^7$ besitzt $\binom{13}{10}$.
+
+        % Task (h)
+        \item Wie können Sie $\sum_{k=0}^n \binom{n}{k}^2$ vereinfachen?\\\\
+        Gemass Satz 11.: $\sum_{k=0}^n \binom{n}{k}\cdot\binom{n}{k} = \binom{2n}{k}$.\\\\
     \end{enumerate}
+    
+    \section*{Kreativitat:} 
+    Zeigen Sie mittels vollständiger Induktion:
+    \[\binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\]
+    \begin{align*}
+            &IA: n=1: \binom{2}{1}\geq \frac{4}{2} = 2\\ % & is for vertical align of IA and IS
+            &IV: \binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\\
+            &IS: \binom{2(n+1)}{n+1}=\binom{2n+2}{n+1}
+            = \binom{2n+1}{n} + \binom{2n+1}{n+1}
+            = \binom{2n}{n-1} + \binom{2n}{n} + \binom{2n}{n} + \binom{2n}{n+1}\\
+    \end{align*}
+    \[\binom{2n}{n-1} + 2\cdot\binom{2n}{n} + \binom{2n}{n+1} \geq \frac{4^{n+1}}{2\sqrt {n+1}}\\
+            \iff 2\cdot\Bigg(\binom{2n}{n+1} + \binom{2n}{n}\Bigg) \geq 2\cdot\frac{4^n}{\sqrt {n+1}}\\\]
+            Da die linke Seite ist deutlich groesser als rechte.
 \end{document}

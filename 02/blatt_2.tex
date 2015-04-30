@@ -16,7 +16,7 @@
         % Task (b)
         \item Wie viele Möglichkeit gibt es, genau 7 Chips auf die drei Felder 1-12, 13-24, 25-36 
         beim Roulette zu legen?\\\\ 
-        Wir ziehen die Felder ohne Reihenfolge mit Zur\"ucklegen.\\
+        Wir ziehen die Felder ohne Reihenfolge mit Zur\"ucklegen.
         $n=3; \; k=7$ \\
         $$ \binom{n+k-1}{k}= \binom{3+7-1}{7}= \binom{9}{7}=
         \frac{9!}{7!(2!)}= \frac{8*9}{2}=36 $$
@@ -50,13 +50,15 @@
         In dieser Wort haben wir 8 Buchstaben. Da aber manche Buchstaben sich viederholen: 
         I=3, C=2, H=2 - Mal. Da wir die Umstellung der gleiche Buchstaben nicht unterscheiden, haben wir:
         \[\frac{n!}{k_1!\cdot k_2!\cdot\ldots\cdot k_n!} = \frac{8!}{3!\cdot2!\cdot2!} = 1680\]
+        Bemerkung: $k_n!$ ist eine Variation von Buchstaben Umstellung, die sich viederholen. 
+        Da wir solche Woertern nicht akzeptiren sollen, ausschließen wir ihre aus gesamte Variationen. 
 
         % Task (g)
-        \item Welcher Faktor B(n, k) erfüllt die Gleichung $\binom{n}{k} = B(n,k)\cdot\binom{n-1}{k-1}$?\\\\
+        \item Welcher Faktor B(n, k) erfüllt die Gleichung $\binom{n}{k} = B(n,k)\cdot\binom{n-1}{k-1}$?
         \begin{align*}
         \binom{n}{k} &=_{def} \frac{n!}{k!\cdot(n-k)!}\\
-        B(n,k) &= \frac{\binom{n}{k}}{\binom{n-1}{k-1}}\\
-        &= \frac{n!}{k!\cdot(n-k)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
+        B(n,k) &= \frac{\binom{n}{k}}{\binom{n-1}{k-1}} &\textrm{(Nach Voraussetzung)}\\
+        &= \frac{n!}{k!\cdot(n-k)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!} &\textrm{(Nach Definition)}\\
         &= \frac{n\cdot(n-1)!}{k\cdot(k-1)!} \cdot \frac{(k-1)!\cdot(n-k)!}{(n-1)!}\\
         &= \frac{n}{k}
         \end{align*}
@@ -78,7 +80,7 @@
         \[(x+y+z)^{13} = \sum_{k=0}^{13}\sum_{j=0}^{k} \binom{13}{k}\binom{k}{j}x^{13-k}y^{k-j}z^j\]
         Folglich $x^3y^3z^7$ besitzt $\binom{13}{10}\cdot\binom{10}{7} = 286 \cdot 120 = 34440$.
 
-        % Task (h)
+        % Task (j)
         \item Wie können Sie $\sum_{k=0}^n \binom{n}{k}^2$ vereinfachen?\\\\
         Gemass Satz 11.: $\sum_{k=0}^n \binom{n}{k}\cdot\binom{n}{k} = \binom{2n}{k}$.\\\\
     \end{enumerate}
@@ -87,19 +89,29 @@
     Zeigen Sie mittels vollständiger Induktion:
     \[\binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\]
     \begin{align*}
-            &IA: n=1: \binom{2}{1}\geq \frac{4}{2} = 2\\ % & is for vertical align of IA and IS
-            &IV: \binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\\
-            &IS: \binom{2(n+1)}{n+1}=\binom{2n+2}{n+1}
-            = \binom{2n+1}{n} + \binom{2n+1}{n+1}
-            = \binom{2n}{n-1} + \binom{2n}{n} + \binom{2n}{n} + \binom{2n}{n+1}\\
+        &IA: n=1: \binom{2}{1}\geq \frac{4}{2} = 2\\ % & is for vertical align of IA and IS
+        &IV: \binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\\
+        &IS: \binom{2(n+1)}{n+1}=\binom{2n+2}{n+1}
+        = \binom{2n+1}{n} + \binom{2n+1}{n+1}
+        = \binom{2n}{n-1} + \binom{2n}{n} + \binom{2n}{n} + \binom{2n}{n+1}\\
     \end{align*}
     \[\binom{2n}{n-1} + 2\cdot\binom{2n}{n} + \binom{2n}{n+1} \geq \frac{4^{n+1}}{2\sqrt {n+1}}\\
-            \iff 2\cdot\Bigg(\binom{2n}{n+1} + \binom{2n}{n}\Bigg) \geq 2\cdot\frac{4^n}{\sqrt {n+1}}\\\]
-            Da die linke Seite ist deutlich groesser als rechte.
+    \iff 2\cdot\Bigg(\binom{2n}{n+1} + \binom{2n}{n}\Bigg) \geq 2\cdot\frac{4^n}{\sqrt {n+1}}\\\]
+    Da die linke Seite ist deutlich groesser als rechte.
+    
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-    \item Wie groß ist $\binom{a^n}{a^m}$?
-    Hier haben wir einfach Kombination (Satz 6. (ungeordnet, ohne Zurucklegen)) mit $|a^n| = n$ und 
-    $|a^m| = m$, also $\binom{n}{m}$
+        % Task (a) 
+        \item Wie groß ist $\binom{a^n}{a^m}$? \\\\
+        Hier haben wir einfach Kombination (Satz 6. (ungeordnet, ohne Zurucklegen)) mit $|a^n| = n$ und 
+        $|a^m| = m$. Wir nehmen $m$ aus $n$ a's und folglich haben: 
+        \[\binom{n}{m}\]
+
+        % Task (b) 
+        \item Wie groß ist $\binom{a^{n_1}b^{n_2}}{a^{m_1}b^{m_2}}$? \\\\
+        Hier haben wir eine Folge von $a$ und $b$. Da koennen wir erstens Variationen von $a$ und dann 
+        Variationen von $b$ (gemass Unterabsatz a) berechnen. Ein Produkt von diese zwei Variationen ist 
+        eine Variationen von die gesamte Folge. Folglich:
+        \[\binom{n_1}{m_1} \cdot \binom{n_2}{m_2} \]
     \end{enumerate} 
 \end{document}

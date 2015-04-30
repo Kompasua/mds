@@ -93,12 +93,21 @@
         &IV: \binom{2n}{n}\geq \frac{4^n}{2\sqrt n}\\
         &IS: \binom{2(n+1)}{n+1}=\binom{2n+2}{n+1}
         = \binom{2n+1}{n} + \binom{2n+1}{n+1}
-        = \binom{2n}{n-1} + \binom{2n}{n} + \binom{2n}{n} + \binom{2n}{n+1}\\
+        = \binom{2n}{n-1} + \binom{2n}{n} + \binom{2n}{n} + \binom{2n}{n+1} &\textrm{(1)}\\
     \end{align*}
-    \[\binom{2n}{n-1} + 2\cdot\binom{2n}{n} + \binom{2n}{n+1} \geq \frac{4^{n+1}}{2\sqrt {n+1}}\\
-    \iff 2\cdot\Bigg(\binom{2n}{n+1} + \binom{2n}{n}\Bigg) \geq 2\cdot\frac{4^n}{\sqrt {n+1}}\\\]
-    Da die linke Seite ist deutlich groesser als rechte.
-    
+    % pay attention about \hspace{lenght} command
+    \[\hspace{30pt}\binom{2n}{n-1} + 2\cdot\binom{2n}{n} + \binom{2n}{n+1} \geq \frac{4^{n+1}}{2\sqrt {n+1}}\\
+    \iff 2\cdot\Bigg(\binom{2n}{n+1} + \binom{2n}{n}\Bigg) \geq 2\cdot\frac{4^n}{\sqrt {n+1}} 
+    \textrm{\hspace{40pt}(2)}\\\]
+    Wo die linke Seite ist deutlich groesser als rechte.\\
+    Oder koennen wir das anders zeigen. Es gilt:
+    \[ \binom{2n}{n-1} = \binom{2n}{n+1} = \binom{2n}{n}\\\]
+    Beweis: 
+    \[\frac{2n!}{(n-1)!(n+1)!} = \frac{2n!\cdot n}{(n)!(n)! \cdot n} =  \frac{2n!}{n!n!}\]
+    Also nach IV und IS(1):
+    \[4\cdot\binom{2n}{n} \geq 4\cdot\frac{4^n}{2\sqrt{n}} \]
+    \[4\cdot\binom{2n}{n} \geq \frac{4^{n+1}}{2\sqrt{n}} \]
+
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
         % Task (a) 

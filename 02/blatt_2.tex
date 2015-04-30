@@ -68,15 +68,15 @@
 
         % Task (i)
         \item Welchen Koeffizienten besitzt $x^3y^3z^7$ in $(x+y+z)^{13}$?\\\\
-        Da wir hier drei Variablen haben, sollen wir kombinatorisches Beweis modifizieren, um 
-        brauchende Formel zu bekommen.\\
-        Insofern jeder Summant besteht aus $n$ Faktoren, sind $j$ davon $z$, so sind $(k-j)$ davon $y$ 
-        und $(n-k)$ davon $x$. Dies entspricht $x^{n-k}y^{k-j}z^7$
-        Somit gilt:
-        \[(x+y+z)^{n} = \sum_{k=0}^{n} \binom{n}{k}x^{n-k}y^{k-j}z^j\]
+        Nach Binomialtheorem:
+        \begin{align*}
+        (x+y+z)^{n} &= \sum_{k=0}^{n} \binom{n}{k}x^{n-k}(y+z)^k \\
+        &= \sum_{k=0}^{n} \binom{n}{k}x^{n-k}\sum_{j=0}^{k}\binom{k}{j}y^{k-j}z^j \\
+        &= \sum_{k=0}^{n}\sum_{j=0}^{k} \binom{n}{k}\binom{k}{j}x^{n-k}y^{k-j}z^j
+        \end{align*}
         Dann nach Voraussetzung: 
-        \[(x+y+z)^{13} = \sum_{k=0}^{13} \binom{13}{10}x^{13-10}y^{10-7}z^7\]
-        Folglich $x^3y^3z^7$ besitzt $\binom{13}{10}$.
+        \[(x+y+z)^{13} = \sum_{k=0}^{13}\sum_{j=0}^{k} \binom{13}{k}\binom{k}{j}x^{13-k}y^{k-j}z^j\]
+        Folglich $x^3y^3z^7$ besitzt $\binom{13}{10}\cdot\binom{10}{7} = 286 \cdot 120 = 34440$.
 
         % Task (h)
         \item Wie können Sie $\sum_{k=0}^n \binom{n}{k}^2$ vereinfachen?\\\\

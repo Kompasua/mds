@@ -58,10 +58,17 @@
 
         % Task (f)
         \item Kein Antwort.\\\\
-
         % Task (g)
-        \item Kein Antwort.\\\\
-
+        \item Zeigen Sie mittels vollständiger Induktion die Gleichung $S_{n,3} = \frac{1}{2} \cdot 3^{n-1} - 2^{n-1} + \frac{1}{2}$ für $n \ge 3$?\par
+		(IA) $n=3:$ \[ S_{3,3} = 1 = \frac{1}{2} \cdot 3^{2} - 2^{2} + \frac{1}{2}\] \\
+		(IV) \[S_{n-1,3} = \frac{1}{2} \cdot 3^{n-2} - 2^{n-2} + \frac{1}{2} \] \\
+		(IS)             \begin{align*}
+			S_{n,3} &= S_{n-1,2} + 3 \cdot S_{n-1,3} \tag{nach Theorem 1.15}\\
+		            &= S_{n-1,2} + 3 \cdot (\frac{1}{2} \cdot 3^{n-2} - 2^{n-2} + \frac{1}{2} )  \tag{nach IV}\\
+		            &= 2^{n-2} - 1 + \frac{3 \cdot 3^{n-2}}{2} -3 \cdot 2^{n-2} + \frac{3}{2} \tag{nach Aufgabe i}\\
+		            &= \frac{1}{2} 3^{n-1} - 2 \cdot 2^{n-2} -1 + 1\frac{1}{2} \\
+		            &= \frac{1}{2} 3^{n-1} - 2^{n-1} + \frac{1}{2} 
+		            		        	  \end{align*}
         % Task (h)
         \item Kein Antwort.\\\\
 
@@ -98,14 +105,14 @@
     \item Für alle $n \in \mathbb{N}_+$ und $k \in \mathbb{N}_+$ gilt 	
     $n^{\underline{k}} = k \cdot (n-1)^{\underline{k-1}} +(n-1)^{\underline{k}}$.\\
     Durch $(n-1)^{\underline{k}}$ bekommen wir eine Variation aus $n-1$ Elementen.
-    Da aber ein Element Fehlt sollen wir eine Variation mit fehlenden Element machen.
+    Da aber ein Element Fehlt, sollen wir eine Variation mit fehlenden Element machen.
     Dann nehmen wir ein Element weniger aus $n-1$ Elementen (um ein Platz fuer ein Element) 
     zu "reservieren" und multiplizieren mit Anzahl der Elementen (Stellen, wo wir
     fehlenden Element stehen lassen Koennen). \\\\
-    Machen wir Mal ein Beispiel.\\
+    Machen wir mal ein Beispiel.\\
     Wir haben ein Stundenplan aus $n-1 = 9$ Fachern und $k-1 = 5$ Lerhstunden gemacht:
     \[(n-1)^{\underline{k-1}}\]
-    Dann wollten wir aber noch ein Facher und Lehrstunde hinzufuegen. Da wir koennen
+    Dann wollten wir aber noch ein Fach und Lehrstunde hinzufuegen. Da wir koennen
     dieser mit 6 multiplizieren, da wir sechster Fach an 6 Stellen stellen koennen: 
     \[6\cdot(n-1)^{\underline{k-1}} \textrm{\qquad (1)}\]
     In diesem Fall aber haben wir alle Kombinationen, die neuer Fach enthalten. 
@@ -115,5 +122,17 @@
     \[(n-1)^{\underline{k}} \textrm{\qquad (2)}\]
     Folglich die Summe von Aussagen (1) und (2) ist eine Variation aus $n$ Fachern 
     an $k$ Lerhstunden. 
+        \end{enumerate}
+    \section*{Transfer:}
+    \begin{enumerate}[label=(\alph*)]
+\item Definiere Punkte Team 1 als n und Punkte Team 2 als m.\\
+		Konstruiere zunächst alle möglichen abfolgen um auf einen Punktestand n oder m zu kommen:
+		$$\sum\limits_{k=0}^{\lfloor \frac{n}{2} \rfloor}\binom{n-k}{k}$$\\
+		Die Summe zählt alle Möglichkeiten zusammen $2 \cdot k$ Einser Würfe durch k Zweier zu ersetzen. 
+		\\
+		Nun müssen die beiden Folge miteinander verknüpft werden.
+		Hierzu schließen wir die beiden Listen aneinander an und verteilen in der Anzahl der Folgeglieder beider Listen die darin die zu werfenden 2er von Teamv1, die zu werfenden 2er von Team 2 und die zu werfenden Einser von Team 1. Die restlichen Einser von Team 2 müssen nicht mehr verteilt werden, da sich diese ergeben.
+		
+		$$ \sum\limits_{k=0}^{\lfloor \frac{n}{2} \rfloor} \sum\limits_{l=0}^{\lfloor\frac{m}{2}\rfloor}\binom{n-k+m-l}{k}\binom{n-2k+m-l}{l}\binom{n-2k+m-2l}{n-2k}$$
     \end{enumerate}
 \end{document}

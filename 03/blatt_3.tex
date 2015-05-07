@@ -77,16 +77,16 @@
 
         % Task (j)
         \item Wie viele Zahlen zwischen 1 und 100000 gibt es, deren Quersumme gerade 13 ergibt?\\\\
-        Sei 13 die Summe von dreizehn 1. Dann koennen wir diese 1 an 5 Positionen 
+        Sei 13 die Summe von dreizehn 1. Dann k\"onnen wir diese 1 an 5 Positionen 
         stellen um eine Zahl, die Quersumme 13 hat, bekommen.\\
-        Um 1 an 5 Gruppen zu Teilen koennen wir solche Folge schreiben:
+        Um 1 an 5 Gruppen zu Teilen k\"onnen wir solche Folge schreiben:
         $1...1 s s s s$, wo $s$ - eine Rolle von Separator spielt.\\ Dann z.B. diese
         Kombination $11111s111s1111s1$ bedeutet 5341 und diese $11111s111s11111s$
         bedeutet 5350. In diesem Fall benutzen wir Formel (siehe Blatt 2, Aufgabe f)
         , wo 1 wiederholt sich 13-Mal, Separator 4-Mal, und isngesamt es gibt 17 Elementen:
         \[\frac{n!}{k_1!\cdot k_2!\cdot\ldots\cdot k_n!} = \frac{17!}{13!\cdot4!} = 2380\]
         2380 enthalt aber auch Kombinationen, wann z.B. alle 1 in eine Gruppe sind. 
-        Das passt uns naturlich nicht, da fuer jeder Ziffer maximal 9 Einsen moeglich sind.
+        Das passt uns naturlich nicht, da fuer jeder Ziffer maximal 9 Einsen m\"oglich sind.
         Deswegen sollen wir solche Faelle ausschliessen. Dann rechnen wir Zahl der 
         Kombinationen, wann 10,11,12,13 Eins in eine Gruppe kommen. \\
         Z.B fuer 10 haben wir noch 3 Einsen, die wir gruppieren sollen. Dann haben wir 111sss.
@@ -96,7 +96,7 @@
         	&12: F_3 = 5 \cdot \frac{4!}{1!\cdot3!} = 20\\
         	&13: F_4 = 5 \cdot \frac{4!}{0!\cdot4!} = 5\\
         \end{align*}
-        Dann ziehen wir unmoegliche Variationen aus unsere Zahl der gesamte Kombinationen aus:
+        Dann ziehen wir unm\"ogliche Variationen aus unsere Zahl der gesamte Kombinationen aus:
         \[2380 - (F_1+F_2+F_3+F_4) = 2380 - 175 = 2205\]
     \end{enumerate}
     \section*{Kreativitat:}

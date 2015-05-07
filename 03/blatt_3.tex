@@ -65,12 +65,14 @@
 		(IS)             \begin{align*}
 			S_{n,3} &= S_{n-1,2} + 3 \cdot S_{n-1,3} \tag{nach Theorem 1.15}\\
 		            &= S_{n-1,2} + 3 \cdot (\frac{1}{2} \cdot 3^{n-2} - 2^{n-2} + \frac{1}{2} )  \tag{nach IV}\\
-		            &= 2^{n-2} - 1 + \frac{3 \cdot 3^{n-2}}{2} -3 \cdot 2^{n-2} + \frac{3}{2} \tag{nach Aufgabe i}\\
+		            &= 2^{n-2} - 1 + \frac{3 \cdot 3^{n-2}}{2} -3 \cdot 2^{n-2} + \frac{3}{2} \tag{nach der Aufgabe f}\\
 		            &= \frac{1}{2} 3^{n-1} - 2 \cdot 2^{n-2} -1 + 1\frac{1}{2} \\
 		            &= \frac{1}{2} 3^{n-1} - 2^{n-1} + \frac{1}{2} 
 		            		        	  \end{align*}
         % Task (h)
-        \item Kein Antwort.\\\\
+        \item Wie viele Möglichkeiten gibt es, eine ganzzahlige Zahl $n \ge 3k$ als Summe von $k$ ganzzahligen Summanden darzustellen, wobei jeder Summand mindestens $3$ ist?\\\\
+        Nach Theorem 1.17: 
+        \[ \binom{n-2k-1}{k-1} \]
 
         % Task (i)
         \item Kein Antwort.\\\\
@@ -125,7 +127,7 @@
         \end{enumerate}
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-\item Definiere Punkte Team 1 als n und Punkte Team 2 als m.\\
+\item Sei Punkte Team 1 = n und Punkte Team 2 = m.\\
 		Konstruiere zunächst alle möglichen abfolgen um auf einen Punktestand n oder m zu kommen:
 		$$\sum\limits_{k=0}^{\lfloor \frac{n}{2} \rfloor}\binom{n-k}{k}$$\\
 		Die Summe zählt alle Möglichkeiten zusammen $2 \cdot k$ Einser Würfe durch k Zweier zu ersetzen. 

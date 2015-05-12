@@ -2,14 +2,22 @@
 % Also useful link: http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
 
 \input{../template.tex}
-
+\DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
 \begin{document}
     \maketitle
     \section*{Vertiefung:}
     \begin{enumerate}[label=(\alph*)]
         % Task (a)
         \item Drücken Sie die Anzahl der surjektiven Funktionen 
-        $f : \{0, 1\}^n \to \{0, 1\}^2$ mit Hilfe der Stirling-Zahlen zweiter Art aus.
+        $f : \{0, 1\}^n \to \{0, 1\}^2$ mit Hilfe der Stirling-Zahlen zweiter Art aus.\\\\
+        Nach Lemma 4 (Potenzregel) und Kreuzprodukt Definition es gilt entsprechend:
+        \begin{align*}
+	        &||\{0, 1\}^n|| = 2^n \\
+	        &|| \{0, 1\}^2|| = 2^2 = 4
+	    \end{align*}
+	    Wir muessen $2^n$ Funktionsargumente auf $4$ Funktionswerte abbilden. Da Stirling-Zahlen auf 
+	    nicht unterscheidbare Funktionswerte aufzuteilt, sollen wir noch nit $4!$ multiplizieren.  
+	    Folglich: \[4!\cdot\stirling{a}{b}\]
 
         % Task (b)
         \item Kein Antwort
@@ -23,9 +31,9 @@
         Außerdem gelte $||A\cup B\cup C|| = 139$. Wie groß ist $||A \cap B \cap C||$?\\\\
         Nach Theorem 1.19 Beispiel es gilt:
         \begin{align*}
-        ||A\cup B\cup C|| &= ||A|| + ||B|| + ||C|| - ||A\cap B|| - ||A\cap C|| - ||C \cap B|| + ||A \cap B \cap C||\\
-        \Rightarrow ||A \cap B \cap C|| &= ||A\cup B\cup C|| - ||A|| - ||B|| - ||C|| + ||A\cap B|| + ||A\cap C|| + ||C \cap B|| \\
-        \Rightarrow ||A \cap B \cap C|| &= 139 - 63 - 91 - 44 + 25 + 23 + 21 = 10 \\
+	        ||A\cup B\cup C|| &= ||A||+||B||+||C||-||A\cap B||-||A\cap C||-||C \cap B||+||A \cap B \cap C||\\
+	        \Rightarrow ||A \cap B \cap C|| &= ||A\cup B\cup C||-||A||-||B||-||C||+||A\cap B||+||A\cap C||+||C \cap B||\\
+	        \Rightarrow ||A \cap B \cap C|| &= 139 - 63 - 91 - 44 + 25 + 23 + 21 = 10 \\
         \end{align*}
     \end{enumerate}
 \end{document}

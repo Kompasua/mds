@@ -23,7 +23,22 @@
         \item Kein Antwort
 
         % Task (c)
-        \item Kein Antwort
+        \item Von 18 Studierenden in einer Spezialvorlesung studieren 7 Mathematik, 9 Physik und 10
+		Informatik. Davon studieren 3 Mathematik und Physik, 3 Mathematik und Informatik
+		sowie 5 Physik und Informatik. Ein Student studiert sogar all drei Fächer. Wie viele
+		Studierende studieren keines der drei Fächer?\\
+		Sei nach Voraussetzung:
+		\[||M|| = 7,\, ||I|| = 10,\, ||P|| = 9,\, ||M \cap P|| = 3,\, ||M \cap I|| = 3,\, 
+		  ||P \cap I|| = 5,\, ||M \cap P \cap I|| = 1\]
+		Die gesamte Zahl der Studierenden, die in einer Spezialvorlesung studieren ist:
+		\[||M \cup P \cup I||\]
+		Nach Theorem 1.19 Beispiel es gilt:
+		\begin{align*}
+	        ||M\cup P\cup I|| &= ||M||+||P||+||I||-||M\cap P||-||M\cap I||-||I \cap P||+||M \cap P \cap I||\\
+	        &= 7 + 9 + 10 - 3 - 3 - 5 + 1 \\
+	        &= 16
+        \end{align*}
+        Folglich die Anzahl der Studierende, die keines der drei Fächer studieren ist $18-16 = 2$.
 
         % Task (d)
         \item Für drei Mengen $A, B$ und $C$ gelten folgende Eigenschaften: 

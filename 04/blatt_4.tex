@@ -15,8 +15,8 @@
 	        &||\{0, 1\}^n|| = 2^n \\
 	        &|| \{0, 1\}^2|| = 2^2 = 4
 	    \end{align*}
-	    Wir muessen $2^n$ Funktionsargumente auf $4$ Funktionswerte abbilden. Da Stirling-Zahlen auf 
-	    nicht unterscheidbare Funktionswerte aufzuteilt, sollen wir noch nit $4!$ multiplizieren.  
+	    Wir m\"ussen $2^n$ Funktionsargumente auf $4$ Funktionswerte abbilden. Da Stirling-Zahlen auf 
+	    nicht unterscheidbare Funktionswerte aufzuteilt, sollen wir noch mit $4!$ multiplizieren.  
 	    Folglich: \[4!\cdot\stirling{2^n}{4}\]
 
         % Task (b)
@@ -26,7 +26,7 @@
         \item Von 18 Studierenden in einer Spezialvorlesung studieren 7 Mathematik, 9 Physik und 10
 		Informatik. Davon studieren 3 Mathematik und Physik, 3 Mathematik und Informatik
 		sowie 5 Physik und Informatik. Ein Student studiert sogar all drei Fächer. Wie viele
-		Studierende studieren keines der drei Fächer?\\
+		Studierende studieren keines der drei Fächer?\\\\
 		Sei nach Voraussetzung:
 		\[||M|| = 7,\, ||I|| = 10,\, ||P|| = 9,\, ||M \cap P|| = 3,\, ||M \cap I|| = 3,\, 
 		  ||P \cap I|| = 5,\, ||M \cap P \cap I|| = 1\]
@@ -54,13 +54,14 @@
         % Task (e)
         \item Für zwei Mengen A und B gelte: $||A|| = 100, ||B|| = 60$ und die Anzahl 
         der Elemente von A  B, die zu genau einer der beiden Mengen gehören, ist genau 
-        doppelt so groß, wie die Anzahl der Elemente, die in beiden Mengen liegen. Wie viele Elemente liegen in beiden Mengen?
+        doppelt so groß, wie die Anzahl der Elemente, die in beiden Mengen liegen. Wie viele Elemente 
+        liegen in beiden Mengen?
         \begin{align*}
         	||A \Delta B|| &= 2 \cdot ||A \cap B|| \\
         	||A \cup B || &= ||A \Delta B|| + ||A \cap B|| \\
         	||A \cup B || &= ||A|| + ||B|| - ||A \cap B|| \\
         	||A \cap B || &= ||A|| + ||B|| - ||A \cup B|| \\
-        	||A \cap B || &= ||A|| + ||B|| - 3||A \cap B|| \\
+        	||A \cap B || &= ||A|| + ||B|| - 3\cdot||A \cap B|| \\
         	4 \cdot ||A \cup B || &= ||A|| + ||B|| \\
         	||A \cap B|| &= \frac{||A||+||B||}{4}= \frac{100 + 60}{4} = 40 
         \end{align*}
@@ -70,31 +71,35 @@
         \begin{align*}
 	        &200 - \bigg(\bigg\lfloor\frac{200}{3}\bigg\rfloor + \bigg\lfloor\frac{200}{7}\bigg\rfloor
 	         + \bigg\lfloor\frac{200}{11}\bigg\rfloor + \bigg\lfloor\frac{200}{27}\bigg\rfloor \bigg) \\
-	         &+  \bigg(\bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
+	        &+ \bigg(\bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
 	         + \bigg\lfloor\frac{200}{81}\bigg\rfloor + \bigg\lfloor\frac{200}{77}\bigg\rfloor
 	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor\bigg) \\ 
-	         &-\bigg(\bigg\lfloor\frac{200}{3\cdot 7\cdot 11}
-	         \bigg\rfloor+\bigg\lfloor\frac{200}{3\cdot 7\cdot 27}\bigg\rfloor + \bigg\lfloor\frac{200}{7\cdot 11\cdot 27}\bigg\rfloor +
-	         \bigg\lfloor\frac{200}{3\cdot 11\cdot 27}\bigg\rfloor \bigg)  \\
-	         &+ \bigg\lfloor\frac{200}{3\cdot 7\cdot 11 \cdot 27}\bigg\rfloor \\
-	         &= 200 - (66+28+18+7) + (9 + 6 + 2 + 2 + 1) - (0 + 0 + 0 + 0) + 0 = 101
-        \end{align*}
-        % Task (g)
-        \item Wie viele Zahlen im Bereich $1,...,10^9$ sind weder von der Form $x^3$ noch $x^7$ noch $x^{13}$
-        für ein geeignetes $x \in N $?\\
-         Es gibt: 
-	    \begin{align*}
-	    &\lfloor 10^{9/3}\rfloor = 1000  \text{ Zahlen der Form } x^3 \\
-	    &\lfloor 10^{9/7}\rfloor= 19  \text{ Zahlen der Form }x^7 \\
-	    &\lfloor 10^{9/13}\rfloor= 4  \text{ Zahlen der Form }x^{13} \\
-	    &\lfloor 10^{9/21}\rfloor= 2  \text{ Zahlen der Form } (x^{3})^7 = x^{21} \\
-	    &\lfloor 10^{9/39}\rfloor= 1  \text{ Zahlen der Form } (x^{3})^{13} = x^{39} \\
-	    &\lfloor 10^{9/91}\rfloor= 1  \text{ Zahlen der Form } (x^{7})^{13} = x^{91} \\
-	    &\lfloor 10^{9/273}\rfloor= 1  \text{ Zahlen der Form } ((x^{3})^7)^{13} = x^{273} \\
-	    \\
-	    10^9-(1000+19+4)&+(2+1+1)-1=999\; 998\; 980  
+	        &-\bigg(\bigg\lfloor\frac{200}{3\cdot 7\cdot 11}
+	         \bigg\rfloor+\bigg\lfloor\frac{200}{3\cdot 7\cdot 27}\bigg\rfloor + 
+	         \bigg\lfloor\frac{200}{7\cdot 11\cdot 27}\bigg\rfloor +
+	         \bigg\lfloor\frac{200}{3\cdot 11\cdot 27}\bigg\rfloor \bigg) \\
+	        &+ \bigg\lfloor\frac{200}{3\cdot 7\cdot 11 \cdot 27}\bigg\rfloor \\
+	        &= 200 - (66+28+18+7) + (9 + 6 + 2 + 2 + 1) - (0 + 0 + 0 + 0) + 0 = 101
         \end{align*}
 
+        % Task (g)
+        \item Wie viele Zahlen im Bereich $1,...,10^9$ sind weder von der Form $x^3$ noch $x^7$ 
+        noch $x^{13}$ für ein geeignetes $x \in N$?\\
+        Es gibt: 
+	    \begin{align*}
+		    &\lfloor 10^{9/3}\rfloor = 1000  \text{ Zahlen der Form } x^3 \\
+		    &\lfloor 10^{9/7}\rfloor= 19  \text{ Zahlen der Form } x^7 \\
+		    &\lfloor 10^{9/13}\rfloor= 4  \text{ Zahlen der Form } x^{13} \\
+		    &\lfloor 10^{9/21}\rfloor= 2  \text{ Zahlen der Form } (x^{3})^7 = x^{21} \\
+		    &\lfloor 10^{9/39}\rfloor= 1  \text{ Zahlen der Form } (x^{3})^{13} = x^{39} \\
+		    &\lfloor 10^{9/91}\rfloor= 1  \text{ Zahlen der Form } (x^{7})^{13} = x^{91} \\
+		    &\lfloor 10^{9/273}\rfloor= 1  \text{ Zahlen der Form } ((x^{3})^7)^{13} = x^{273} \\\\
+		    10^9-(1000+19+4)&+(2+1+1)-1=999\; 998\; 980  
+        \end{align*}
+
+        % Task (h)
+        \item Kein Antwort
+        
         % Task (i)
         \item Menschen haben bis zu 150.000 Kopfhaare. Mindestens wie viele Chinesen haben die
 		exakt gleiche Anzahl von Kopfhaaren (zu einem bestimmten Zeitpunkt), wenn Sie von
@@ -102,6 +107,9 @@
 		\textbf{Bemerkung}: Wir vermuten, dass alle Chinesen mindestens 1 Haar haben.\\
 		Verwenden wir ein Schubfachprinzip. Dann gilt:
 		\[\bigg\lceil\frac{1330000000}{150000}\bigg\rceil = 8867\]
+		
+		% Task (j)
+        \item Kein Antwort
     \end{enumerate}
     \section*{Kreativit\"at:}
     \begin{enumerate}[label=(\alph*)]

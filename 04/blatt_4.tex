@@ -17,7 +17,7 @@
 	    \end{align*}
 	    Wir muessen $2^n$ Funktionsargumente auf $4$ Funktionswerte abbilden. Da Stirling-Zahlen auf 
 	    nicht unterscheidbare Funktionswerte aufzuteilt, sollen wir noch nit $4!$ multiplizieren.  
-	    Folglich: \[4!\cdot\stirling{a}{b}\]
+	    Folglich: \[4!\cdot\stirling{2^n}{4}\]
 
         % Task (b)
         \item Kein Antwort
@@ -56,9 +56,13 @@
 
         % Task (f)
         \item Wie viele Zahlen im Bereich $1, 2,\ldots, 200$ sind durch keine der Zahlen 3, 7, 11, 27 teilbar?\\
-        \[200 - \bigg(\bigg\lfloor\frac{200}{3}\bigg\rfloor + \bigg\lfloor\frac{200}{7}\bigg\rfloor
-         + \bigg\lfloor\frac{200}{11}\bigg\rfloor + \bigg\lfloor\frac{200}{27}\bigg\rfloor \bigg)
-         = 200 - (66+28+18+7) = 81
-        \]
+        \begin{align*}
+	        &200 - \bigg(\bigg\lfloor\frac{200}{3}\bigg\rfloor + \bigg\lfloor\frac{200}{7}\bigg\rfloor
+	         + \bigg\lfloor\frac{200}{11}\bigg\rfloor + \bigg\lfloor\frac{200}{27}\bigg\rfloor \bigg) \\
+	         &+  \bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
+	         + \bigg\lfloor\frac{200}{81}\bigg\rfloor + \bigg\lfloor\frac{200}{77}\bigg\rfloor
+	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor
+	         = 200 - (66+28+18+7) + 9 + 6 + 2 + 2 + 1= 101
+        \end{align*}
     \end{enumerate}
 \end{document}

@@ -70,10 +70,35 @@
         \begin{align*}
 	        &200 - \bigg(\bigg\lfloor\frac{200}{3}\bigg\rfloor + \bigg\lfloor\frac{200}{7}\bigg\rfloor
 	         + \bigg\lfloor\frac{200}{11}\bigg\rfloor + \bigg\lfloor\frac{200}{27}\bigg\rfloor \bigg) \\
-	         &+  \bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
+	         &+  \bigg(\bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
 	         + \bigg\lfloor\frac{200}{81}\bigg\rfloor + \bigg\lfloor\frac{200}{77}\bigg\rfloor
-	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor
-	         = 200 - (66+28+18+7) + 9 + 6 + 2 + 2 + 1= 101
+	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor\bigg) \\ 
+	         &-\bigg(\bigg\lfloor\frac{200}{3\cdot 7\cdot 11}
+	         \bigg\rfloor+\bigg\lfloor\frac{200}{3\cdot 7\cdot 27}\bigg\rfloor + \bigg\lfloor\frac{200}{7\cdot 11\cdot 27}\bigg\rfloor +
+	         \bigg\lfloor\frac{200}{3\cdot 11\cdot 27}\bigg\rfloor \bigg)  \\
+	         &+ \bigg\lfloor\frac{200}{3\cdot 7\cdot 11 \cdot 27}\bigg\rfloor \\
+	         &= 200 - (66+28+18+7) + (9 + 6 + 2 + 2 + 1) - (0 + 0 + 0 + 0) + 0 = 101
+        \end{align*}
+        % Task (g)
+        \item Wie viele Zahlen im Bereich $1,...,10^9$ sind weder von der Form $x^3$ noch $x^7$ noch $x^{13}$
+        für ein geeignetes $x \in N $?\\
+         Es gibt: 
+	    \begin{align*}
+	    &\lfloor 10^{9/3}\rfloor = 1000  \text{ Zahlen der Form } x^3 \\
+	    &\lfloor 10^{9/7}\rfloor= 19  \text{ Zahlen der Form }x^7 \\
+	    &\lfloor 10^{9/13}\rfloor= 4  \text{ Zahlen der Form }x^{13} \\
+	    &\lfloor 10^{9/21}\rfloor= 2  \text{ Zahlen der Form } (x^{3})^7 = x^{21} \\
+	    &\lfloor 10^{9/39}\rfloor= 1  \text{ Zahlen der Form } (x^{3})^{13} = x^{39} \\
+	    &\lfloor 10^{9/91}\rfloor= 1  \text{ Zahlen der Form } (x^{7})^{13} = x^{91} \\
+	    &\lfloor 10^{9/273}\rfloor= 1  \text{ Zahlen der Form } ((x^{3})^7)^{13} = x^{273} \\
+	    \\
+	    10^9-(1000+19+4)&+(2+1+1)-1=999\; 998\; 980  
         \end{align*}
     \end{enumerate}
 \end{document}
+
+
+
+
+
+

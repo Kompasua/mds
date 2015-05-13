@@ -64,5 +64,35 @@
 	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor
 	         = 200 - (66+28+18+7) + 9 + 6 + 2 + 2 + 1= 101
         \end{align*}
+
+        % Task (i)
+        \item Menschen haben bis zu 150.000 Kopfhaare. Mindestens wie viele Chinesen haben die
+		exakt gleiche Anzahl von Kopfhaaren (zu einem bestimmten Zeitpunkt), wenn Sie von
+		einer chinesischen Bevölkerung von 1,33 Millarden ausgehen?\\\\
+		\textbf{Bemerkung}: Wir vermuten, dass alle Chinesen mindestens 1 Haar haben.\\
+		Verwenden wir ein Schubfachprinzip. Dann gilt:
+		\[\bigg\lceil\frac{1330000000}{150000}\bigg\rceil = 8867\]
+    \end{enumerate}
+    \section*{Kreativit\"at:}
+    \begin{enumerate}[label=(\alph*)]
+    	\item Zeigen Sie, dass es eine Stadt geben muss, von der man direkt in mindestens die Hälfte
+		aller anderen Städte kommen kann.\\\\
+		Sei $k$ Anzahl der Knoten und $n$ maximale Anzahl der Kanten, die ein Knoten haben kann. 
+		Es ist so, dass erster (beliebiger) Knoten hat $n_k = k-1$, dann nechster ein weniger, 
+		also $k-2$ usw. bis $n_1 = 1$. 
+		Die gesamte Anzahl der Kanten k\"onnen wir so schreiben (Arithmetische Folge): 
+		\[S_n = \frac{a_1+a_n}{2}\cdot n = \frac{1+n}{2}\cdot n\]
+		Verwenden wir f\"ur Beweis ein Schubfachprinzip. Wir sollen $S_n$ orientirete Kanten auf $k$ 
+		Knoten stellen. Nach Schubfachprinzip und Voraussetzung es gilt: 
+		\begin{align*}
+			&\bigg\lceil\frac{S_n}{k}\bigg\rceil \geq \frac{k}{2} \\
+			\Rightarrow &\bigg\lceil\frac{\frac{1+n}{2}\cdot n}{n+1}\bigg\rceil \geq \frac{n+1}{2}\\
+			\Rightarrow &\bigg\lceil\frac{(n+1)\cdot n}{2} \cdot \frac{1}{n+1}\bigg\rceil \geq \frac{n+1}{2}\\
+			\Rightarrow &\bigg\lceil\frac{n}{2}\bigg\rceil \geq \frac{n+1}{2}\\
+			\Rightarrow &\bigg\lfloor\frac{n}{2}\bigg\rfloor + 1 \geq \frac{n+1}{2}\\
+			\Rightarrow &\bigg\lfloor\frac{n}{2}\bigg\rfloor \geq \frac{n+1}{2} - 1\\
+			\Rightarrow &\bigg\lfloor\frac{n}{2}\bigg\rfloor \geq \frac{n-1}{2}\\
+		\end{align*}
+		Da die letze Aussage gilt, die Voraussetzung ist bewiesen.
     \end{enumerate}
 \end{document}

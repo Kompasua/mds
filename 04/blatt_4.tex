@@ -52,8 +52,19 @@
         \end{align*}
 
         % Task (e)
-        \item Kein Atnwort
-
+        \item Für zwei Mengen A und B gelte: $||A|| = 100, ||B|| = 60$ und die Anzahl 
+        der Elemente von A  B, die zu genau einer der beiden Mengen gehören, ist genau 
+        doppelt so groß, wie die Anzahl der Elemente, die in beiden Mengen liegen. Wie viele Elemente liegen in beiden Mengen?
+        \begin{align*}
+        	||A \Delta B|| &= 2 \cdot ||A \cap B|| \\
+        	||A \cup B || &= ||A \Delta B|| + ||A \cap B|| \\
+        	||A \cup B || &= ||A|| + ||B|| - ||A \cap B|| \\
+        	||A \cap B || &= ||A|| + ||B|| - ||A \cup B|| \\
+        	||A \cap B || &= ||A|| + ||B|| - 3||A \cap B|| \\
+        	4 \cdot ||A \cup B || &= ||A|| + ||B|| \\
+        	||A \cap B|| &= \frac{||A||+||B||}{4}= \frac{100 + 60}{4} = 40 
+        \end{align*}
+        
         % Task (f)
         \item Wie viele Zahlen im Bereich $1, 2,\ldots, 200$ sind durch keine der Zahlen 3, 7, 11, 27 teilbar?\\
         \begin{align*}

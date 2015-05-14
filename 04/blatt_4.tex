@@ -48,7 +48,7 @@
         \begin{align*}
 	        ||A\cup B\cup C|| &= ||A||+||B||+||C||-||A\cap B||-||A\cap C||-||C \cap B||+||A \cap B \cap C||\\
 	        \Rightarrow ||A \cap B \cap C|| &= ||A\cup B\cup C||-||A||-||B||-||C||+||A\cap B||+||A\cap C||+||C \cap B||\\
-	        \Rightarrow ||A \cap B \cap C|| &= 139 - 63 - 91 - 44 + 25 + 23 + 21 = 10 \\
+	        \Rightarrow ||A \cap B \cap C|| &= 139 - 63 - 91 - 44 + 25 + 23 + 21 = 10
         \end{align*}
 
         % Task (e)
@@ -98,7 +98,16 @@
         \end{align*}
         
         % Task (h)
-        \item Kein Antwort
+        \item Auf einer großen Informatikerkonferenz finden immer parallel 5 Vorträge statt. Die da-
+		für vorgesehenen 5 Konferenzräume bieten 150, 200, 200, 300 und 500 Teilnehmern einen
+		Sitzplatz. Für die Konferenz haben sich 1523 Teilnehmer registriert. Wie viele registrier-
+		te Teilnehmer müssen in einem der Konferenzräume auf jeden Fall stehen, wenn alle
+		registrierten Teilnehmer zeitgleich genau einen Vortrag besuchen?\\
+		\textbf{Beachtung:} Vortragende besuchen keine Vorträge anderer und zählen auch nicht als re-
+		gistrierte Teilnehmer.\\
+		Insgesamt haben wir $150+200+200+300+500 = 1350$ Sitzpl\"atze. Wenn alle besetzt sind haben 
+		$1523-1350=173$ Teilnehmern kein Sitzplatz. Teilen wir stehende auf 5 Konferenzräume, da 
+		m\"usen mindestens $\Big\lceil\frac{173}{5}\Big\rceil = 35$ Teilnehmern stehen. 
         
         % Task (i)
         \item Menschen haben bis zu 150.000 Kopfhaare. Mindestens wie viele Chinesen haben die
@@ -109,7 +118,10 @@
 		\[\bigg\lceil\frac{1330000000}{150000}\bigg\rceil = 8867\]
 		
 		% Task (j)
-        \item Kein Antwort
+        \item Wie oft müssen Sie mindestens würfeln, damit eine Zahl n-mal vorkommt?\\\\
+        Generell es ist genug mindestens $n$-mal wurfen. In schlimmsten Fall kommt jeder Zalh $n-1$ mal,
+        da aber nach n\"achster wurfel kommt eine Zahl $n$-mal. Also haben wir $6\cdot(n-1)+1$ 
+        (wenn Wurfel 6 Seiten hast).
     \end{enumerate}
     \section*{Kreativit\"at:}
     Auf $Oneway \> Island$ gibt es zwischen den Städten nur Einbahnstraßen. Jede Stadt ist mit jeder

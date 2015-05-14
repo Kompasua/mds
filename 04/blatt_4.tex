@@ -73,13 +73,13 @@
 	         + \bigg\lfloor\frac{200}{11}\bigg\rfloor + \bigg\lfloor\frac{200}{27}\bigg\rfloor \bigg) \\
 	        &+ \bigg(\bigg\lfloor\frac{200}{21}\bigg\rfloor + \bigg\lfloor\frac{200}{33}\bigg\rfloor 
 	         + \bigg\lfloor\frac{200}{81}\bigg\rfloor + \bigg\lfloor\frac{200}{77}\bigg\rfloor
-	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor\bigg) \\ 
+	         + \bigg\lfloor\frac{200}{189}\bigg\rfloor + \bigg\lfloor\frac{200}{297}\bigg\rfloor\bigg) \\ 
 	        &-\bigg(\bigg\lfloor\frac{200}{3\cdot 7\cdot 11}
 	         \bigg\rfloor+\bigg\lfloor\frac{200}{3\cdot 7\cdot 27}\bigg\rfloor + 
 	         \bigg\lfloor\frac{200}{7\cdot 11\cdot 27}\bigg\rfloor +
 	         \bigg\lfloor\frac{200}{3\cdot 11\cdot 27}\bigg\rfloor \bigg) \\
 	        &+ \bigg\lfloor\frac{200}{3\cdot 7\cdot 11 \cdot 27}\bigg\rfloor \\
-	        &= 200 - (66+28+18+7) + (9 + 6 + 2 + 2 + 1) - (0 + 0 + 0 + 0) + 0 = 101
+	        &= 200 - (66+28+18+7) + (9 + 6 + 2 + 2 + 1 + 0) - (0 + 0 + 0 + 0) + 0 = 101
         \end{align*}
 
         % Task (g)
@@ -87,14 +87,14 @@
         noch $x^{13}$ für ein geeignetes $x \in N$?\\
         Es gibt: 
 	    \begin{align*}
-	    &\lfloor 10^{9/3}\rfloor = 1000  \text{ Zahlen der Form } x^3 \\
-	    &\lfloor 10^{9/7}\rfloor= 19  \text{ Zahlen der Form }x^7 \\
-	    &\lfloor 10^{9/13}\rfloor= 4  \text{ Zahlen der Form }x^{13} \\
-	    &\lfloor 10^{9/21}\rfloor= 2  \text{ Zahlen der Form } (x^{3})^7 = x^{21} \\
-	    &\lfloor 10^{9/39}\rfloor= 1  \text{ Zahlen der Form } (x^{3})^{13} = x^{39} \\
-	    &\lfloor 10^{9/91}\rfloor= 1  \text{ Zahlen der Form } (x^{7})^{13} = x^{91} \\
-	    &\lfloor 10^{9/273}\rfloor= 1  \text{ Zahlen der Form } ((x^{3})^7)^{13} = x^{273} \\
-	    10^9-(1000+19+4)&+(2+1+1)-1=999\; 998\; 980 \\
+		    &\lfloor 10^{9/3}\rfloor = 1000  \text{ Zahlen der Form } x^3 \\
+		    &\lfloor 10^{9/7}\rfloor= 19  \text{ Zahlen der Form }x^7 \\
+		    &\lfloor 10^{9/13}\rfloor= 4  \text{ Zahlen der Form }x^{13} \\
+		    &\lfloor 10^{9/21}\rfloor= 2  \text{ Zahlen der Form } (x^{3})^7 = x^{21} \\
+		    &\lfloor 10^{9/39}\rfloor= 1  \text{ Zahlen der Form } (x^{3})^{13} = x^{39} \\
+		    &\lfloor 10^{9/91}\rfloor= 1  \text{ Zahlen der Form } (x^{7})^{13} = x^{91} \\
+		    &\lfloor 10^{9/273}\rfloor= 1  \text{ Zahlen der Form } ((x^{3})^7)^{13} = x^{273} \\
+		    10^9-(1000+19+4)&+(2+1+1)-1=999\; 998\; 980
         \end{align*}
         
         % Task (h)
@@ -112,11 +112,15 @@
         \item Kein Antwort
     \end{enumerate}
     \section*{Kreativit\"at:}
+    Auf $Oneway \> Island$ gibt es zwischen den Städten nur Einbahnstraßen. Jede Stadt ist mit jeder
+	Stadt durch eine Einbahnstraße verbunden: Für zwei beliebige, unterschiedliche Städte $A$ und
+	$B$ gilt, dass man entweder direkt von $A$ nach $B$ oder direkt von $B$ nach $A$ kommen kann,
+	nicht aber beides direkt.
     \begin{enumerate}[label=(\alph*)]
     	\item Zeigen Sie, dass es eine Stadt geben muss, von der man direkt in mindestens die Hälfte
 		aller anderen Städte kommen kann.\\\\
 		Sei $k$ Anzahl der Knoten und $n$ maximale Anzahl der Kanten, die ein Knoten haben kann. 
-		Es ist so, dass erster (beliebiger) Knoten hat $n_k = k-1$, dann nechster ein weniger, 
+		Es ist so, dass erster (beliebiger) Knoten $n_k = k-1$ hat. Dann n\"achster ein weniger, 
 		also $k-2$ usw. bis $n_1 = 1$. 
 		Die gesamte Anzahl der Kanten k\"onnen wir so schreiben (Arithmetische Folge): 
 		\[S_n = \frac{a_1+a_n}{2}\cdot n = \frac{1+n}{2}\cdot n\]
@@ -133,18 +137,17 @@
 		\end{align*}
 		Da die letze Aussage gilt, die Voraussetzung ist bewiesen.	
     \end{enumerate}
-        \section*{Transfer:}
+    \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-    \item 
-    	    \begin{align*}
-    	&K:\{0,1\}^n \rightarrow \bigcup _{k=0}^{n-1} \{0,1\}^k  \\
-    	\\
+    	\item 
+    	\begin{align*}
+    		&K:\{0,1\}^n \rightarrow \bigcup _{k=0}^{n-1} \{0,1\}^k \\
         	&||\{0,1\}^n U|| > || \bigcup _{k=0}^{n-1} \{0,1\}^k|| \\
         	&||\{0,1\}^n|| = 2^n \tag{Korollar 1.8}\\
         	&|| \bigcup _{k=0}^{n-1} \{0,1\}^k|| = \sum_{k=0}^{n-1}2^k=2^n-1 \tag{Theorem 1.20}\\
         \end{align*}
         Also für die K(x) = K(y) mindestens zwei Bitstrings x und y der Länge n gibt,  gilt.
-        \end{enumerate}
+    \end{enumerate}
 \end{document}
 
 

@@ -129,6 +129,7 @@
 	$B$ gilt, dass man entweder direkt von $A$ nach $B$ oder direkt von $B$ nach $A$ kommen kann,
 	nicht aber beides direkt.
     \begin{enumerate}[label=(\alph*)]
+    	%Task (a)
     	\item Zeigen Sie, dass es eine Stadt geben muss, von der man direkt in mindestens die Hälfte
 		aller anderen Städte kommen kann.\\\\
 		Sei $k$ Anzahl der Knoten und $n$ maximale Anzahl der Kanten, die ein Knoten haben kann. 
@@ -147,7 +148,25 @@
 			\Rightarrow &\bigg\lfloor\frac{n}{2}\bigg\rfloor \geq \frac{n+1}{2} - 1\\
 			\Rightarrow &\bigg\lfloor\frac{n}{2}\bigg\rfloor \geq \frac{n-1}{2}\\
 		\end{align*}
-		Da die letze Aussage gilt, die Voraussetzung ist bewiesen.	
+		Da die letze Aussage gilt, die Behauptung ist bewiesen.	
+
+		\newpage
+		%Task (b)
+		\item Zeigen Sie, dass es eine Stadt geben muss, von der man mit höchstens einem 
+		Zwischenstopp zu jeder Stadt kommen kann.\\\\
+		Nehmen wir zum Fallunterscheidung 4 St\"adte und zeigen die Verbundungen in Matrix Darstellung:\\
+		\[\begin{pmatrix}
+		  	f & A & B & C & D \\
+		  	A & X & 1 & 0 & 0 \\
+		  	B & 0 & X & 0 & 1\\
+		  	C & 1 & 1 & X & 0\\
+ 			D & 1 & 0 & 1 & X
+ 		\end{pmatrix}\]
+ 		Beim Tabelle Ausf\"ullung k\"onnen wir maximal zwei Einsen stellen, weil mit drei wir 
+ 		die Behauptung erf\"ullen werden. Folglich, nach Schubfachprinzip haben in diesem Fall  in die Tabelle 
+ 		mindestens zwei Knoten mit zwei Einsen. Da die jeder Knoten mit einander vereinigt ist, sollen die m\"achtigste Knoten auch vereinigt sein (z.B. A und B), die in Vereinigung mit alle andere vereinigt sind. D.h. dass man
+ 		mit höchstens einem Zwischenstopp zu jeder Stadt kommen kann.
+
     \end{enumerate}
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]

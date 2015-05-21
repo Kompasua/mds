@@ -16,7 +16,12 @@
 		Platzierungen ergeben sich aus den erzielten Punkten, bei Punktgleichheit wird gelost.
 		Kann eine Mannschaft mit n Punkten Turnierletzter werden? \\\\
 		Es kann eine Situation sein, wenn alle Mannschaften gleiche Anzahl der Punkten haben. 
-		Ein Mannschaft spielt insgesamt $n-1$ Spielen. Um $n$ Punkten 
+		Ein Mannschaft spielt insgesamt $n-1$ Spielen. Um $n$ Punkten zu bekommen kann die einmal 
+		gewinnen, und einmal verloren (3 Punkten zusammen). Dann hat die noch $n-3$ Spielen, die die 
+		Unentschieden spielen kann ($n-3$ Punkten zusammen). Damit in die Summe haben wir genau $n$ 
+		Punkten. Es kann sein, dass alle Mannschaften so spielen werden, weil diese Situatuion
+		symmetrisch ist. Dann nach Voraussetzung, wenn alle Mannschaften gleiche Anzahl der Punkten 
+		haben, wird es gelost. In diesem Fall kann die Mannschaft Turnierletzer sein.
 		
 		% Task (b)
         \item Keine Antwort
@@ -29,7 +34,9 @@
 		$(n-2)\cdot 3$ bekommen.
         
         % Task (d)
-        \item Keine Antwort
+        \item Wie viele Mannschaften können höchstens $n + 1$ Punkte erreichen, wenn das gleiche
+		Szenario wie in Teilaufgabe (a) betrachtet wird? \\\\
+		  
         
         % Task (e)
         \item Keine Antwort

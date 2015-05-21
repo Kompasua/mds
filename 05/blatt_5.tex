@@ -3,6 +3,9 @@
 
 \input{../template.tex}
 
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+
 \begin{document}
     \maketitle
     \section*{Vertiefung:}
@@ -12,6 +15,42 @@
 		Sieg gibt es 3 Punkte, für ein Unentschieden 1 Punkt, für eine Niederlage 0 Punkte. Die
 		Platzierungen ergeben sich aus den erzielten Punkten, bei Punktgleichheit wird gelost.
 		Kann eine Mannschaft mit n Punkten Turnierletzter werden?
+		
+		% Task (b)
+        \item Keine Antwort
+        
+        % Task (c)
+        \item Wie viele Punkte kann der Turnierzweite höchstens erreichen, wenn das gleiche Szenario
+		wie in Teilaufgabe (a) betrachtet wird?\\
+		Turniererster kann maximal $(n-1)\cdot 3$ Punkten bekommen, wenn der in alle Spiele gewinnen 
+		wird. Dann Turnierzweite einmal 
+        
+        % Task (d)
+        \item Keine Antwort
+        
+        % Task (e)
+        \item Keine Antwort
+        
+        % Task (f)
+        \item Keine Antwort
+        
+        % Task (g)
+        \item Keine Antwort
+        
+        % Task (h)
+        \item Wie viele rekursive Aufrufe benötigt der Algorithmus von Euklid, um $\ggT(F_{k+2},F_{k+4})$
+		zu bestimmen. Hierbei steht $F_k$ für die $k$-te Fibonacci-Zahl.
+		Es gilt:
+		\[\bmod(F_{k+4},F_{k+2}) = \bmod(F_{k+2} + F_{k+3},F_{k+2}) = \bmod(F_{k+3},F_{k+2}) = F_{k+1}\]
+		Dann folgt:
+		\begin{align*}
+			\ggT(F_{k+2},F_{k+4}) &= EUKLID(F_{k+2},F_{k+4}) \\
+			 &= EUKLID(\bmod(F_{k+4},F_{k+2}),F_{k+2}) &(1) \\ 
+			 &= EUKLID(F_{k+1},F_{k+2}) &(2)
+		\end{align*}
+		Da die Schritt (1) ein Aufruf braucht und Schritt (2) braucht $k-1$ Aufrufe, haben wir insgesamt
+		$k$ rekursive Aufrufe.
+
     \end{enumerate}
     \section*{Kreativität:}
     \begin{enumerate}[label=(\alph*)]

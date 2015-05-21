@@ -24,7 +24,14 @@
 		haben, wird es gelost. In diesem Fall kann die Mannschaft Turnierletzer sein.
 		
 		% Task (b)
-        \item Keine Antwort
+        \item Muss eine Mannschaft mindestens n Punkte für den Turniersieg erreichen, wenn das		gleiche Szenario wie in Teilaufgabe (a) betrachtet wird? \\ \\
+         Wir beobachten die drei verschiedene Varianten der Entwicklung von der Ereignisse: \\
+        1. Alle Mannschaften haben die gleiche Anzahl von der Punkte $(n)$ , dann der Sieger und Verlierer werden gelost. \\
+        2. Eine von der Mannschaften hat $n$ Punkte und die andere remisieren. \\
+        3. Die andere Varianten, wann manche Mannschaften gewinnen und die andere verlieren. Unsere Team ist immer "in der Mitte". Das ist offensichtlich, dass unsere Mannschaft weder gewinnen noch verloren kann, da es immer Mannschaften gibt, die haben mehr und weniger Punkten.
+        	Betrachten wir den zweiten Fall. Man kann sagen, dass es der schlimmste Fall für die andere Teams ist, weil nur eine Mannschaft  $(n+1)$ Punkte haben wird und nur Eine - $(n-1)$. Unsere Mannschaft kann die punkte mit solche formula kriegen:
+        	$$n= 1 \cdot WIN + 1\cdot LOOSE + (n-3) \cdot DRAW = 3 + 0 + (n-3)\cdot 1 $$ \\
+        	Soll unsere Mannschaft nur $n-1$ Punkte kriegen, gewinnt dann einmal irgendwelche andere Team. Falls die beste Team gewinnt, wird sie $n+3$ haben, Mittlere - $(n+2)$ und die Schlimmste - $(n+1)$.
         
         % Task (c)
         \item Wie viele Punkte kann der Turnierzweite höchstens erreichen, wenn das gleiche Szenario
@@ -39,7 +46,8 @@
 		  
         
         % Task (e)
-        \item Keine Antwort
+        \item Nein. Es gibt F\"alle, wenn die Mannschaften Verschiedene Punktzahl haben. \\
+        z.B. $n=4, \quad A=\{3,1,0\}; B=\{0,1,1\}; C=\{1,1,1\}; D= \{3,1,1 \}$
         
         % Task (f)
         \item Keine Antwort

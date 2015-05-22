@@ -45,15 +45,24 @@
         \item Wie viele Mannschaften können höchstens $n + 1$ Punkte erreichen, wenn das gleiche
 		Szenario wie in Teilaufgabe (a) betrachtet wird? \\\\
 		Z.B. haben wir 6 Mannschaften. Jeder Mannschaft hat zweimal gewinnen, zweimal verloren und
-		einmal 1 Punkt bekommen. In diesem Fall haben alle 7 Punkten. Also $n$ Mannschaften koennen
-		höchstens $n + 1$ Punkte erreichen.
+		einmal 1 Punkt bekommen. In diesem Fall haben alle 7 Punkten. Wenn wir ein MAnnschaft mehr haben,
+		dann sollen sie wieder alle mit dieser Mannschaft unentschieden schpielen.
+		Also $n$ Mannschaften koennen höchstens $n + 1$ Punkte erreichen.
         
         % Task (e)
         \item Nein. Es gibt F\"alle, wenn die Mannschaften Verschiedene Punktzahl haben. \\
         z.B. $n=4, \quad A=\{3,1,0\}; B=\{0,1,1\}; C=\{1,1,1\}; D= \{3,1,1 \}$
         
         % Task (f)
-        \item Keine Antwort
+        \item Wie viele rekursive Aufrufe benötigt der Algorithmus von Euklid, um 
+        $\ggT(2^{n+1} + 1, 2^{n + 1})$ zu bestimmen?\\
+        \begin{align*}
+			\ggT(2^n+1, 2^{n+1} +1) &= \ggT(\bmod(2\cdot 2^n +1, 2^n +1), 2^n+1) \\
+			&= \ggT(2^n,2^n+1) \\
+			&= \ggT(1,2^n) \\
+			&= 1 
+		\end{align*}
+		Also brauchen wir 3 Aufrufe.
         
         % Task (g)
         \item Keine Antwort
@@ -71,6 +80,9 @@
 		\end{align*}
 		Da die Schritt (1) ein Aufruf braucht und Schritt (2) braucht $k-1$ Aufrufe, haben wir insgesamt
 		$k$ rekursive Aufrufe.
+
+		% Task (i)
+        \item Keine Antwort
 
     \end{enumerate}
     \section*{Kreativität:}

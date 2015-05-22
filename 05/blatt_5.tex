@@ -27,12 +27,19 @@
         \item Muss eine Mannschaft mindestens n Punkte für den Turniersieg erreichen, wenn das
 		gleiche Szenario wie in Teilaufgabe (a) betrachtet wird? \\ \\
          Wir beobachten die drei verschiedene Varianten der Entwicklung von der Ereignisse: \\
-        1. Alle Mannschaften haben die gleiche Anzahl von der Punkte $(n)$ , dann der Sieger und Verlierer werden gelost. \\
+        1. Alle Mannschaften haben die gleiche Anzahl von der Punkte $(n)$ , dann der Sieger und 
+        Verlierer werden gelost. \\
         2. Eine von der Mannschaften hat $n$ Punkte und die andere remisieren. \\
-        3. Die andere Varianten, wann manche Mannschaften gewinnen und die andere verlieren. Unsere Team ist immer "in der Mitte". Das ist offensichtlich, dass unsere Mannschaft weder gewinnen noch verloren kann, da es immer Mannschaften gibt, die haben mehr und weniger Punkten.
-        	Betrachten wir den zweiten Fall. Man kann sagen, dass es der schlimmste Fall für die andere Teams ist, weil nur eine Mannschaft  $(n+1)$ Punkte haben wird und nur Eine - $(n-1)$. Unsere Mannschaft kann die punkte mit solche formula kriegen:
-        	$$n= 1 \cdot WIN + 1\cdot LOOSE + (n-3) \cdot DRAW = 3 + 0 + (n-3)\cdot 1 $$ \\
-        	Soll unsere Mannschaft nur $n-1$ Punkte kriegen, gewinnt dann einmal irgendwelche andere Team. Falls die beste Team gewinnt, wird sie $n+3$ haben, Mittlere - $(n+2)$ und die Schlimmste - $(n+1)$.
+        3. Die andere Varianten, wann manche Mannschaften gewinnen und die andere verlieren. Unsere 
+        Team ist immer "in der Mitte". Das ist offensichtlich, dass unsere Mannschaft weder gewinnen 
+        noch verloren kann, da es immer Mannschaften gibt, die haben mehr und weniger Punkten.
+        Betrachten wir den zweiten Fall. Man kann sagen, dass es der schlimmste Fall für die 
+        andere Teams ist, weil nur eine Mannschaft  $(n+1)$ Punkte haben wird und nur Eine - $(n-1)$. 
+        Unsere Mannschaft kann die punkte mit solche formula kriegen:
+        $$n= 1 \cdot WIN + 1\cdot LOOSE + (n-3) \cdot DRAW = 3 + 0 + (n-3)\cdot 1 $$ 
+        Soll unsere Mannschaft nur $n-1$ Punkte kriegen, gewinnt dann einmal irgendwelche andere 
+        Team. Falls die beste Team gewinnt, wird sie $n+3$ haben, Mittlere - $(n+2)$ und die 
+        Schlimmste - $(n+1)$.
         
         % Task (c)
         \item Wie viele Punkte kann der Turnierzweite höchstens erreichen, wenn das gleiche Szenario
@@ -55,7 +62,7 @@
         
         % Task (f)
         \item Wie viele rekursive Aufrufe benötigt der Algorithmus von Euklid, um 
-        $\ggT(2^{n+1} + 1, 2^{n + 1})$ zu bestimmen?\\
+        $\ggT(2^{n+1} + 1, 2^{n + 1})$ zu bestimmen?
         \begin{align*}
 			\ggT(2^n+1, 2^{n+1} +1) &= \ggT(\bmod(2\cdot 2^n +1, 2^n +1), 2^n+1) \\
 			&= \ggT(2^n,2^n+1) \\
@@ -92,47 +99,51 @@
     \end{enumerate}
     \section*{Selbststudium:}
     \begin{enumerate}[label=(\alph*)]
-    	\item $x_n = 3x_{n-1}+ \sqrt{2}$, fuer $n \geq 1 $ ; $ x_0 = 1.$ \\ \\
+    	\item $x_n = 3x_{n-1}+ \sqrt{2}$, f\"ur $n \geq 1 $ ; $ x_0 = 1.$ \\ \\
     	Ihomogen, erster Ordnung \\
     	$ x_o = b_0 =1 ; \quad a=3; \quad b_1 = \sqrt{2} $ 
     	\[x_n =1 \cdot 3^n + \sqrt{2} \cdot \frac{3^n -1}{2} \]
-    	\item $x_n = 2x_{n-2}$, fuer $n \geq 2 $ ;  $\quad x_1 = 2, \quad x_0 =1 .$ \\ \\
+    	
+    	\item $x_n = 2x_{n-2}$, f\"ur $n \geq 2 $ ;  $\quad x_1 = 2, \quad x_0 =1 .$ \\ \\
     	Homogen, zweiter Ordnung.\\
     	$x_1 =b_1 = 2, \quad x_0=b_0=1, \quad a_1=0, \quad a_2=2$
     	\begin{align*}
     		&t^2-0 \cdot t -2 =0 \\
     		&t= \pm \sqrt{2} ; \quad \alpha = \sqrt{2}, \quad \beta = -\sqrt{2} \\
-    		&A = \frac{2-1\cdot (- \sqrt{2} )}{\sqrt{2}+\sqrt{2}} \quad B = \frac{2-1\cdot  \sqrt{2} }{\sqrt{2}+\sqrt{2}} \\\\
+    		&A = \frac{2-1\cdot (-\sqrt{2})}{\sqrt{2}+\sqrt{2}} \quad B = \frac{2-1\cdot \sqrt{2}}{\sqrt{2}+\sqrt{2}} \\\\
     		&x_n = \frac{2+\sqrt{2}}{2\sqrt{2}} \cdot (\sqrt{2})^n - \frac{2-\sqrt{2}}{2\sqrt{2}} \cdot (-\sqrt{2})^n
     	\end{align*}
-    	\item $x_n = 2x_{n-1} +x_{n-2}$, fuer $n \geq 2 $ ;  $\quad x_1 = 2, \quad x_0 =1 .$ \\ \\
+    	
+    	\item $x_n = 2x_{n-1} +x_{n-2}$, f\"ur $n \geq 2 $ ;  $\quad x_1 = 2, \quad x_0 =1 .$ \\ \\
     	Homogen, zweiter Ordnung. \\
-    	    	$x_1 =b_1 = 2, \quad x_0=b_0=1, \quad a_1=2, \quad a_2=1$\\
-    	    	\begin{align*}
-    	    		   &t^2-2 \cdot t -1 =0 \\
-						&\alpha = 1+\sqrt{2}, \quad \beta = 1-\sqrt{2} \\
-						&A= \frac{2-1+\sqrt{2}}{1+\sqrt{2-1+\sqrt{2}}} \quad B = \frac{2-1-\sqrt{2}}{2\sqrt{2}} \\ \\
-						&x_n=\frac{1+\sqrt{2}}{2\sqrt{2}} \cdot(1+ \sqrt{2} )^n - \frac{1-\sqrt{2}}{2\sqrt{2}}(1-\sqrt{2})^n
-    	    	\end{align*}
-		\item $x_n = -3x_{n-1} +4x_{n-2}$, fuer $n \geq 2 $ ; mit $\quad x_1 = 1, \quad x_0 =0 .$ \\ \\
+    	$x_1 =b_1 = 2, \quad x_0=b_0=1, \quad a_1=2, \quad a_2=1$\\
+    	\begin{align*}
+	    	&t^2-2 \cdot t -1 =0 \\
+			&\alpha = 1+\sqrt{2}, \quad \beta = 1-\sqrt{2} \\
+			&A= \frac{2-1+\sqrt{2}}{1+\sqrt{2-1+\sqrt{2}}} \quad B = \frac{2-1-\sqrt{2}}{2\sqrt{2}} \\ \\
+			&x_n=\frac{1+\sqrt{2}}{2\sqrt{2}} \cdot(1+ \sqrt{2} )^n - \frac{1-\sqrt{2}}{2\sqrt{2}}(1-\sqrt{2})^n
+    	\end{align*}
+		
+		\item $x_n = -3x_{n-1} +4x_{n-2}$, f\"ur $n \geq 2 $ ; mit $\quad x_1 = 1, \quad x_0 =0 .$ \\ \\
 		Homogen, 2.Ordnung.
 	    $x_1 =b_1 = 1, \quad x_0=b_0=0, \quad a_1=-3, \quad a_2=4$\\
 	  	\begin{align*}
-			   &t^2+3 \cdot t -4 =0 \\
-			   &d=b^2-4ac= 9 \cdot -4 \cdot (-4) = 25 \\
-			   &t_{1,2}= \frac{-3 \pm \sqrt{25}}{2}; \quad \alpha = -4, \quad \beta =1 \\
-			   &A= \frac{1-0}{-4-1} = -\frac{1}{5}; \quad B=-\frac{1}{5}\\
-			   &x_n=-\frac{1}{5}(-4)^n - (-\frac{1}{5})1=(- \frac{1}{5})((-4)^n-1)=\frac{1}{5}(1-(-4)^n)
+			&t^2+3 \cdot t -4 =0 \\
+			&d=b^2-4ac= 9 \cdot -4 \cdot (-4) = 25 \\
+			&t_{1,2}= \frac{-3 \pm \sqrt{25}}{2}; \quad \alpha = -4, \quad \beta =1 \\
+			&A= \frac{1-0}{-4-1} = -\frac{1}{5}; \quad B=-\frac{1}{5}\\
+			&x_n=-\frac{1}{5}(-4)^n - (-\frac{1}{5})1=(- \frac{1}{5})((-4)^n-1)=\frac{1}{5}(1-(-4)^n)
 		\end{align*}
- \item $x_n = -3x_{n-1} +4x_{n-2}$, fuer $n \geq 2 $ ; mit $\quad x_1 = 0, \quad x_0 =1 .$ \\ \\
-   Homogen, 2.Ordnung.
+ 		
+ 		\item $x_n = -3x_{n-1} +4x_{n-2}$, f\"ur $n \geq 2 $ ; mit $\quad x_1 = 0, \quad x_0 =1 .$ \\ \\
+   		Homogen, 2.Ordnung.
 	    $x_1 =b_1 = 0, \quad x_0=b_0=1, \quad a_1=-3, \quad a_2=4$\\
 	    \begin{align*}
-	   	   &t^2+3 \cdot t -4 =0 \\
-	   	   &\alpha = -4, \quad \beta =1 \\
-	   	   &A= \frac{0-1}{-5} = -\frac{1}{5}; \quad B=-\frac{4}{5}\\
-	   	   &x_n=\frac{1}{5}(-4)^n - (-\frac{4}{5})1^n=\frac{1}{5}(-4)^n+\frac{4}{5}
-	   	   	\end{align*}
+	   		&t^2+3 \cdot t -4 =0 \\
+	   	    &\alpha = -4, \quad \beta =1 \\
+	   	    &A= \frac{0-1}{-5} = -\frac{1}{5}; \quad B=-\frac{4}{5}\\
+	   	    &x_n=\frac{1}{5}(-4)^n - (-\frac{4}{5})1^n=\frac{1}{5}(-4)^n+\frac{4}{5}
+	   	\end{align*}
     \end{enumerate}
 \end{document}
 

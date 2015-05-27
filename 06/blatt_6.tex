@@ -29,11 +29,22 @@
 
         % Task (f)
         \item Welche erzeugende Funktion hat die Folge $(-1, 1, -1, 1, -1, 1, \ldots , -1, 1, \ldots )$?\\
-        \[\sum_{n=1}^{k} (-1)^n\]
-
+        \begin{align*}
+        &a_n = (-1)^{n+1}  \\
+        A(x)&=\sum_{n=0}^{\infty} (-1)^{n+1} x^n \\
+            &=(-1)\sum_{n=0}^{\infty} (-1)^n x^n \\
+            &=(-1)\cdot \frac{1}{1+x}
+        \end{align*}
         % Task (g)
-        \item Keine Antwort
-
+        \item Welche erzeugende Funktion hat die Folge (0,1,3,6,10,15,21,28,36,...,?,...)?
+		\begin{align*}
+        	&a_n = (\frac{1}{2} )(n+1)n  \\
+        	A(x)&=\sum_{n=0}^{\infty} \frac{n(n+1)}{2} x^n \\
+            	&=(\frac{1}{2})\sum_{n=0}^{\infty} (n^2+n) x^n \\
+            	&=(\frac{1}{2})(\sum_{n=0}^{\infty} n^2 x^n  + \sum_{n=0}^{\infty} n x^n)\\
+            	&=\frac{x(1+x) + 1 -x }{2(1-x)^3} \\
+            	&=\frac{x^2 + 1}{2(1-x)^3} \\
+        \end{align*}
         % Task (h)
         \item Keine Antwort
     \end{enumerate}

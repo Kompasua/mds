@@ -97,7 +97,15 @@
         haben erzeugende Funktion für solche Folge ist $\displaystyle\frac{1}{1-2z}$.
 
         % Task (j)
-        \item Keine Antwort
+        \item Bestimmen Sie die Folgenglieder zur Folge aus Teilaufgabe (i), indem Sie $a_n - a_n-1$
+        betrachten und eine einfacherere Rekursionsgleichung gewinnen.
+        \begin{align*}
+            a_n - a_{n-1} &= 1+\sum_{k=0}^{n-1} a_k - \Big(1+\sum_{k=0}^{n-2} a_k\Big) \\
+            &= \sum_{k=0}^{n-1} a_k - \sum_{k=0}^{n-2} a_k \\
+            &= a_{n-1} \\
+            \implies a_n - a_{n-1} &= a_{n-1} \\
+            a_n &= 2\cdot a_{n-1}
+        \end{align*}
     \end{enumerate}
     \section*{Kreativität:}
     \begin{enumerate}[label=(\alph*)]

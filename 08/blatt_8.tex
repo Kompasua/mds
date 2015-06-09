@@ -32,11 +32,11 @@
 
         % Task (c)
         \item Gibt es einen Graphen mit Gradfolge $(5, 4, 3, 2, 2, 2, 2, 1)$? - Und wenn ja, welchen?\\
-        Gibt es keinen.
+        Gibt es keinen, weil die Summe alle Grade ungerade ist. 
 
         % Task (c)
         \item Gibt es einen Graphen mit Gradfolge $(5, 2, 1, 1, 1, 1, 1, 1, 1)$? - Und wenn ja, welchen?\\
-        Gibt es keinen.\\\\
+        Gibt es keinen, weil es keine Moeglichleit gibt, folgende zwei Graphen zusammen zu verbunden.\\\\
         \begin{tikzpicture}
             [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
             \node (n1) at (3,1) {5};
@@ -90,7 +90,7 @@
             \foreach \from/\to in {n2/n1, n1/n7, n7/n5, n1/n4, n4/n6, n4/n8, n7/n3, n3/n9}
             \draw (\from) -- (\to);
         \end{tikzpicture}\\\\
-        Prüfer-Code: $17744173$
+        Prüfer-Code: $1744173$
 
         %Task (d)
         \item Welcher markierte Baum hat den Prüfer-Code 212323212?\\\\

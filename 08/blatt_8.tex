@@ -11,7 +11,48 @@
     \section*{Vertiefung:}
     \begin{enumerate}[label=(\alph*)]
         % Task (a)
-        \item Task a
+        \item Welche Gradfolge besitzt $M_{3,4}$?\\
+        Die Gradfolge von $M_{3,4}$ ist $4,4,3,3,3,3,3,3,2,2,2,2$.
+
+        % Task (b)
+        \item Gibt es einen Graphen mit Gradfolge $(5, 4, 3, 2, 2, 2, 2)$? - Und wenn ja, welchen?\\
+        \begin{tikzpicture}
+            [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+            \node (n1) at (3,1) {5};
+            \node (n2) at (1,-1) {2};
+            \node (n3) at (3,-1) {2};
+            \node (n4) at (4,-1) {2};
+            \node (n6) at (5,-1) {2};
+            \node (n7) at (2,-2) {4};
+            \node (n8) at (4,-2) {3};
+
+            \foreach \from/\to in {n1/n2, n1/n3, n1/n4, n1/n6, n7/n1, n7/n2, n7/n3, n7/n8, n8/n6, n8/n4}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}\\\\
+
+        % Task (c)
+        \item Gibt es einen Graphen mit Gradfolge $(5, 4, 3, 2, 2, 2, 2, 1)$? - Und wenn ja, welchen?\\
+        Gibt es keinen.
+
+        % Task (c)
+        \item Gibt es einen Graphen mit Gradfolge $(5, 2, 1, 1, 1, 1, 1, 1, 1)$? - Und wenn ja, welchen?\\
+        Gibt es keinen.\\\\
+        \begin{tikzpicture}
+            [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+            \node (n1) at (3,1) {5};
+            \node (n2) at (1,-1) {1};
+            \node (n3) at (2,-1) {1};
+            \node (n4) at (3,-1) {1};
+            \node (n5) at (4,-1) {1};
+            \node (n6) at (5,-1) {1};
+            \node (n7) at (6,-1) {1};
+            \node (n8) at (7,-1) {1};
+
+            \node (n9) at (6,1) {2};
+
+            \foreach \from/\to in {n1/n2, n1/n3, n1/n4, n1/n5, n1/n6, n9/n8, n9/n7}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}\\\\
     \end{enumerate}
     \section*{Kreativität:}
     \begin{enumerate}[label=(\alph*)]

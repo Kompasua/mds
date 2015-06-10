@@ -28,15 +28,18 @@
 
             \foreach \from/\to in {n1/n2, n1/n3, n1/n4, n1/n6, n7/n1, n7/n2, n7/n3, n7/n8, n8/n6, n8/n4}
             \draw (\from) -- (\to);
-        \end{tikzpicture}\\\\
+        \end{tikzpicture}
 
         % Task (c)
         \item Gibt es einen Graphen mit Gradfolge $(5, 4, 3, 2, 2, 2, 2, 1)$? - Und wenn ja, welchen?\\
-        Nach Proposition 3.3 gilt, dass die Summe der Grade über die Menge der Knoten eine gerade Zahl ergibt. In unserem Fall beträgt die Summe der Grade 21, was eine ungerade Zahl ist. Folglich kann es keinen solchen Graphen geben. 
+        Nach Proposition 3.3 gilt, dass die Summe der Grade über die Menge der Knoten eine gerade Zahl ergibt. 
+        In unserem Fall beträgt die Summe der Grade 21, was eine ungerade Zahl ist. Folglich kann es 
+        keinen solchen Graphen geben. 
 
         % Task (d)
         \item Gibt es einen Graphen mit Gradfolge $(5, 2, 1, 1, 1, 1, 1, 1, 1)$? - Und wenn ja, welchen?\\
-        Es kann keinen solchen Graphen geben. Der Graph hätte 9 Knoten und (nach Proposition 3.3) 7 Kanten. Folgende Graphik zeigt ein Beispiel für unseren Graphen: 
+        Es kann keinen solchen Graphen geben. Der Graph hätte 9 Knoten und (nach Proposition 3.3) 7 Kanten. 
+        Folgende Graphik zeigt ein Beispiel für unseren Graphen: 
         \\\\
         \begin{tikzpicture}
             [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
@@ -54,21 +57,30 @@
             \foreach \from/\to in {n1/n2, n1/n3, n1/n4, n1/n5, n1/n6, n9/n8, n9/n7}
             \draw (\from) -- (\to);
         \end{tikzpicture}\\\\
-        Es wird offensichtlich, dass es keine Möglichkeit zum Verbinden existiert. Ohne den Knoten mit den 5 Verbindungen bleiben genau 2 Kanten übrig. Allgemein reichen 2 Kanten  nicht aus, um die (verbliebenen) 8 Knoten zu verbinden. Ein Graph mit der Gradfolge (5,2,1,1,1,1,1,1,1) kann es folglich nicht geben. 
-          
+        Es wird offensichtlich, dass es keine Möglichkeit zum Verbinden existiert. Ohne den Knoten mit 
+        den 5 Verbindungen bleiben genau 2 Kanten übrig. Allgemein reichen 2 Kanten  nicht aus, um die 
+        (verbliebenen) 8 Knoten zu verbinden. Ein Graph mit der Gradfolge $(5,2,1,1,1,1,1,1,1)$ kann es 
+        folglich nicht geben. 
+         
+        % Task (e)
         \item Wie groß ist der maximale Abstand zweier Knoten im Hyperwürfel Q$_d$? \\
-        d \par
+        Maximale Abstand zweier Knoten im Hyperwürfel Q$_d$ ist $d$.
         
-        \item Wie groß ist der maximale Abstand zweier Knoten im Gittergraphen $M_{n,n} $ ? \\
-        $2n - 2$
+        % Task (f)
+        \item Wie groß ist der maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ? \\
+        Maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ist $2n - 2$
         
+        % Task (g)
         \item Welche Knoten haben im $M_{n,n}$ den kleinsten maximalen Abstand zu einem anderen Knoten? \\
         
+        % Task (h)
         \item Welche Knoten haben im $M_{n,n}$ den größten maximalen Abstand zu einem anderen Knoten? \\
         
-        \item Wie viele Wege der Länge k enthält ein r-regulärer Graph mit n Knoten? \\
+        % Task (i)
+        \item Wie viele Wege der Länge $k$ enthält ein $r$-regulärer Graph mit $n$ Knoten? \\
         
-        \item Wie viele Kreise der Länge k enthält der vollständige Graph $K_n$? \\
+        % Task (j)
+        \item Wie viele Kreise der Länge $k$ enthält der vollständige Graph $K_n$? \\
         
         
     \end{enumerate}
@@ -85,9 +97,10 @@
         %Task (a)
         \item Ist jeder zusammenhängende Graph mit n Knoten und $n - 1$ Kanten eine Baum? Be-
         gründen Sie Ihre Antwort.\\
-        Jeder Knoten ist nach Voraussetzung über eine Kante verbunden. Da wir n-1 Kanten haben, kann der Graph keinen KReis bidlden. Somit ist nach Definition 3.10 (MDS),
+        Jeder Knoten ist nach Voraussetzung über eine Kante verbunden. Da wir $n-1$ Kanten haben, 
+        kann der Graph keinen Kreis bilden. Somit ist nach Definition 3.10 (MDS),
         da dieser Graph ist zusammenhangend und kreisfrei. %Lemma 3.11 und Lemma 3.12?
-        \\ Außerdem gilt Theorem 3.13, da wir n-1 Kanten haben. Damit die Eigenschaft eines Baums erfüllt .
+        \\ Außerdem gilt Theorem 3.13, da wir $n-1$ Kanten haben. Damit die Eigenschaft eines Baums erfüllt .
 
         %Task (b)
         \item %http://en.wikipedia.org/wiki/Hypercube_graph hier steht es drinn... aber warum das so ist ist eine gute Frage..
@@ -132,12 +145,6 @@
 
             \foreach \from/\to in {n5/n1, n10/n1, n1/n2, n2/n11, n2/n4, n2/n6, n2/n8, n2/n3, n3/n7, n9/n3}
             \draw (\from) -- (\to);
-        \end{tikzpicture}\\\\
+        \end{tikzpicture}
     \end{enumerate}
 \end{document}
-
-
-
-
-
-

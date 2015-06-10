@@ -38,9 +38,9 @@
 
         % Task (d)
         \item Gibt es einen Graphen mit Gradfolge $(5, 2, 1, 1, 1, 1, 1, 1, 1)$? - Und wenn ja, welchen?\\
-        Es kann keinen solchen Graphen geben. Der Graph hätte 9 Knoten und (nach Proposition 3.3) 7 Kanten. 
-        Folgende Graphik zeigt ein Beispiel für unseren Graphen: 
-        \\\\
+        Es kann keinen solchen zusammenh"angenden Graphen geben (wenn es nicht zusammenh"angend sein muss, 
+        dann siehe Beispiel). Der Graph hätte 9 Knoten und (nach Proposition 3.3) 7 Kanten. 
+        Folgende Graphik zeigt ein Beispiel für unseren Graphen: \\\\
         \begin{tikzpicture}
             [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
             \node (n1) at (3,1) {5};
@@ -68,27 +68,110 @@
         
         % Task (f)
         \item Wie groß ist der maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ? \\
-        Maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ist $2n - 2$
+        Maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ist $2\cdot n - 2$
         
         % Task (g)
         \item Welche Knoten haben im $M_{n,n}$ den kleinsten maximalen Abstand zu einem anderen Knoten? \\
+        Das sind die Knoten die in die "Mitte" der Graph sind. Für ungerade $n$ das ist die Knote mit
+        $(\big\lceil\frac{n}{2}\big\rceil,\big\lceil\frac{n}{2}\big\rceil)$ Koordinate. 
+        Für gerade $n$ das sin die Knoten, die zu $M_{2,2}$ Teilraph gehören, der auch in die Mitte ist.
         
         % Task (h)
         \item Welche Knoten haben im $M_{n,n}$ den größten maximalen Abstand zu einem anderen Knoten? \\
+        Das sind die Knoten, die ''am Rand'' der Graph sind.
         
         % Task (i)
         \item Wie viele Wege der Länge $k$ enthält ein $r$-regulärer Graph mit $n$ Knoten? \\
+        Kein Antwort
         
         % Task (j)
         \item Wie viele Kreise der Länge $k$ enthält der vollständige Graph $K_n$? \\
+        Kein Antwort
         
         
     \end{enumerate}
     \section*{Kreativität:}
-    \begin{enumerate}[label=(\alph*)]
-        %Task (a)
-        \item Task a
-    \end{enumerate}
+    Ein ungerichteter Graph G = (V, E) heißt \textit{Splitgraph}, falls es eine Knotenmenge $U\subseteq V$ gibt,
+	sodass $G[U]$ ein vollständiger Graph und $G[V\backslash U]$ ein leerer Graph ist.\\
+	Zeigen Sie folgende Aussage:
+	Es sei $G = (V, E)$ ein Splitgraph mit $V\geq 4$. Kein induzierter Teilgraph von $G$
+	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\\\
+	Um ein Teilgraph aus vier Knoten zu bauen, haben wir drei M"oglichkeiten:
+	\begin{enumerate}
+		\item Wir nehmen vier Knoten aus vollständiger Graph;
+		\item Wir nehmen einige Knoten aus vollständiger Graph und einige aus unabh"angige Kanten;
+		\item Wir nehmen vier Knoten aus unabh"angige Kanten.
+	\end{enumerate}
+	1. 
+	\begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+       	\node (n1) at (0,0) {};
+      	\node (n2) at (1,1) {};
+		\node (n3) at (1,0) {};
+    	\node (n4) at (0,1) {};
+
+       	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+        \draw (\from) -- (\to);
+    \end{tikzpicture}
+    \qquad 2.
+    \begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+       	\node (n1) at (0,0) {};
+      	\node (n2) at (1,1) {};
+		\node (n3) at (1,0) {};
+    	\node (n4) at (0,1) {};
+
+       	\foreach \from/\to in { n1/n3, n1/n4, n2/n4}
+        \draw (\from) -- (\to);
+    \end{tikzpicture}
+    \qquad 3.
+    \begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+       	\node (n1) at (0,0) {};
+      	\node (n2) at (1,1) {};
+		\node (n3) at (1,0) {};
+    	\node (n4) at (0,1) {};
+    \end{tikzpicture}\\\\
+    Da kann man deutlich sehen, dass es kein Kreis oder inzidenter Kanten sein kann. 
+    Pr"ufen wir ob das f"ur $n+1$ gilt. Wir hinzufügen zu jeden Fall ein Knoten. Bekommen wir:\\\\
+    1. 
+	\begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+       	\node (n1) at (0,0) {};
+      	\node (n2) at (2,2) {};
+		\node (n3) at (2,0) {};
+    	\node (n4) at (0,2) {};
+    	\node (n5) at (1,1) {};
+
+       	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+        \draw (\from) -- (\to);
+    \end{tikzpicture}
+    \qquad 2.
+    \begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+       	\node (n1) at (0,0) {};
+      	\node (n2) at (2,2) {};
+		\node (n3) at (2,0) {};
+    	\node (n4) at (0,2) {};
+    	\node (n5) at (1,1) {};
+
+       	\foreach \from/\to in {n1/n3, n1/n4, n2/n4, n5/n1, n5/n4}
+        \draw (\from) -- (\to);
+    \end{tikzpicture}
+    \qquad 3.
+    \begin{tikzpicture}
+      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+	    \node (n1) at (0,0) {};
+      	\node (n2) at (2,2) {};
+		\node (n3) at (2,0) {};
+    	\node (n4) at (0,2) {};
+    	\node (n5) at (1,1) {};
+    \end{tikzpicture}\\\\
+    Da die Graphen aus vorheriger Beispiel Teilgraphen von dieses Beispiel sind, das gilt auch f"uer andere Anzahl der Kanten. Sofern kann mann sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph vieder ein 
+    vollständiger Graph ist und nach Definition der Kreis, kann Kreis bilden kann. In zweiten Beispiel unabh"angige Kanten
+    bleiben nicht verbunden und damit kann man auch kein Kreis bilden. Im dritten Fall es ist augenfällig, dass es kein 
+    Kreis sein kann. 
+
     \section*{Selbststudium:}
         Erarbeiten Sie sich den Inhalt des Abschnitts "Bäume und Wälder" (Abschnitt 3.2) aus dem
         Skriptum \textit{Mathematik: Diskrete Strukturen} (Version v4.10 oder höher) und beantworten Sie

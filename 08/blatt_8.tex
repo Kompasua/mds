@@ -5,6 +5,8 @@
 % Used to draw graphs. More info: http://en.wikipedia.org/wiki/PGF/TikZ
 % Examples: http://www.texample.net/tikz/examples/
 \usepackage{tikz} 
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 
 \begin{document}
     \maketitle
@@ -72,35 +74,38 @@
         
         % Task (g)
         \item Welche Knoten haben im $M_{n,n}$ den kleinsten maximalen Abstand zu einem anderen Knoten? \\
-        Das sind die Knoten die in die "Mitte" der Graph sind. Für ungerade $n$ das ist die Knote mit
+        Das sind die Knoten die in der "Mitte" des Graphen sind. Für ungerade $n$ ist das der Knoten mit
         $(\big\lceil\frac{n}{2}\big\rceil,\big\lceil\frac{n}{2}\big\rceil)$ Koordinate. 
-        Für gerade $n$ das sin die Knoten, die zu $M_{2,2}$ Teilraph gehören, der auch in die Mitte ist.
+        Für gerade $n$ sind das die Knoten, die zu $M_{2,2}$ als Teilgraph gehören, wobei dieser Teilgraph sich auch in die Mitte des Gittergraphen befindet.
         
         % Task (h)
         \item Welche Knoten haben im $M_{n,n}$ den größten maximalen Abstand zu einem anderen Knoten? \\
-        Das sind die Knoten, die ''am Rand'' der Graph sind.
+        Das sind die Knoten, die ''an den Ecken'' vom Graph sind. \\
+        Folgende Knotenzählung (Zählung beginnt von 1 weg) ermittelt die "gesuchten Knoten":
+        
+        $$v_1, v_n, v_{n^2-n+1} \text{ und } v_{n^2}.$$
         
         % Task (i)
         \item Wie viele Wege der Länge $k$ enthält ein $r$-regulärer Graph mit $n$ Knoten? \\
-        Kein Antwort
+        Aus der Vorraussetzung folgt, dass jeder Knoten r Nachbarn hat. Von jedem Knoten kann man also r verschieden Knoten für den nächsten Schritt wählen. Dies wird $k$ mal wiederholt, wodurch wir $r^k$ mögliche Wege erhalten. Da man von n verschiedenen Knoten starten kann, gibt es $n \cdot r^k$ mögliche Wege insgesamt.
         
         % Task (j)
         \item Wie viele Kreise der Länge $k$ enthält der vollständige Graph $K_n$? \\
         Kein Antwort
-        
-        
     \end{enumerate}
     \section*{Kreativität:}
     Ein ungerichteter Graph G = (V, E) heißt \textit{Splitgraph}, falls es eine Knotenmenge $U\subseteq V$ gibt,
 	sodass $G[U]$ ein vollständiger Graph und $G[V\backslash U]$ ein leerer Graph ist.\\
 	Zeigen Sie folgende Aussage:
 	Es sei $G = (V, E)$ ein Splitgraph mit $V\geq 4$. Kein induzierter Teilgraph von $G$
-	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\\\
-	Um ein Teilgraph aus vier Knoten zu bauen, haben wir drei M"oglichkeiten:
+	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\ \\
+	Beweis per Induktion: \\
+	IA: n = 4 \\ 
+	Um einen Teilgraphen aus vier Knoten zu bauen, haben wir folgende drei Möglichkeiten:
 	\begin{enumerate}
-		\item Wir nehmen vier Knoten aus vollständiger Graph;
-		\item Wir nehmen einige Knoten aus vollständiger Graph und einige aus unabh"angige Knoten;
-		\item Wir nehmen vier Knoten aus unabh"angige Knoten.
+		\item Wir nehmen vier Knoten aus dem vollständigen Graphen;
+		\item Wir nehmen einige Knoten aus dem vollständigen Graphen und einige aus unabhängige Knoten;
+		\item Wir nehmen vier Knoten aus den unabhängigen Knoten.
 	\end{enumerate}
 	1. 
 	\begin{tikzpicture}
@@ -132,8 +137,10 @@
 		\node (n3) at (1,0) {};
     	\node (n4) at (0,1) {};
     \end{tikzpicture}\\\\
-    Da kann man deutlich sehen, dass es kein Kreis oder inzidenter Kanten sein kann. 
-    Pr"ufen wir ob das f"ur $n+1$ gilt. Wir hinzufügen zu jeden Fall ein Knoten. Bekommen wir:\\\\
+    Daraus kann man deutlich erkennen, dass keine der drei Möglichkeiten ein Kreis oder ein Paar nicht inzidenter Kanten sein kann. 
+    
+    IS: von n nach n + 1
+    Wir fügen zu jedem der drei Fälle einen Knoten hinzu. Dadurch erhalten wirBekommen wir:\\\\
     1. 
 	\begin{tikzpicture}
       	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
@@ -167,10 +174,10 @@
     	\node (n4) at (0,2) {};
     	\node (n5) at (1,1) {};
     \end{tikzpicture}\\\\
-    Da die Graphen aus vorheriger Beispiel Teilgraphen von dieses Beispiel sind, das gilt auch f"uer andere Anzahl der Knoten. Sofern kann mann sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph vieder ein 
-    vollständiger Graph ist und nach Definition der Kreis, kann Kreis bilden kann. In zweiten Beispiel unabh"angige Knoten
-    bleiben nicht verbunden und damit kann man auch kein Kreis bilden. Im dritten Fall es ist augenfällig, dass es kein 
-    Kreis sein kann. 
+    Da die Graphen aus dem vorherigen Beispiel Teilgraphen von diesem Beispiel sind, gilt das auch für eine andere Anzahl der Knoten. %das stimmt glaub net so ganz...
+    Sofern kann man sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph wieder ein 
+    vollständiger Graph ist und nach Definition des Kreises, einen Kreis bilden kann. Im zweiten Beispiel mit den unabhängigen Knoten, bleiben diese
+    nicht verbunden und damit kann man auch keinen Kreis bilden. Im dritten Fall ist es offensichtlich, dass es kein Kreis sein kann, da die Kanten fehlen. 
 
     \section*{Selbststudium:}
         Erarbeiten Sie sich den Inhalt des Abschnitts "Bäume und Wälder" (Abschnitt 3.2) aus dem
@@ -180,13 +187,11 @@
         %Task (a)
         \item Ist jeder zusammenhängende Graph mit n Knoten und $n - 1$ Kanten eine Baum? Be-
         gründen Sie Ihre Antwort.\\
-        Jeder Knoten ist nach Voraussetzung über eine Kante verbunden. Da wir $n-1$ Kanten haben, 
-        kann der Graph keinen Kreis bilden. Somit ist nach Definition 3.10 (MDS),
-        da dieser Graph ist zusammenhangend und kreisfrei. %Lemma 3.11 und Lemma 3.12?
+        Der Graph ist zusammenhängend. D.h. jeder Knoten ist nach Voraussetzung über mindestens eine Kante verbunden. Da wir $n-1$ Kanten haben, kann der Graph keinen Kreis bilden, denn für einen Kreis sind mindestens n Kanten erforderlich. Somit ist nach Definition 3.10 (MDS), jeder Graph dieser Form ein Baum. 
         \\ Außerdem gilt Theorem 3.13, da wir $n-1$ Kanten haben. Damit die Eigenschaft eines Baums erfüllt .
 
         %Task (b)
-        \item %http://en.wikipedia.org/wiki/Hypercube_graph hier steht es drinn... aber warum das so ist ist eine gute Frage..
+        \item Der Hyperwürfel $Q_3$ enthält 384 Spannbäume. %http://en.wikipedia.org/wiki/Hypercube_graph hier steht es drinn
 
         %Task (c)
         \item Welchen Prüfer-Code besitzt der folgende, markierte Baum?\\\\
@@ -229,5 +234,6 @@
             \foreach \from/\to in {n5/n1, n10/n1, n1/n2, n2/n11, n2/n4, n2/n6, n2/n8, n2/n3, n3/n7, n9/n3}
             \draw (\from) -- (\to);
         \end{tikzpicture}
+        \item % Scheiß Spannbaum 
     \end{enumerate}
 \end{document}

@@ -12,7 +12,7 @@
     \maketitle
     \section*{Vertiefung:}
     \begin{enumerate}[label=(\alph*)]
-        % Task (a)
+        % Task (a) 
         \item Welche Gradfolge besitzt $M_{3,4}$?\\
         Die Gradfolge von $M_{3,4}$ ist $4,4,3,3,3,3,3,3,2,2,2,2$.
 
@@ -234,6 +234,25 @@
             \foreach \from/\to in {n5/n1, n10/n1, n1/n2, n2/n11, n2/n4, n2/n6, n2/n8, n2/n3, n3/n7, n9/n3}
             \draw (\from) -- (\to);
         \end{tikzpicture}
-        \item % Scheiß Spannbaum 
+
+        \item Welcher Spannbaum des gegebenen Graphen besitzt den lexikographisch kleinsten Prüfer-Code?\\
+        \begin{tikzpicture}
+            [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+            \node (n0) at (1,0) {0};
+            \node (n6) at (3,0) {6};
+            
+            \node (n1) at (0,-1) {1};
+            \node (n2) at (2,-1) {2};
+            \node (n4) at (3,-1) {4};
+            
+            \node (n5) at (2,-2) {5};
+            \node (n7) at (3,-2) {7};
+
+            \node (n3) at (2,-3) {3};
+
+            \foreach \from/\to in {n0/n1, n0/n2, n0/n6, n6/n4, n5/n3, n4/n5, n4/n7}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}\\\\
+        Mit Pruefer code $006544$.
     \end{enumerate}
 \end{document}

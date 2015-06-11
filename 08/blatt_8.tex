@@ -76,13 +76,13 @@
         \item Welche Knoten haben im $M_{n,n}$ den kleinsten maximalen Abstand zu einem anderen Knoten? \\
         Das sind die Knoten die in der "Mitte" des Graphen sind. Für ungerade $n$ ist das der Knoten mit
         $(\big\lceil\frac{n}{2}\big\rceil,\big\lceil\frac{n}{2}\big\rceil)$ Koordinate. 
-        Für gerade $n$ sind das die Knoten, die zu $M_{2,2}$ als Teilgraph gehören, wobei dieser Teilgraph sich auch in die Mitte des Gittergraphen befindet.
+        Für gerade $n$ sind das die Knoten, die zu $M_{2,2}$ als Teilgraph gehören, wobei dieser Teilgraph 
+        sich auch in die Mitte des Gittergraphen befindet.
         
         % Task (h)
         \item Welche Knoten haben im $M_{n,n}$ den größten maximalen Abstand zu einem anderen Knoten? \\
         Das sind die Knoten, die ''an den Ecken'' vom Graph sind. \\
         Folgende Knotenzählung (Zählung beginnt von 1 weg) ermittelt die "gesuchten Knoten":
-        
         $$v_1, v_n, v_{n^2-n+1} \text{ und } v_{n^2}.$$
         
         % Task (i)
@@ -93,91 +93,94 @@
         \item Wie viele Kreise der Länge $k$ enthält der vollständige Graph $K_n$? \\
         Kein Antwort
     \end{enumerate}
+
     \section*{Kreativität:}
-    Ein ungerichteter Graph G = (V, E) heißt \textit{Splitgraph}, falls es eine Knotenmenge $U\subseteq V$ gibt,
-	sodass $G[U]$ ein vollständiger Graph und $G[V\backslash U]$ ein leerer Graph ist.\\
-	Zeigen Sie folgende Aussage:
-	Es sei $G = (V, E)$ ein Splitgraph mit $V\geq 4$. Kein induzierter Teilgraph von $G$
-	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\ \\
-	Beweis per Induktion: \\
-	IA: n = 4 \\ 
-	Um einen Teilgraphen aus vier Knoten zu bauen, haben wir folgende drei Möglichkeiten:
-	\begin{enumerate}
-		\item Wir nehmen vier Knoten aus dem vollständigen Graphen;
-		\item Wir nehmen einige Knoten aus dem vollständigen Graphen und einige aus unabhängige Knoten;
-		\item Wir nehmen vier Knoten aus den unabhängigen Knoten.
-	\end{enumerate}
-	1. 
-	\begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-       	\node (n1) at (0,0) {};
-      	\node (n2) at (1,1) {};
-		\node (n3) at (1,0) {};
-    	\node (n4) at (0,1) {};
+        Ein ungerichteter Graph G = (V, E) heißt \textit{Splitgraph}, falls es eine Knotenmenge $U\subseteq V$ gibt,
+    	sodass $G[U]$ ein vollständiger Graph und $G[V\backslash U]$ ein leerer Graph ist.\\
+    	Zeigen Sie folgende Aussage:
+    	Es sei $G = (V, E)$ ein Splitgraph mit $V\geq 4$. Kein induzierter Teilgraph von $G$
+    	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\ \\
+    	Beweis per Induktion: \\
+    	\textbf{IA:} $n = 4$ \\ 
+    	Um einen Teilgraphen aus vier Knoten zu bauen, haben wir folgende drei Möglichkeiten:
+    	\begin{enumerate}
+    		\item Wir nehmen vier Knoten aus dem vollständigen Graphen;
+    		\item Wir nehmen einige Knoten aus dem vollständigen Graphen und einige aus unabhängige Knoten;
+    		\item Wir nehmen vier Knoten aus den unabhängigen Knoten.
+    	\end{enumerate}
+    	1. 
+    	\begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+           	\node (n1) at (0,0) {};
+          	\node (n2) at (1,1) {};
+    		\node (n3) at (1,0) {};
+        	\node (n4) at (0,1) {};
 
-       	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
-        \draw (\from) -- (\to);
-    \end{tikzpicture}
-    \qquad 2.
-    \begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-       	\node (n1) at (0,0) {};
-      	\node (n2) at (1,1) {};
-		\node (n3) at (1,0) {};
-    	\node (n4) at (0,1) {};
+           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}
+        \qquad 2.
+        \begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+           	\node (n1) at (0,0) {};
+          	\node (n2) at (1,1) {};
+    		\node (n3) at (1,0) {};
+        	\node (n4) at (0,1) {};
 
-       	\foreach \from/\to in { n1/n3, n1/n4, n2/n4}
-        \draw (\from) -- (\to);
-    \end{tikzpicture}
-    \qquad 3.
-    \begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-       	\node (n1) at (0,0) {};
-      	\node (n2) at (1,1) {};
-		\node (n3) at (1,0) {};
-    	\node (n4) at (0,1) {};
-    \end{tikzpicture}\\\\
-    Daraus kann man deutlich erkennen, dass keine der drei Möglichkeiten ein Kreis oder ein Paar nicht inzidenter Kanten sein kann. 
-    
-    IS: von n nach n + 1
-    Wir fügen zu jedem der drei Fälle einen Knoten hinzu. Dadurch erhalten wirBekommen wir:\\\\
-    1. 
-	\begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-       	\node (n1) at (0,0) {};
-      	\node (n2) at (2,2) {};
-		\node (n3) at (2,0) {};
-    	\node (n4) at (0,2) {};
-    	\node (n5) at (1,1) {};
+           	\foreach \from/\to in { n1/n3, n1/n4, n2/n4}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}
+        \qquad 3.
+        \begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+           	\node (n1) at (0,0) {};
+          	\node (n2) at (1,1) {};
+    		\node (n3) at (1,0) {};
+        	\node (n4) at (0,1) {};
+        \end{tikzpicture}\\\\
+        Daraus kann man deutlich erkennen, dass keine der drei Möglichkeiten ein Kreis oder ein Paar 
+        nicht inzidenter Kanten sein kann.\\\\
+        \textbf{IS:} von $n$ nach $n + 1$
+        Wir fügen zu jedem der drei Fälle einen Knoten hinzu. Dadurch erhalten wir:\\\\
+        1. 
+    	\begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+           	\node (n1) at (0,0) {};
+          	\node (n2) at (2,2) {};
+    		\node (n3) at (2,0) {};
+        	\node (n4) at (0,2) {};
+        	\node (n5) at (1,1) {};
 
-       	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
-        \draw (\from) -- (\to);
-    \end{tikzpicture}
-    \qquad 2.
-    \begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-       	\node (n1) at (0,0) {};
-      	\node (n2) at (2,2) {};
-		\node (n3) at (2,0) {};
-    	\node (n4) at (0,2) {};
-    	\node (n5) at (1,1) {};
+           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}
+        \qquad 2.
+        \begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+           	\node (n1) at (0,0) {};
+          	\node (n2) at (2,2) {};
+    		\node (n3) at (2,0) {};
+        	\node (n4) at (0,2) {};
+        	\node (n5) at (1,1) {};
 
-       	\foreach \from/\to in {n1/n3, n1/n4, n2/n4, n5/n1, n5/n4}
-        \draw (\from) -- (\to);
-    \end{tikzpicture}
-    \qquad 3.
-    \begin{tikzpicture}
-      	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-	    \node (n1) at (0,0) {};
-      	\node (n2) at (2,2) {};
-		\node (n3) at (2,0) {};
-    	\node (n4) at (0,2) {};
-    	\node (n5) at (1,1) {};
-    \end{tikzpicture}\\\\
-    Da die Graphen aus dem vorherigen Beispiel Teilgraphen von diesem Beispiel sind, gilt das auch für eine andere Anzahl der Knoten. %das stimmt glaub net so ganz...
-    Sofern kann man sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph wieder ein 
-    vollständiger Graph ist und nach Definition des Kreises, einen Kreis bilden kann. Im zweiten Beispiel mit den unabhängigen Knoten, bleiben diese
-    nicht verbunden und damit kann man auch keinen Kreis bilden. Im dritten Fall ist es offensichtlich, dass es kein Kreis sein kann, da die Kanten fehlen. 
+           	\foreach \from/\to in {n1/n3, n1/n4, n2/n4, n5/n1, n5/n4}
+            \draw (\from) -- (\to);
+        \end{tikzpicture}
+        \qquad 3.
+        \begin{tikzpicture}
+          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+    	    \node (n1) at (0,0) {};
+          	\node (n2) at (2,2) {};
+    		\node (n3) at (2,0) {};
+        	\node (n4) at (0,2) {};
+        	\node (n5) at (1,1) {};
+        \end{tikzpicture}\\\\
+        Da die Graphen aus dem vorherigen Beispiel Teilgraphen von diesem Beispiel sind, gilt das auch 
+        für eine andere Anzahl der Knoten. %das stimmt glaub net so ganz...
+        Sofern kann man sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph wieder ein 
+        vollständiger Graph ist und nach Definition des Kreises, einen Kreis bilden kann. Im zweiten 
+        Beispiel mit den unabhängigen Knoten, bleiben diese nicht verbunden und damit kann man auch keinen 
+        Kreis bilden. Im dritten Fall ist es offensichtlich, dass es kein Kreis sein kann, da die Kanten fehlen. 
 
     \section*{Selbststudium:}
         Erarbeiten Sie sich den Inhalt des Abschnitts "Bäume und Wälder" (Abschnitt 3.2) aus dem
@@ -235,7 +238,7 @@
             \draw (\from) -- (\to);
         \end{tikzpicture}
 
-        \item Welcher Spannbaum des gegebenen Graphen besitzt den lexikographisch kleinsten Prüfer-Code?\\
+        \item Welcher Spannbaum des gegebenen Graphen besitzt den lexikographisch kleinsten Prüfer-Code?\\\\
         \begin{tikzpicture}
             [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
             \node (n0) at (1,0) {0};
@@ -252,7 +255,7 @@
 
             \foreach \from/\to in {n0/n1, n0/n2, n0/n6, n6/n4, n5/n3, n4/n5, n4/n7}
             \draw (\from) -- (\to);
-        \end{tikzpicture}\\\\
-        Mit Pruefer code $006544$.
+        \end{tikzpicture}\\
+        Mit Prüfer-Code $006544$.
     \end{enumerate}
 \end{document}

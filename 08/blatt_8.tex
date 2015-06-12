@@ -18,6 +18,7 @@
 
         % Task (b)
         \item Gibt es einen Graphen mit Gradfolge $(5, 4, 3, 2, 2, 2, 2)$? - Und wenn ja, welchen?\\
+        Ja es gibt einen solchen Graphen. Folgender Graph würde die Gradfolge erfüllen: \\
         \begin{tikzpicture}
             [scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
             \node (n1) at (3,1) {5};
@@ -60,21 +61,21 @@
             \draw (\from) -- (\to);
         \end{tikzpicture}\\\\
         Es wird offensichtlich, dass es keine Möglichkeit zum Verbinden existiert. Ohne den Knoten mit 
-        den 5 Verbindungen bleiben genau 2 Kanten übrig. Allgemein reichen 2 Kanten  nicht aus, um die 
+        den 5 Verbindungen bleiben genau 2 Kanten übrig. Mit zwei Kanten lässt sich nur ein zusammenhängender Graph mit höchstens 3 Knoten erzeugen. DIe 2 Kanten reichen nicht aus, um die 
         (verbliebenen) 8 Knoten zu verbinden. Ein Graph mit der Gradfolge $(5,2,1,1,1,1,1,1,1)$ kann es 
         folglich nicht geben. 
          
         % Task (e)
         \item Wie groß ist der maximale Abstand zweier Knoten im Hyperwürfel Q$_d$? \\
-        Maximale Abstand zweier Knoten im Hyperwürfel Q$_d$ ist $d$.
+        Der maximale Abstand zweier Knoten im Hyperwürfel Q$_d$ ist $d$.
         
         % Task (f)
         \item Wie groß ist der maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ? \\
-        Maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ist $2\cdot n - 2$
+        Der maximale Abstand zweier Knoten im Gittergraphen $M_{n,n}$ ist $2\cdot n - 2$
         
         % Task (g)
         \item Welche Knoten haben im $M_{n,n}$ den kleinsten maximalen Abstand zu einem anderen Knoten? \\
-        Das sind die Knoten die in der "Mitte" des Graphen sind. Für ungerade $n$ ist das der Knoten mit
+        Das sind die Knoten die in der "Mitte" des Graphen sind. Für ungerade $n$ ist das der Knoten mit der
         $(\big\lceil\frac{n}{2}\big\rceil,\big\lceil\frac{n}{2}\big\rceil)$ Koordinate. 
         Für gerade $n$ sind das die Knoten, die zu $M_{2,2}$ als Teilgraph gehören, wobei dieser Teilgraph 
         sich auch in die Mitte des Gittergraphen befindet.
@@ -95,92 +96,112 @@
     \end{enumerate}
 
     \section*{Kreativität:}
-        Ein ungerichteter Graph G = (V, E) heißt \textit{Splitgraph}, falls es eine Knotenmenge $U\subseteq V$ gibt,
-    	sodass $G[U]$ ein vollständiger Graph und $G[V\backslash U]$ ein leerer Graph ist.\\
-    	Zeigen Sie folgende Aussage:
-    	Es sei $G = (V, E)$ ein Splitgraph mit $V\geq 4$. Kein induzierter Teilgraph von $G$
-    	mit vier Knoten ist ein Kreis der Länge 4 oder ein Paar nicht inzidenter Kanten.\\ \\
-    	Beweis per Induktion: \\
-    	\textbf{IA:} $n = 4$ \\ 
-    	Um einen Teilgraphen aus vier Knoten zu bauen, haben wir folgende drei Möglichkeiten:
-    	\begin{enumerate}
-    		\item Wir nehmen vier Knoten aus dem vollständigen Graphen;
-    		\item Wir nehmen einige Knoten aus dem vollständigen Graphen und einige aus unabhängige Knoten;
-    		\item Wir nehmen vier Knoten aus den unabhängigen Knoten.
-    	\end{enumerate}
-    	1. 
-    	\begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-           	\node (n1) at (0,0) {};
-          	\node (n2) at (1,1) {};
-    		\node (n3) at (1,0) {};
-        	\node (n4) at (0,1) {};
+Sei $V$ beliebig aber fest und gelte $|V| \ge 4$. Sei $H(V_H,E_H)$ ein beliebiger aber fester induzierter Teilgraph auf $G$ mit $|V_H|=4$. Sei $A=V_H \cap U$ und $B=V_H \cap (V\setminus U)$. Die Knoten aus diesen Mengen werden mit $a_i$ und $b_j$ bezeichnet. Wir wollen folgende Eigenschaften zeigen:
+\begin{enumerate}[label=(\alph*)]
+	\item Kein Teilgraph $H$ ist ein Kreis der Länge 4 oder 
+	\item Kein Teilgraph $H$ ist ein Paar nicht inzidenter Kanten
+\end{enumerate}
 
-           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
-            \draw (\from) -- (\to);
-        \end{tikzpicture}
-        \qquad 2.
-        \begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-           	\node (n1) at (0,0) {};
-          	\node (n2) at (1,1) {};
-    		\node (n3) at (1,0) {};
-        	\node (n4) at (0,1) {};
+Wir führen folgende Fallunterscheidung durch:
+\begin{description}
+	\item[Fall 1] mit $|A|=4$ und $|B|=0$. Da $G[U]$ vollständig ist, ist auch jeder Teilgraph $H$ vollständig. Damit hat $H$ 6 Kanten und ist kein Kreis der Länge $4$ bzw. auch kein Paar nicht inzidenter Kanten.
+	\item[Fall 2] mit $|A|=3$ und $|B|=1$. Da $G[U]$ vollständig ist, ist auch jeder Teilgraph $H$ in Bezug auf seine Knoten in $G[U]$ vollständig. Das heißt diese drei Knoten sind bereits alle miteinander verbunden. Wenn nun einer dieser Knoten $a_i$ ($i \in \{1,2,3\})$ mit dem Knoten $b_1$ verbunden ist, hat der Teilgraph $H$ vier Knoten, aber er ist kein Kreis. Wäre nun $b_1$ mit einem weiteren Knoten aus $A$ verbunden, wären es zu viel Knoten. Offensichtlich ist keiner der Kanten nicht paarweise inzident.
+	\item[Fall 3] mit  $|A|=2$ und $|B|=2$. Der Teilgraph $H$ hat maximal drei Kanten, damit ist (a) erfüllt. Da $a_1$ und $a_2$ verbunden ist und $b_1$ und $b_2$ nur mit $a_1$ und $a_2$ verbunden sein können, ist (b) erfüllt.
+	\item[Fall 4] mit  $|A|=1$ und $|B|=3$. Da $b_1, b_2$ und $b_3$ nicht mit einander verbunden sind, kann $H$ kein Kreis sein.  Da $b_1, b_2$ und $b_3$ maximal mit $a_1$ verbunden sind, ist (b) erfüllt.
+	\item[Fall 5] mit  $|A|=0$ und $|B|=4$. Da die Knoten $b$ alle nicht miteinander verbunden sind, ist (a) und (b) erfüllt.
+\end{description}
 
-           	\foreach \from/\to in { n1/n3, n1/n4, n2/n4}
-            \draw (\from) -- (\to);
-        \end{tikzpicture}
-        \qquad 3.
-        \begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-           	\node (n1) at (0,0) {};
-          	\node (n2) at (1,1) {};
-    		\node (n3) at (1,0) {};
-        	\node (n4) at (0,1) {};
-        \end{tikzpicture}\\\\
-        Daraus kann man deutlich erkennen, dass keine der drei Möglichkeiten ein Kreis oder ein Paar 
-        nicht inzidenter Kanten sein kann.\\\\
-        \textbf{IS:} von $n$ nach $n + 1$
-        Wir fügen zu jedem der drei Fälle einen Knoten hinzu. Dadurch erhalten wir:\\\\
-        1. 
-    	\begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-           	\node (n1) at (0,0) {};
-          	\node (n2) at (2,2) {};
-    		\node (n3) at (2,0) {};
-        	\node (n4) at (0,2) {};
-        	\node (n5) at (1,1) {};
-
-           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
-            \draw (\from) -- (\to);
-        \end{tikzpicture}
-        \qquad 2.
-        \begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-           	\node (n1) at (0,0) {};
-          	\node (n2) at (2,2) {};
-    		\node (n3) at (2,0) {};
-        	\node (n4) at (0,2) {};
-        	\node (n5) at (1,1) {};
-
-           	\foreach \from/\to in {n1/n3, n1/n4, n2/n4, n5/n1, n5/n4}
-            \draw (\from) -- (\to);
-        \end{tikzpicture}
-        \qquad 3.
-        \begin{tikzpicture}
-          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
-    	    \node (n1) at (0,0) {};
-          	\node (n2) at (2,2) {};
-    		\node (n3) at (2,0) {};
-        	\node (n4) at (0,2) {};
-        	\node (n5) at (1,1) {};
-        \end{tikzpicture}\\\\
-        Da die Graphen aus dem vorherigen Beispiel Teilgraphen von diesem Beispiel sind, gilt das auch 
-        für eine andere Anzahl der Knoten. %das stimmt glaub net so ganz...
-        Sofern kann man sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph wieder ein 
-        vollständiger Graph ist und nach Definition des Kreises, einen Kreis bilden kann. Im zweiten 
-        Beispiel mit den unabhängigen Knoten, bleiben diese nicht verbunden und damit kann man auch keinen 
-        Kreis bilden. Im dritten Fall ist es offensichtlich, dass es kein Kreis sein kann, da die Kanten fehlen. 
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+%    	Beweis per Induktion: \\
+%    	\textbf{IA:} $n = 4$ \\ 
+%    	Um einen Teilgraphen aus vier Knoten zu bauen, haben wir folgende drei Möglichkeiten:
+%    	\begin{enumerate}
+%    		\item Wir nehmen vier Knoten aus dem vollständigen Graphen;
+%    		\item Wir nehmen einige Knoten aus dem vollständigen Graphen und einige aus unabhängige Knoten;
+%    		\item Wir nehmen vier Knoten aus den unabhängigen Knoten.
+%    	\end{enumerate}
+%    	1. 
+%    	\begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%           	\node (n1) at (0,0) {};
+%          	\node (n2) at (1,1) {};
+%    		\node (n3) at (1,0) {};
+%        	\node (n4) at (0,1) {};
+%
+%           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+%            \draw (\from) -- (\to);
+%        \end{tikzpicture}
+%        \qquad 2.
+%        \begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%           	\node (n1) at (0,0) {};
+%          	\node (n2) at (1,1) {};
+%    		\node (n3) at (1,0) {};
+%        	\node (n4) at (0,1) {};
+%
+%           	\foreach \from/\to in { n1/n3, n1/n4, n2/n4}
+%            \draw (\from) -- (\to);
+%        \end{tikzpicture}
+%        \qquad 3.
+%        \begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%           	\node (n1) at (0,0) {};
+%          	\node (n2) at (1,1) {};
+%    		\node (n3) at (1,0) {};
+%        	\node (n4) at (0,1) {};
+%        \end{tikzpicture}\\\\
+%        Daraus kann man deutlich erkennen, dass keine der drei Möglichkeiten ein Kreis oder ein Paar 
+%        nicht inzidenter Kanten sein kann.\\\\
+%        \textbf{IS:} von $n$ nach $n + 1$
+%        Wir fügen zu jedem der drei Fälle einen Knoten hinzu. Dadurch erhalten wir:\\\\
+%        1. 
+%    	\begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%           	\node (n1) at (0,0) {};
+%          	\node (n2) at (2,2) {};
+%    		\node (n3) at (2,0) {};
+%        	\node (n4) at (0,2) {};
+%        	\node (n5) at (1,1) {};
+%
+%           	\foreach \from/\to in {n1/n2, n1/n3, n1/n4, n2/n3, n2/n4, n3/n4}
+%            \draw (\from) -- (\to);
+%        \end{tikzpicture}
+%        \qquad 2.
+%        \begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%           	\node (n1) at (0,0) {};
+%          	\node (n2) at (2,2) {};
+%    		\node (n3) at (2,0) {};
+%        	\node (n4) at (0,2) {};
+%        	\node (n5) at (1,1) {};
+%
+%           	\foreach \from/\to in {n1/n3, n1/n4, n2/n4, n5/n1, n5/n4}
+%            \draw (\from) -- (\to);
+%        \end{tikzpicture}
+%        \qquad 3.
+%        \begin{tikzpicture}
+%          	[scale=.8,auto=left,every node/.style={circle,fill=blue!20}]
+%    	    \node (n1) at (0,0) {};
+%          	\node (n2) at (2,2) {};
+%    		\node (n3) at (2,0) {};
+%        	\node (n4) at (0,2) {};
+%        	\node (n5) at (1,1) {};
+%        \end{tikzpicture}\\\\
+%        Da die Graphen aus dem vorherigen Beispiel Teilgraphen von diesem Beispiel sind, gilt das auch 
+%        für eine andere Anzahl der Knoten. %das stimmt glaub net so ganz...
+%        Sofern kann man sehen, dass induzierter Graph mit $V=4$ aus vollständiger Graph wieder ein 
+%        vollständiger Graph ist und nach Definition des Kreises, einen Kreis bilden kann. Im zweiten 
+%        Beispiel mit den unabhängigen Knoten, bleiben diese nicht verbunden und damit kann man auch keinen 
+%        Kreis bilden. Im dritten Fall ist es offensichtlich, dass es kein Kreis sein kann, da die Kanten fehlen. 
 
     \section*{Selbststudium:}
         Erarbeiten Sie sich den Inhalt des Abschnitts "Bäume und Wälder" (Abschnitt 3.2) aus dem
@@ -190,8 +211,7 @@
         %Task (a)
         \item Ist jeder zusammenhängende Graph mit n Knoten und $n - 1$ Kanten eine Baum? Be-
         gründen Sie Ihre Antwort.\\
-        Der Graph ist zusammenhängend. D.h. jeder Knoten ist nach Voraussetzung über mindestens eine Kante verbunden. Da wir $n-1$ Kanten haben, kann der Graph keinen Kreis bilden, denn für einen Kreis sind mindestens n Kanten erforderlich. Somit ist nach Definition 3.10 (MDS), jeder Graph dieser Form ein Baum. 
-        \\ Außerdem gilt Theorem 3.13, da wir $n-1$ Kanten haben. Damit die Eigenschaft eines Baums erfüllt .
+        Da wir $n-1$ Kanten haben, kann der Graph nicht gleichzeitig zusammenhängend sein und einen Kreis bilden, denn für einen Kreis in einem zusammenhängenden Graphen sind mindestens n Kanten erforderlich. Nach Theorem 3.13 gilt, das jeder Baum $n-1$ Kanten hat. Somit ist ein solcher Graph kreisfrei und erfüllt nach Definition 3.10 (MDS), die Eigenschaften eines Baumes. 
 
         %Task (b)
         \item Der Hyperwürfel $Q_3$ enthält 384 Spannbäume. %http://en.wikipedia.org/wiki/Hypercube_graph hier steht es drinn

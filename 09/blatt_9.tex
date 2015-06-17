@@ -36,7 +36,10 @@
         \item Ist der $Q_4$ planar?
         Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. wenn man diesen Teilgraphen "aufspannt" gibt es Überkreuzungen im gesamten Graphen. Daraus folgt, dass der $Q_4$ nicht planar sein kann.
         %Task f
-        \item
+        \item Es reicht aus die Aussage für kantenmaximale planare Graphen zu zeigen, da hiermit die linke Seite maximiert wird. Sei nun $G=(V,E)$ ein kantenmaximaler und ebener Graph, der keine Dreiecke als Teilgraphen besitzt. Für $||V||=3$ gibt es nur das Äußere und somit nur ein Gebiet. Wenn wir nun einen Knoten hinzufügen, dann müssen wir auch aufgrund der Kantenmaximalität zwei Kanten hinzufügen, wodurch Dreiecke vermieden werden.  Wenn wir dies fortsetzen, erhalten wir: \\ 
+        $ 2 \cdot ||F|| \le ||E||\implies 2 \cdot \left(||E|| - ||V|| + 2 \right) \le ||E||$ \\ 
+        Nach Theorem 3.23 gilt somit:
+        $||E|| \le 2 \cdot ||V|| - 4 $. 
         
         % Task g
         \item
@@ -45,8 +48,8 @@
         \item
         % Task i
         \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$ ?
-        Da jeder Knoten n-1 Nachbarn hat (jeder Knoten ist mit jedem verbunden) hat der $K_n n$ Farben. Den ersten Knoten kann beliebig wählen, weshalb es $k$ Möglichkeiten zur Färbung gibt. Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es: \\
-        $\prod_{i=0}^{k-1} k - i = i^k $ Möglichkeiten zur Färbung eines $K_n$
+        Da jeder Knoten n-1 Nachbarn hat (jeder Knoten ist mit jedem verbunden) hat der $K_n$ $n$ Farben. Der erste Knoten kann beliebig gewählt werden, weshalb es $k$ Möglichkeiten zur Färbung gibt. Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es: \\
+        $\prod_{i=0}^{k-1} k - i$ Möglichkeiten zur Färbung eines $K_n$
           
         % Task j
         \item

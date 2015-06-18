@@ -8,38 +8,39 @@
     \section*{Vertiefung:}
     \begin{enumerate}[label=(\alph*)]
         % Task (a)
-        \item  Ein ebener,
-        k-regulärer Graph besteht aus
-        12 Knoten und teilt die Ebene in
-        14 Gebiete. Wie groß ist k? \\
+        \item  Ein ebener, $k$-regulärer Graph besteht aus 12 Knoten und teilt die Ebene in 14 Gebiete. 
+        Wie groß ist $k$? \\
         Nach Theorem 3.23 gilt $||F|| = ||E|| - ||V|| + 2$. Für unseren Fall bedeutet das also:
-        $14 = ||E|| - 12 + 2 \implies E = 24$ \\
-        Des weiteren gilt nach Proposition 3.3: \\
-        $\sum_{v \in V} deg(v) = 2 \cdot ||E||$. D.h. die Summe der Grade ist $2 * 24 = 58$. \\
+        $$14 = ||E|| - 12 + 2 \implies E = 24$$ Des weiteren gilt nach Proposition 3.3:
+        $$\sum_{v \in V} deg(v) = 2 \cdot ||E||$$ D.h. die Summe der Grade ist $2 * 24 = 58$.
         Daraus folgt $\frac{58}{12} = 4 = k$
         
         %Task (b)
-        \item Aus Theorem 3.23 folgt, dass $||F|| = ||E|| - ||V|| + 2 gilt $. Für unseren Fall bedeutet 
+        \item Gibt es einen ebenen, $k$-regulären Graphen mit 8 Knoten, der die Ebene in 14 Gebiete
+        teilt? \\  
+        Aus Theorem 3.23 folgt, dass $||F|| = ||E|| - ||V|| + 2$ gilt. Für unseren Fall bedeutet 
         das aus $ 14 = ||E|| - 8 + 2 $ $ ||E|| = 20 $ folgt. Wir haben also einen Graphen mit 8 Knoten 
         und 20 Kanten. Nach Theorem 3.24 gilt für jeden planaren Graphen $ ||E|| \leq 3 \cdot ||V|| - 6$. 
         Für unseren Fall gilt also $20 \leq 3 \cdot 8 - 6  = 18$.
         Wir stoßen auf einen Widerspruch, da $20 \leq 18$ falsch ist. Einen solchen Graphen kann es nicht geben.
         
         %Task (c)
-        \item Für einen planaren nicht-zusammenhängenden Graphen G mit k Zusammenhangskomponenten beachten 
+        \item Erweitern Sie die Eulersche Polyederformel auf nichtzusammenhängende, planare Gra-
+        phen. \\
+        Für einen planaren nicht-zusammenhängenden Graphen G mit k Zusammenhangskomponenten beachten 
         wir, dass sich die Komponenten die äußere Fläche gemeinsam teilen. Daraus folgt, dass es im gegensatz 
         zum zusammenhängenden Fall k-1 Flächen weniger gibt. Somit gilt für nicht zusammenhängende Graphen 
-        $||F|| = ||E|| - ||V|| + 2 + (k-1) = ||E|| - ||V|| + 1 + k$. Für nicht-zusammenhängende Graphen 
-        ergibt sich folglich: $||F|| = ||E|| - ||V|| + 1 + k $
+        $$||F|| = ||E|| - ||V|| + 2 + (k-1) = ||E|| - ||V|| + 1 + k$$ Für nicht-zusammenhängende Graphen 
+        ergibt sich folglich: $$||F|| = ||E|| - ||V|| + 1 + k $$
        
         %Task (d)
-        \item Ist der $Q_3$ planar? 
+        \item Ist der $Q_3$ planar? \\
         Ja. Betrachte dazu folgende Graphik:\\
         \includegraphics{Q3}
         
         %Task (e)
-        \item Ist der $Q_4$ planar?
-        Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. wenn man diesen Teilgraphen "aufspannt" 
+        \item Ist der $Q_4$ planar?\\
+        Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. wenn man diesen Teilgraphen ''aufspannt'' 
         gibt es Überkreuzungen im gesamten Graphen. Daraus folgt, dass der $Q_4$ nicht planar sein kann.
         
         %Task (f)
@@ -47,23 +48,23 @@
         linke Seite maximiert wird. Sei nun $G=(V,E)$ ein kantenmaximaler und ebener Graph, der keine 
         Dreiecke als Teilgraphen besitzt. Für $||V||=3$ gibt es nur das Äußere und somit nur ein Gebiet. 
         Wenn wir nun einen Knoten hinzufügen, dann müssen wir auch aufgrund der Kantenmaximalität zwei 
-        Kanten hinzufügen, wodurch Dreiecke vermieden werden.  Wenn wir dies fortsetzen, erhalten wir: \\ 
-        $ 2 \cdot ||F|| \le ||E||\implies 2 \cdot \left(||E|| - ||V|| + 2 \right) \le ||E||$ \\ 
+        Kanten hinzufügen, wodurch Dreiecke vermieden werden.  Wenn wir dies fortsetzen, erhalten wir:
+        $$ 2 \cdot ||F|| \le ||E||\implies 2 \cdot \left(||E|| - ||V|| + 2 \right) \le ||E||$$
         Nach Theorem 3.23 gilt somit:
-        $||E|| \le 2 \cdot ||V|| - 4 $. 
+        $$||E|| \le 2 \cdot ||V|| - 4 $$ 
         
         % Task (g)
-        \item
+        \item Kein Antwort
         
         % Task (h)
-        \item
+        \item Kein Antwort
 
         % Task (i)
-        \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$ ?
+        \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$?
         Da jeder Knoten n-1 Nachbarn hat (jeder Knoten ist mit jedem verbunden) hat der $K_n$ $n$ Farben. 
         Der erste Knoten kann beliebig gewählt werden, weshalb es $k$ Möglichkeiten zur Färbung gibt. 
         Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es: \\
-        $\prod_{i=0}^{k-1} k - i$ Möglichkeiten zur Färbung eines $K_n$
+        $\prod_{i=0}^{k-1} k - i$ Möglichkeiten zur Färbung eines $K_n$.
           
         % Task (j)
         \item Wie ist die chromatische Zahl eines $Q_d$?
@@ -100,9 +101,9 @@
             &= 3\cdot (2^4 - 2^3 + 2^2 - 2^1)
         \end{align*} 
         Dann es ist schon deutlich, dass wir rekursive Formel so überschreiben können:
-        $$ a_n = 3 \cdot (-1)^{n-1} \cdot \sum_{n=1}^{n-1}(-2)^n$$
+        $$ a_n = 3 \cdot (-1)^{n-1} \cdot \sum_{k=1}^{n-1}(-2)^k$$
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-    	\item Task a
+    	\item Kein Antwort
     \end{enumerate}
 \end{document}

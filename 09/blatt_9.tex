@@ -27,8 +27,7 @@
         Wir stoßen auf einen Widerspruch, da $20 \leq 18$ falsch ist. Einen solchen Graphen kann es nicht geben.
         
         %Task (c)
-        \item Erweitern Sie die Eulersche Polyederformel auf nichtzusammenhängende, planare Gra-
-        phen. \\
+        \item Erweitern Sie die Eulersche Polyederformel auf nichtzusammenhängende, planare Graphen. \\
         Für einen planaren nicht-zusammenhängenden Graphen G mit k Zusammenhangskomponenten beachten 
         wir, dass sich die Komponenten die äußere Fläche gemeinsam teilen. Daraus folgt, dass es im gegensatz 
         zum zusammenhängenden Fall k-1 Flächen weniger gibt. Somit gilt für nicht zusammenhängende Graphen 
@@ -42,9 +41,9 @@
         
         %Task (e)
         \item Ist der $Q_4$ planar?\\
-        Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. wenn man diesen Teilgraphen ''aufspannt'' 
+        Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. Wenn man diesen Teilgraphen ''aufspannt'' 
         gibt es Überkreuzungen im gesamten Graphen. Daraus folgt, dass der $Q_4$ nicht planar sein kann. \\
-        hier der (gut versteckte) $K_{3,3}$ mit \textcolor{magenta}{direkten Verbindungen} und \textcolor{green}{indirekten Verbindungen} \\ \includegraphics{Q4}
+        Hier der (gut versteckte) $K_{3,3}$ mit den \textcolor{magenta}{direkten Verbindungen} und \textcolor{green}{indirekten Verbindungen} \\ \includegraphics{Q4}
         
         %Task (f)
         \item Es reicht aus die Aussage für kantenmaximale planare Graphen zu zeigen, da hiermit die 
@@ -57,21 +56,29 @@
         $$||E|| \le 2 \cdot ||V|| - 4 $$ 
         
         % Task (g)
-        \item Kein Antwort
-        
+        \item Besitzt jeder planare, dreiecksfreie Graph einen Knoten $v$ mit $deg(v) \leq 3$? \\
+        Wir führen einen Beweis durch Widerspruch: Angenommen es gibt einen planaren, dreiecksfreien Graphen mit der Eigenschaft, dass bei jedem Knoten der Grad strikt größer als drei ist. Dann gilt: 
+        \begin{align*}
+            4 \cdot ||V|| &\geq \sum_{v \in V} deg(v)
+            &= 2 \cdot ||E|| (Proposition 3.3)
+            &\geq 4 \cdot ||V|| - 8 (Vertiefung f)
+        \end{align*}
+        Wir erhalten einen Widerspruch. Also besitzt jeder planare Graph einen Knoten mit der Eigenschaft $deg(v) \leq 3$
         % Task (h)
         \item Kein Antwort
 
         % Task (i)
-        \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$?
+        \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$? \\
         Da jeder Knoten n-1 Nachbarn hat (jeder Knoten ist mit jedem verbunden) hat der $K_n$ $n$ Farben. 
         Der erste Knoten kann beliebig gewählt werden, weshalb es $k$ Möglichkeiten zur Färbung gibt. 
         Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es: \\
-        $\prod_{i=0}^{k-1} k - i$ Möglichkeiten zur Färbung eines $K_n$.
+        $\prod_{i=0}^{k-1} k - i = k^{\underline{n}}$ Möglichkeiten zur Färbung eines $K_n$.
           
         % Task (j)
-        \item Wie ist die chromatische Zahl eines $Q_d$?
-        Nach Defifnition des Hyperwürfels gilt, dass der $Q_d$ immer quadratische Flächen hat bzw. Kreise der Länge 4. Da man für einen solchen Kreis minimal zwei Farben braucht, gibt es auch einen $Q_d$ der mit nur zwei Farben auskommt. Die chromatische
+        \item Wie ist die chromatische Zahl eines $Q_d$? \\
+        Für den Sonderfall $d = 1$ reicht eine Farbe aus. \\
+        Für den Fall $d = 2$ haben wir zwei Knoten, die über einen Graph mit zwei Knoten die über eine Kante verbunden sind. Hier ist die chromatische Zahl trivialer Weise 2.\\
+        Für $d \geq 3$ betrachten wir die Definition des Hyperwürfels. Nach der Definition des Hyperwürfels gilt, dass der $Q_d$ immer quadratische Flächen hat bzw. Kreise der Länge 4. Da man für einen   Kreis mit gerader Knotenanzahl mit minimal zwei Farben für eine Knotenfärbung auskommt, gibt es auch einen $Q_d$ der mit nur zwei Farben auskommt, wenn man den Kreis mit vier Knoten und Kanten ''ausdimensionalisiert'' und den jeweils neu entstehenden ''Ecken'' eine andere Farbe zuteilt als dem entsprechenden Nachbarknoten aus der ''vorherigen Dimension''. Die chromatische Zahl des $Q_d$ für $d \geq 2$ ist somit 2.
         
     \end{enumerate}
     \section*{Kreativität:} Wie viele Knotenfärbungen mit 3 Farben hat der Kreis $C_n$ ?\\
@@ -82,8 +89,8 @@
             \includegraphics[width=1\linewidth]{baum_kreativ}
         \end{wrapfigure}\\
      Wir können sehen, dass die eingefügte Graphik alle Variationen für einen $C_1$ bis hin zum $C_6$  wiedergibt. \\
-     Wir müssen allerdings beachten, dass wir manche Knoten 'zu oft abzählen', da sie nicht in das Färbungsschema hineinpassen. In unserer Graphik sind das beispielsweise für den $C_6$  immer die Knoten, die die Farbe 1 haben. Wir müssen folglich für jeden der drei Bäume  mit den verschiedenen Wurzelfärbungen stets die Anzahl an Knoten abziehen, die eine Farbe erhalten würden, die mit der Farbe der Baumwurzel übereinstimmt.\\
-     Für den Binärbaum, mit der Baumwurzel, die die Farbe 1 erhalten hat, ist die gesamte Anzahl der Knoten $2^n-1$. Wir färben nun jedes Blatt mit jeweils einer anderen Farbe wir die Wurzel gefärbt haben. Für alle weiteren Blätter bzw. Subbäume wenden wir das gleiche Färbungsschema an und erhalten somit einen Baum mit $2^n-1$ Färbungen. Da wir den ersten Knoten (die Baumwurzel) auch mit der 2 oder 3 Färben können, lassen sich analog 2 weitere Binärbäume aufspannen, die das gleiche Schema besitzen, aber weitere Möglichkeiten zur Färbung, die uns fehlen, wenn wir die Wurzel mit der 1 färben. Wir halten eine 'Gesamtfarbenbelegungsanzahlanzahl' mit $3\cdot 2^{n-1}$ Möglichkeiten (vorerst) fest. Dies ist gerade die Anzahl der Knoten in den untersten Baumebenen.
+     Wir müssen allerdings beachten, dass wir manche Knoten ''zu oft abzählen'', da sie nicht in das Färbungsschema hineinpassen. In unserer Graphik sind das beispielsweise für den $C_6$  immer die Knoten, die die Farbe 1 haben. Wir müssen folglich für jeden der drei Bäume  mit den verschiedenen Wurzelfärbungen stets die Anzahl an Knoten abziehen, die eine Farbe erhalten würden, die mit der Farbe der Baumwurzel übereinstimmt.\\
+     Für den Binärbaum, mit der Baumwurzel, die die Farbe 1 erhalten hat, ist die gesamte Anzahl der Knoten $2^n-1$. Wir färben nun jedes Blatt mit jeweils einer anderen Farbe wir die Wurzel gefärbt haben. Für alle weiteren Blätter bzw. Subbäume wenden wir das gleiche Färbungsschema an und erhalten somit einen Baum mit $2^n-1$ Färbungen. Da wir den ersten Knoten (die Baumwurzel) auch mit der 2 oder 3 Färben können, lassen sich analog 2 weitere Binärbäume aufspannen, die das gleiche Schema besitzen, aber weitere Möglichkeiten zur Färbung, die uns fehlen, wenn wir die Wurzel mit der 1 färben. Wir halten eine ''Gesamtfarbenbelegungsanzahlanzahl'' mit $3\cdot 2^{n-1}$ Möglichkeiten (vorerst) fest. Dies ist gerade die Anzahl der Knoten in den untersten Baumebenen.
      Von dieser müssen wir nun die Anzahl der gefärbten Knoten abziehen, die uns nicht passen. Dies sind gerade diejenigen Knoten in der untersten Baumebene, deren Farbe mit der Farbe der Baumwurzel übereinstimmt. Die Anzahl dieser Knoten erhalten wir stets, indem wir uns die Möglichkeiten für die Färbung in der "Baumebene darüber" berechnen.
      
      Somit können wir folgende rekursive Formel aufstellen, die die Anzahl der Knotenfärbungen 
@@ -109,10 +116,22 @@
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item Wie viele Kanten benötigen Sie für einen (n, d)-dimensionalen De Bruijn-Graphen?\\
-        Wir haben zwei Fällen. In einer Fall haben wir zwei gleiche Zahlen am Ende, da ist nur in $d$ 
-        Kombinationen möglich ist. Dann für jeder dieser Zahl haben wir nur zwei $d-1$ Möglichkeiten. 
-        Also insgesamt: $d\cdot(d-1)$ Kanten. Zweiten Fall ist alle andere Fälle, also $d^n-d$. Dann haben
-        wir: $d\cdot(d^n-d)$. Folglich insgesamt es gibt so viel Kanten:
-        $$d\cdot(d-1) + d\cdot(d^n-d) = d^{n+1}-d$$
+        Im ungerichteten Graphen können wir ab mehr als einen Knoten, 3 verschiedene Gruppen von Knoten, die sich in ihren Knotengraden unterscheiden, festlegen. Die erste Gruppe dieser Knoten ist in der Form $(x,x,x,\ldots)$ mit $x \in [d]$ und für diese Gruppe gilt $\textrm{deg}(v) = 2d -2$. Die 2. Gruppe der Knoten hat die Form $(x,y,x,y,\ldots)$ mit $x \not = y$ und $x,y \in [d]$, für diese Gruppe gilt $\textrm{deg}(v) = 2d -1$. Zu guter Letzt gibt es noch die letzte Gruppe, die aus den restlichen Knoten besteht, die nicht die Form der bereits vorherigen Gruppen besitzen. Für solche Knoten gilt $\textrm{deg}(v) = 2d$.\par
+        In Gruppe 1. befinden sich $d$ Knoten, in Gruppe 2. $d^2-d$ Knoten und in Gruppe 3. $d^n - d - d(d-1)$ Knoten. Benutzt man nun Proposition 3.3, so erhält man die Anzahl der Kanten. 
+        \begin{align*}
+        d(2d-2) + (d^2-d)(2d-1) + 2d(d^n-d-d(d-1)) &= 2d^{n+1}-d^2-d
+        \end{align*}
+        
+        Durch Anwendung von Proposition 3.3 erhalten wir:
+        \begin{align*}
+        ||E|| = \frac{2d^{n+1}-d^2-d}{2}
+        \end{align*}
+        
+        \item In einem solchen Graphen beträgt der maximale Abstand zweier Knoten $n$
+        
+        \item Wir suchen uns ein Tupel der Form $(1,\ldots,1)$ und bezeichnen ihn als $x_1$. Von diesem aus betrachten wir alle Verbindungen zu all anderen Knoten, welche maximal $n$ entfernt liegen (Teilaufgabe (b)). Nun verfahren wir wie folgt: \par
+        Wir gehen von einem beliebigen Knoten rückwärts zu dem Knoten $x_1$ zurück  und summieren dabei die Zahlenwerte auf. Dabei werden jeweils 3 Rechenschritte benötigt (Lesen, Addition, Schreiben). Nun kann es passieren, dass Zahlenwerte doppelt gezählt werden, um dies zu vermeiden muss man nochmal über die Knoten iterieren und alles mit 0 überschreiben. Nun suchen wir uns solange einen Knoten aus, der keine 0 stehen hat und wiederholen das Prozedere solange, bis kein solcher Knoten mehr existiert. \par
+        Somit erhält man für die Anzahl der Rechenschritte $(nd^n-2n)(3nd^n-3n)$.
+        
     \end{enumerate}
 \end{document}

@@ -75,36 +75,37 @@
         
     \end{enumerate}
     \section*{Kreativität:} Wie viele Knotenfärbungen mit 3 Farben hat der Kreis $C_n$ ?\\
-    Hinweis: Stellen Sie eine geeignete Rekursionsgleichung auf und lösen Sie diese.\\\\
-        
-        Wenn wir anfangen den Kreis mit unseren 3 zur Verfügung stehenden Farben zu färben, so können wir bei einem beliebigen Knoten unseren Anfang setzen. Wir denken uns nun eine der beiden Kanten vom Anfangsknoten weg und erhalten einen Baum, da wir $||E|| = n-1$ haben. Um den Anfangsknoten zu färben stehen 3 Möglichkeiten zur Verfügung, wodurch sich 3 verschieden gefärbte Binärbäume konstruieren lassen, die aber alle die gleiche Struktur haben. Zur Visualisierung zeigt die linke Graphik den konstruierten Binärbaum bis zum $C_6$ für den Fall, dass man dem ersten Knoten die Farbe 1 vergeben hat. Offensichtlich gibt es bei jedem Blatt für jeden der drei Binärbaume 2 
-        Möglichkeiten zur Färbung. Wir spannen hierbei folgende 3 Binärbäume auf, die unsere Möglichkeiten  
-        Dann bekommen wir ein Beispiel mit der Farben $(1,2,3)$ und erste Knoten als 1 bewertet:
+    Hinweis: Stellen Sie eine geeignete Rekursionsgleichung auf und lösen Sie diese.\\
+    \\
+    Wenn wir anfangen den Kreis mit unseren 3 Farben zu färben, dann können wir bei einem beliebigen Knoten unseren Anfang setzen. Wir denken uns nun eine der beiden Kanten vom Anfangsknoten weg und erhalten einen zusammenhängenden Graphen mit der Eigenschaft $||E|| = n-1$, also einen Baum. Um den Anfangsknoten zu färben stehen 3 Möglichkeiten zur Verfügung, wodurch sich 3 verschieden gefärbte Binärbäume konstruieren lassen, die aber alle die gleiche Struktur haben (es entstehen verschiedene Binärbäume da die Wurzelfarbe jeweils unterschiedlich ist). Zur Visualisierung zeigt die eingefügte Graphik den konstruierten Binärbaum bis hin zum $C_6$ für den Fall, dass man dem ersten Knoten die Farbe 1 zugeordnet hat. Offensichtlich gibt es im Kreisgraphen bis zum Vorletzten Knoten 2 Möglichkeiten zur weiteren Färbung. Wir halten im Binärbaum mit jeden weiteren Blättern die "Färbungspfade" fest. 
         \begin{wrapfigure}{l}{0.25\textwidth}
             \includegraphics[width=1\linewidth]{baum_kreativ}
         \end{wrapfigure}\\
-        Dann wir können sehen, alle Variationen für Kreis Länge $C_1$ bis $C_6$ und unseres Baum ein 
-        Binärbaum ist. Da müssen wir aber beachten, dass manche Knoten passen uns nicht, und zwar die, 
-        die Farbe 1 haben. Sehen wie der Kreis Länge 6 ein. Da sehen wir, dass die gesamte Anzahl der 
-        Knoten $2^n-1$ ist, wo $n$ ist Länge der Kreis. Von 32 Knoten uns passen nur solche, die nicht 
-        gleich 1 sind, also nur 22. Ferner merken wir, dass die Anzahl der 1 ist gleich wie die Anzahl 
-        der passende Kanten aus $C_5$, weil die nur aus 2 oder 3 kommt und nur einmal pro jede Knote. 
-        Da dieser Beispiel ist nur für 1 und wir drei Farben haben, sollen wir unsere Kombinationen 
-        mit drei multiplizieren. Dann schreiben wir ein rekursiver Formel, der Knotenfärbungen Anzahl 
-        berechnet, und zwar: $$ a_n = 3\cdot 2^{n-1} - a_{n-1} $$
-        Jetzt sollen wir ein nicht-rekursive Formel finden. Schreiben wir erste 5 Knotenfärbungen:
-        \begin{align*}
-            a_0 &= 0\\
-            a_1 &= 0\\
-            a_2 &= 3\cdot 2^1 - a_1 = 3\cdot 2^1\\
-            a_3 &= 3\cdot 2^2 - a_2 = 3\cdot 2^2 - 3\cdot 2^1\\
-            a_4 &= 3\cdot 2^3 - a_3 = 3\cdot 2^3 - (3\cdot 2^2 - 3\cdot 2^1)\\
-            a_5 &= 3\cdot 2^4 - a_4 = 3\cdot 2^4 - (3\cdot 2^3 - (3\cdot 2^2 - 3\cdot 2^1))\\
-            &= 3\cdot 2^4 - 3\cdot 2^3 + 3\cdot 2^2 - 3\cdot 2^1\\
-            &= 3\cdot (2^4 - 2^3 + 2^2 - 2^1)
+     Wir können sehen, dass die eingefügte Graphik alle Variationen für einen $C_1$ bis hin zum $C_6$  wiedergibt. \\
+     Wir müssen allerdings beachten, dass wir manche Knoten 'zu oft abzählen', da sie nicht in das Färbungsschema hineinpassen. In unserer Graphik sind das beispielsweise für den $C_6$  immer die Knoten, die die Farbe 1 haben. Wir müssen folglich für jeden der drei Bäume  mit den verschiedenen Wurzelfärbungen stets die Anzahl an Knoten abziehen, die eine Farbe erhalten würden, die mit der Farbe der Baumwurzel übereinstimmt.\\
+     Für den Binärbaum, mit der Baumwurzel, die die Farbe 1 erhalten hat, ist die gesamte Anzahl der Knoten $2^n-1$. Wir färben nun jedes Blatt mit jeweils einer anderen Farbe wir die Wurzel gefärbt haben. Für alle weiteren Blätter bzw. Subbäume wenden wir das gleiche Färbungsschema an und erhalten somit einen Baum mit $2^n-1$ Färbungen. Da wir den ersten Knoten (die Baumwurzel) auch mit der 2 oder 3 Färben können, lassen sich analog 2 weitere Binärbäume aufspannen, die das gleiche Schema besitzen, aber weitere Möglichkeiten zur Färbung, die uns fehlen, wenn wir die Wurzel mit der 1 färben. Wir halten eine 'Gesamtfarbenbelegungsanzahlanzahl' mit $3\cdot 2^{n-1}$ Möglichkeiten (vorerst) fest. Dies ist gerade die Anzahl der Knoten in den untersten Baumebenen.
+     Von dieser müssen wir nun die Anzahl der gefärbten Knoten abziehen, die uns nicht passen. Dies sind gerade diejenigen Knoten in der untersten Baumebene, deren Farbe mit der Farbe der Baumwurzel übereinstimmt. Die Anzahl dieser Knoten erhalten wir stets, indem wir uns die Möglichkeiten für die Färbung in der "Baumebene darüber" berechnen.
+     
+     Somit können wir folgende rekursive Formel aufstellen, die die Anzahl der Knotenfärbungen 
+     berechnet. Für den $C_0$  und $C_1$ gibt es keine Möglichkeiten, denn ein Kreis muss aus mindestens 3 Knoten bestehen. Für die Gültigkeit unserer rekursiven Formel fassen wir fassen einen Pfad aus zwei Knoten und einer Kante als Sonderfall eines Kreises auf ( der 6 mögliche Färbungen besitzen kann) und für den $C_n$ gelte somit: 
+     \begin{align*} 
+     a_0 &= 0 \\ 
+     a_1 &= 0  \\
+     a_n &= 3\cdot 2^{n-1} - a_{n-1}\\ 
+     \end{align*}
+     Nun wollen wir unsere rekursive Formel in eine explizite (nicht-rekursive) Form überführen. Wir schreiben die ersten 5 Knotenfärbungen auf:
+     \begin{align*}
+          a_0 &= 0\\
+          a_1 &= 0\\
+          a_2 &= 3\cdot 2^1 - a_1 = 3\cdot 2^1\\
+          a_3 &= 3\cdot 2^2 - a_2 = 3\cdot 2^2 - 3\cdot 2^1\\
+          a_4 &= 3\cdot 2^3 - a_3 = 3\cdot 2^3 - (3\cdot 2^2 - 3\cdot 2^1)\\
+          a_5 &= 3\cdot 2^4 - a_4 = 3\cdot 2^4 - (3\cdot 2^3 - (3\cdot 2^2 - 3\cdot 2^1))\\
+          &= 3\cdot 2^4 - 3\cdot 2^3 + 3\cdot 2^2 - 3\cdot 2^1\\
+          &= 3\cdot (2^4 - 2^3 + 2^2 - 2^1)
         \end{align*} 
-        Dann es ist schon deutlich, dass wir rekursive Formel so überschreiben können:
-        $$ a_n = 3 \cdot (-1)^{n-1} \cdot \sum_{k=1}^{n-1}(-2)^k$$
+     Ohne Beeinträchtigung der Allgemeinheit können wir folglich unsere rekursive Formel wie folgt überschreiben:
+     $$ a_n = 3 \cdot (-1)^{n-1} \cdot \sum_{k=1}^{n-1}(-2)^k$$
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item Wie viele Kanten benötigen Sie für einen (n, d)-dimensionalen De Bruijn-Graphen?\\

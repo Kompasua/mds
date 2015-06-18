@@ -3,6 +3,8 @@
 
 \input{../template.tex}
 \usepackage{wrapfig}
+\usepackage{color}
+
 \begin{document}
     \maketitle
     \section*{Vertiefung:}
@@ -41,7 +43,8 @@
         %Task (e)
         \item Ist der $Q_4$ planar?\\
         Nein. Der $Q_4$ enthält einen $K_{3,3}$ als Teilgraphen. wenn man diesen Teilgraphen ''aufspannt'' 
-        gibt es Überkreuzungen im gesamten Graphen. Daraus folgt, dass der $Q_4$ nicht planar sein kann.
+        gibt es Überkreuzungen im gesamten Graphen. Daraus folgt, dass der $Q_4$ nicht planar sein kann. \\
+        hier der (gut versteckte) $K_{3,3}$ mit \textcolor{magenta}{direkten Verbindungen} und \textcolor{green}{indirekten Verbindungen} \\ \includegraphics{Q4}
         
         %Task (f)
         \item Es reicht aus die Aussage für kantenmaximale planare Graphen zu zeigen, da hiermit die 
@@ -68,14 +71,14 @@
           
         % Task (j)
         \item Wie ist die chromatische Zahl eines $Q_d$?
-        Nach Defifnition der Hyperwurfel folgt, dass $Q_d$ immer quadratische Flächen hat (oder Kreise 
-        länge 4). Da für ein Quadrat brauchen wir nut zwei Farben, könner wir auch $Q_d$ mit zwei Farben farben.
+        Nach Defifnition des Hyperwürfels gilt, dass der $Q_d$ immer quadratische Flächen hat bzw. Kreise der Länge 4. Da man für einen solchen Kreis minimal zwei Farben braucht, gibt es auch einen $Q_d$ der mit nur zwei Farben auskommt. Die chromatische
         
     \end{enumerate}
     \section*{Kreativität:} Wie viele Knotenfärbungen mit 3 Farben hat der Kreis $C_n$ ?\\
-        Hinweis: Stellen Sie eine geeignete Rekursionsgleichung auf und lösen Sie diese.\\\\
-        Wenn wir anfangen die Knotenfärbungen sehen wir, dass beim jeder Kanten haben wir mehere 
-        Möglichkeiten eine Farbe zu wählen. Da stellen wir diese Möglichkeiten als ein Baum vor. 
+    Hinweis: Stellen Sie eine geeignete Rekursionsgleichung auf und lösen Sie diese.\\\\
+        
+        Wenn wir anfangen den Kreis mit unseren 3 zur Verfügung stehenden Farben zu färben, so können wir bei einem beliebigen Knoten unseren Anfang setzen. Wir denken uns nun eine der beiden Kanten vom Anfangsknoten weg und erhalten einen Baum, da wir $||E|| = n-1$ haben. Um den Anfangsknoten zu färben stehen 3 Möglichkeiten zur Verfügung, wodurch sich 3 verschieden gefärbte Binärbäume konstruieren lassen, die aber alle die gleiche Struktur haben. Zur Visualisierung zeigt die linke Graphik den konstruierten Binärbaum bis zum $C_6$ für den Fall, dass man dem ersten Knoten die Farbe 1 vergeben hat. Offensichtlich gibt es bei jedem Blatt für jeden der drei Binärbaume 2 
+        Möglichkeiten zur Färbung. Wir spannen hierbei folgende 3 Binärbäume auf, die unsere Möglichkeiten  
         Dann bekommen wir ein Beispiel mit der Farben $(1,2,3)$ und erste Knoten als 1 bewertet:
         \begin{wrapfigure}{l}{0.25\textwidth}
             \includegraphics[width=1\linewidth]{baum_kreativ}

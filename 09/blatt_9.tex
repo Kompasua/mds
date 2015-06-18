@@ -38,7 +38,7 @@
         %Task (d)
         \item Ist der $Q_3$ planar? \\
         Ja. Betrachte dazu folgende Graphik:\\
-        \includegraphics{Q3}
+        \includegraphics[width=0.3\linewidth]{Q3}
         
         %Task (e)
         \item Ist der $Q_4$ planar?\\
@@ -107,6 +107,11 @@
         $$ a_n = 3 \cdot (-1)^{n-1} \cdot \sum_{k=1}^{n-1}(-2)^k$$
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-    	\item Kein Antwort
+    	\item Wie viele Kanten benötigen Sie für einen (n, d)-dimensionalen De Bruijn-Graphen?\\
+        Wir haben zwei Fällen. In einer Fall haben wir zwei gleiche Zahlen am Ende, da ist nur in $d$ 
+        Kombinationen möglich ist. Dann für jeder dieser Zahl haben wir nur zwei $d-1$ Möglichkeiten. 
+        Also insgesamt: $d\cdot(d-1)$ Kanten. Zweiten Fall ist alle andere Fälle, also $d^n-d$. Dann haben
+        wir: $d\cdot(d^n-d)$. Folglich insgesamt es gibt so viel Kanten:
+        $$d\cdot(d-1) + d\cdot(d^n-d) = d^{n+1}-d$$
     \end{enumerate}
 \end{document}

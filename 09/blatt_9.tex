@@ -2,7 +2,10 @@
 % Also useful link: http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
 
 \input{../template.tex}
+
 \usepackage{wrapfig}
+\usepackage{graphicx}
+
 \begin{document}
     \maketitle
     \section*{Vertiefung:}
@@ -69,7 +72,7 @@
         % Task (j)
         \item Wie ist die chromatische Zahl eines $Q_d$?
         Nach Defifnition der Hyperwurfel folgt, dass $Q_d$ immer quadratische Flächen hat (oder Kreise 
-        länge 4). Da für ein Quadrat brauchen wir nut zwei Farben, könner wir auch $Q_d$ mit zwei Farben farben.
+        länge 4). Da für ein Quadrat brauchen wir nur zwei Farben, könner wir auch $Q_d$ mit zwei Farben farben.
         
     \end{enumerate}
     \section*{Kreativität:} Wie viele Knotenfärbungen mit 3 Farben hat der Kreis $C_n$ ?\\
@@ -105,10 +108,11 @@
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item Wie viele Kanten benötigen Sie für einen (n, d)-dimensionalen De Bruijn-Graphen?\\
-        Wir haben zwei Fällen. In einer Fall haben wir zwei gleiche Zahlen am Ende, da ist nur in $d$ 
-        Kombinationen möglich ist. Dann für jeder dieser Zahl haben wir nur zwei $d-1$ Möglichkeiten. 
-        Also insgesamt: $d\cdot(d-1)$ Kanten. Zweiten Fall ist alle andere Fälle, also $d^n-d$. Dann haben
-        wir: $d\cdot(d^n-d)$. Folglich insgesamt es gibt so viel Kanten:
+        Wir haben zwei Fällen. In einer Fall haben wir alleohne erste Zahlen gleich, was ist nur in $d$ 
+        Kombinationen möglich. Dann für jeder dieser Zahl haben wir nur $d-1$ Möglichkeiten mit weiterem 
+        Knoten zu verbinden. Also insgesamt für dieser Fall haben $d\cdot(d-1)$ Kanten. Zweiten Fall 
+        ist alle andere Fälle, also $d^n-d$. Da können wir dieser Knoten mit $d$ andere Knoten verbinden.
+        Dann haben wir: $d\cdot(d^n-d)$. Folglich insgesamt es gibt so viel Kanten:
         $$d\cdot(d-1) + d\cdot(d^n-d) = d^{n+1}-d$$
     \end{enumerate}
 \end{document}

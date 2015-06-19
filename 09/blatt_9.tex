@@ -64,9 +64,9 @@
         Wir führen einen Beweis durch Widerspruch: Angenommen es gibt einen planaren, dreiecksfreien 
         Graphen mit der Eigenschaft, dass bei jedem Knoten der Grad strikt größer als drei ist. Dann gilt: 
         \begin{align*}
-            4 \cdot ||V|| &\geq \sum_{v \in V} deg(v)
-            &= 2 \cdot ||E|| (Proposition 3.3)
-            &\geq 4 \cdot ||V|| - 8 (Vertiefung f)
+            4 \cdot ||V|| &\geq \sum_{v \in V} deg(v)\\
+            &= 2 \cdot ||E|| &\textrm{(Proposition 3.3)}\\
+            &\geq 4 \cdot ||V|| - 8 &\textrm{(Vertiefung f)}
         \end{align*}
         Wir erhalten einen Widerspruch. Also besitzt jeder planare Graph einen Knoten mit der Eigenschaft $deg(v) \leq 3$
         
@@ -77,15 +77,15 @@
         \item Wie viele Knotenfärbungen mit k Farben hat ein $K_n$? \\
         Da jeder Knoten n-1 Nachbarn hat (jeder Knoten ist mit jedem verbunden) hat der $K_n$ $n$ Farben. 
         Der erste Knoten kann beliebig gewählt werden, weshalb es $k$ Möglichkeiten zur Färbung gibt. 
-        Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es: \\
+        Für die weiteren Knoten gibt es immer eine Möglichkeit weniger, für eine Färbung. Folglich gibt es
         $\prod_{i=0}^{k-1} k - i = k^{\underline{n}}$ Möglichkeiten zur Färbung eines $K_n$.
           
         % Task (j)
         \item Wie ist die chromatische Zahl eines $Q_d$? \\
-        Für den Sonderfall $d = 1$ reicht eine Farbe aus. \\
-        Für den Fall $d = 2$ haben wir zwei Knoten, die über einen Graph mit zwei Knoten die über eine 
+        - Für den Sonderfall $d = 1$ reicht eine Farbe aus. \\
+        - Für den Fall $d = 2$ haben wir zwei Knoten, die über einen Graph mit zwei Knoten die über eine 
         Kante verbunden sind. Hier ist die chromatische Zahl trivialer Weise 2.\\
-        Für $d \geq 3$ betrachten wir die Definition des Hyperwürfels. Nach der Definition des 
+        - Für $d \geq 3$ betrachten wir die Definition des Hyperwürfels. Nach der Definition des 
         Hyperwürfels gilt, dass der $Q_d$ immer quadratische Flächen hat bzw. Kreise der Länge 4. 
         Da man für einen   Kreis mit gerader Knotenanzahl mit minimal zwei Farben für eine Knotenfärbung 
         auskommt, gibt es auch einen $Q_d$ der mit nur zwei Farben auskommt, wenn man den Kreis mit vier 
@@ -108,13 +108,15 @@
     zur weiteren Färbung. Wir halten im Binärbaum mit jeden weiteren Blättern die "Färbungspfade" fest. 
         \begin{wrapfigure}{l}{0.25\textwidth}
             \includegraphics[width=1\linewidth]{baum_kreativ}
-        \end{wrapfigure}\\
+        \end{wrapfigure}
+
      Wir können sehen, dass die eingefügte Graphik alle Variationen für einen $C_1$ bis hin zum $C_6$  wiedergibt. \\
      Wir müssen allerdings beachten, dass wir manche Knoten ''zu oft abzählen'', da sie nicht in das 
      Färbungsschema hineinpassen. In unserer Graphik sind das beispielsweise für den $C_6$  immer die 
      Knoten, die die Farbe 1 haben. Wir müssen folglich für jeden der drei Bäume  mit den verschiedenen 
      Wurzelfärbungen stets die Anzahl an Knoten abziehen, die eine Farbe erhalten würden, die mit der 
      Farbe der Baumwurzel übereinstimmt.\\
+
      Für den Binärbaum, mit der Baumwurzel, die die Farbe 1 erhalten hat, ist die gesamte Anzahl der 
      Knoten $2^n-1$. Wir färben nun jedes Blatt mit jeweils einer anderen Farbe wir die Wurzel gefärbt 
      haben. Für alle weiteren Blätter bzw. Subbäume wenden wir das gleiche Färbungsschema an und erhalten 
@@ -122,11 +124,12 @@
      oder 3 Färben können, lassen sich analog 2 weitere Binärbäume aufspannen, die das gleiche Schema 
      besitzen, aber weitere Möglichkeiten zur Färbung, die uns fehlen, wenn wir die Wurzel mit der 1 
      färben. Wir halten eine ''Gesamtfarbenbelegungsanzahlanzahl'' mit $3\cdot 2^{n-1}$ Möglichkeiten 
-     (vorerst) fest. Dies ist gerade die Anzahl der Knoten in den untersten Baumebenen.
+     (vorerst) fest. Dies ist gerade die Anzahl der Knoten in den untersten Baumebenen.\\
+
      Von dieser müssen wir nun die Anzahl der gefärbten Knoten abziehen, die uns nicht passen. Dies 
      sind gerade diejenigen Knoten in der untersten Baumebene, deren Farbe mit der Farbe der Baumwurzel 
      übereinstimmt. Die Anzahl dieser Knoten erhalten wir stets, indem wir uns die Möglichkeiten für 
-     die Färbung in der "Baumebene darüber" berechnen.
+     die Färbung in der "Baumebene darüber" berechnen.\\
      
      Somit können wir folgende rekursive Formel aufstellen, die die Anzahl der Knotenfärbungen 
      berechnet. Für den $C_0$  und $C_1$ gibt es keine Möglichkeiten, denn ein Kreis muss aus mindestens 

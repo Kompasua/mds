@@ -3,6 +3,7 @@
 
 \input{../template.tex}
 \usepackage{ tipa }
+\usepackage{tikz}
 
 \begin{document}
     \maketitle
@@ -27,13 +28,28 @@
         \item
         
         %Task (f)
-        \item  
+        \item Gilt $\chi ' (G) = k $ für jeden k-regulären Graphen G? \\
+        Nein. Man betrachte hierzu den $K_3$. Dieser Graph ist vollständig aber 2-regulär (k=2), da jeder Knoten mit 2 Knoten in Verbindung steht. Somit folgt hieraus mit $\chi'(K_3) = 3 \neq 2$ ein Widerspruch.
         
         %Task (g)
         \item 
         Angenommen es gibt zwei perfekte Matchings in einem Baum. Dann müsste für jeden Knoten $v \in V$ folgendes gelten: $\textrm{deg}(v) = 2$, da beide Matchings unterschiedlich sein müssen und jeder Knoten an jeweils einer Kante aus dem einen Matching und aus einer Kante vom anderen Matching beteiligt sein muss. Dann haben wir allerdings einen Widerspruch zur Definition des Baumes, denn ein Knotengrad von 2 bei allen Knoten des Graphen impliziert, dass der Graph einen Kreis enthalten muss (bzw. selbst einer ist). Somit kann ein Baum nicht mehr als ein perfektes Matching enthalten. 
+        
         %Task (h)
         \item 
+        Welche Gitter $M_{n,m} $enthalten perfekte Matchings? \\
+        Der $M_{n,m}$ hat $n \cdot m$ Knoten. Wenn $n$ und $m$ beide ungerade sind, dann besteht der $M_{n,m}$ ebenfalls aus einer ungeraden Anzahl aus Knoten. Nach der Definition 3.32 (2.) muss $||M|| = \frac{1}{2} ||V||$ gelten, damit ein perfektes Matching gefunden werden kann. Wir können demnach kein perfektes Matching finden, da es keinen Graphen mit ''halben Knoten'' geben kann. \par
+        Für den Fall das $n \cdot m$ gerade ist, lässt sich ein perfektes Matching für einen $M_{n,m}$ darstellen, indem man die Knoten links außen vom Gitter nimmt und ''paarweise nach rechts Verknüpft'', wobei bereits gematchte Knoten überspruchgen werden müssen. Folgende Graphik veranschaulicht den Gedanken:
+        % hier kommt noch ein Bild rein
+        Folglich hat der $M_{n,m}$ ein perfektes Matching, für den Fall, dass $n \cdot m$ gerade ist.
+        
+        %Task (i)
+        \item
+        Wieviele perfekte Matchings enthält der $Q_3$? \\
+        9
+        %Task (j)
+        \item 
+        Wieviele perfekte Matchings enthält der $K_{2n}$ ?
         
     \end{enumerate}
     \section*{Kreativität:}

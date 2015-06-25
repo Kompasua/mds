@@ -4,6 +4,8 @@
 \input{../template.tex}
 \usepackage{ tipa }
 \usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{listings}
 
 \begin{document}
     \maketitle
@@ -26,7 +28,9 @@
         
         %Task (e)
         \item
-        
+        Ja, es gibt einen solchen Graphen.\\
+        Für $n=2$ erfüllt ein Baum mit 3 Knoten und 2 Kanten die Voraussetzung.
+        Für $n > 2$ erfüllt jeder beliebige Sterngraph die Voraussetzung, wenn dieser Sterngraph genau einen Knoten mit $deg(G)= ||V|| - 1$ (also den Knoten im Mittelpunkt vom Graphen) hat. Dieser Knoten ist zu jedem anderen Knoten benachbart, sodass für jedes beliebig wählbare $ n \in \mathbb{N} \quad \chi'(G) = n$ gilt.  
         %Task (f)
         \item Gilt $\chi ' (G) = k $ für jeden k-regulären Graphen G? \\
         Nein. Man betrachte hierzu den $K_3$. Dieser Graph ist vollständig aber 2-regulär (k=2), da jeder Knoten mit 2 Knoten in Verbindung steht. Somit folgt hieraus mit $\chi'(K_3) = 3 \neq 2$ ein Widerspruch.
@@ -40,13 +44,13 @@
         Welche Gitter $M_{n,m} $enthalten perfekte Matchings? \\
         Der $M_{n,m}$ hat $n \cdot m$ Knoten. Wenn $n$ und $m$ beide ungerade sind, dann besteht der $M_{n,m}$ ebenfalls aus einer ungeraden Anzahl aus Knoten. Nach der Definition 3.32 (2.) muss $||M|| = \frac{1}{2} ||V||$ gelten, damit ein perfektes Matching gefunden werden kann. Wir können demnach kein perfektes Matching finden, da es keinen Graphen mit ''halben Knoten'' geben kann. \par
         Für den Fall das $n \cdot m$ gerade ist, lässt sich ein perfektes Matching für einen $M_{n,m}$ darstellen, indem man die Knoten links außen vom Gitter nimmt und ''paarweise nach rechts Verknüpft'', wobei bereits gematchte Knoten überspruchgen werden müssen. Folgende Graphik veranschaulicht den Gedanken:
-        \includegraphics{task_h}[h]
+        \includegraphics{task_h}
         Folglich hat der $M_{n,m}$ ein perfektes Matching, für den Fall, dass $n \cdot m$ gerade ist.
         
         %Task (i)
         \item
         Wieviele perfekte Matchings enthält der $Q_3$? \\
-        9
+        Durch abzählen der perfekten Matchings erhalten wir für den $Q_3$ 9 perfekte Matchings
         %Task (j)
         \item 
         Wieviele perfekte Matchings enthält der $K_{2n}$ ?
@@ -60,7 +64,7 @@
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item Bestimmen Sie das kleinste $r$, sodass $G_r$ ein perfektes Matching enthält.\\
-        Überschreiben wir gegebene Tabellen in eine. Da wir können deutlich sehen, dass kleinste $r=4$. %5 oder?
+        Überschreiben wir die gegebenen Tabellen in eine. Da wir können deutlich sehen, dass kleinste $r=4$. %5 oder?
         \begin{table}[h]\centering
             \begin{tabular}{|l|c|c|c|c|c|c|}
             \hline
@@ -74,7 +78,86 @@
             \end{tabular}
         \end{table}
         \item Bestimmen Sie ein perfektes Matching, sodass es keine unzufriedenen Paare gibt.\\
-        Verwenden wir dafür Gale - Shapley Algorithm. Dann bekommen wir:
+        Der Gale-Shapley Algorithmus liefert ung folgendes: \par
+   \begin{lstlisting}
+        Round 1
+        
+        Biscuit prefers Hasue
+        Hasue is previously unmatched
+        Biscuit becomes paired with Hasue
+        Adagio prefers Hasue
+        Hasue is already paired to Biscuit
+        Hasue ranks Biscuit as 0
+        Hasue ranks Adagio as 1
+        Adagio moves on to Dottie
+        Sobresalto prefers Culture
+        Culture is previously unmatched
+        Sobresalto becomes paired with Culture
+        Apercu prefers Bodhifee
+        Bodhifee is previously unmatched
+        Apercu becomes paired with Bodhifee
+        Cyrano prefers Whipcat
+        Whipcat is previously unmatched
+        Cyrano becomes paired with Whipcat
+        Happy prefers Hasue
+        Hasue is already paired to Biscuit
+        Hasue ranks Biscuit as 0
+        Hasue ranks Happy as 5
+        Happy moves on to Dottie
+        
+        Round 2
+        
+        Adagio prefers Dottie
+        Dottie is previously unmatched
+        Adagio becomes paired with Dottie
+        Happy prefers Dottie
+        Dottie is already paired to Adagio
+        Dottie ranks Adagio as 4
+        Dottie ranks Happy as 1
+        Happy becomes paired with Dottie
+        Adagio becomes single
+        Adagio moves on to Whipcat
+        
+        Round 3
+        
+        Adagio prefers Whipcat
+        Whipcat is already paired to Cyrano
+        Whipcat ranks Cyrano as 4
+        Whipcat ranks Adagio as 3
+        Adagio becomes paired with Whipcat
+        Cyrano becomes single
+        Cyrano moves on to Hasue
+        Cyrano prefers Hasue
+        Hasue is already paired to Biscuit
+        Hasue ranks Biscuit as 0
+        Hasue ranks Cyrano as 4
+        Cyrano moves on to Bodhifee
+        
+        Round 4
+        
+        Cyrano prefers Bodhifee
+        Bodhifee is already paired to Apercu
+        Bodhifee ranks Apercu as 4
+        Bodhifee ranks Cyrano as 5
+        Cyrano moves on to Adobra
+        
+        Round 5
+        
+        Cyrano prefers Adobra
+        Adobra is previously unmatched
+        Cyrano becomes paired with Adobra
+        
+        Results
+        
+        Biscuit is paired with Hasue
+        Adagio is paired with Whipcat
+        Sobresalto is paired with Culture
+        Apercu is paired with Bodhifee
+        Cyrano is paired with Adobra
+        Happy is paired with Dottie
+        \end{lstlisting} \par
+        \clearpage 
+        Wir erhalten dadurch folgende Matchings (in der Tabelle fett hervorgehoben):
         \begin{table}[h]\centering
             \begin{tabular}{|l|c|c|c|c|c|c|}
             \hline

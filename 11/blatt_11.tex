@@ -59,7 +59,7 @@
     \end{enumerate}
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
-    	\item Task a
+    	\item
         \begin{align*}
             (R \Join S) \Join T &= \{(a,d) \, | \, \exists\, c \in C : (a,c) \in R \Join S \land (c,d) \in T \}\\
             &=\{(a,d) \, | \, \exists\, c \in C : (a,c) \in \{(a,c) \,|\, \exists\, b \in B : (a,b) \in R \land (b,c) 
@@ -73,6 +73,11 @@
             &=\{(a,d) \, |  \, \exists\, b \in B : (a,b) \in R \land (b,d) \in S\Join T  \}\\
             &=R \Join (S \Join T)
         \end{align*}
+        \item
+        Die Kardinalitet von alle Joins in die Tabelle ist 8. Wenn wir folglich so klammern:
+        $$  (E \Join E) \Join (E \Join E) \Join W$$
+        dann muss die $(E \Join E)$ nur einmal usgefuert werden. Dann die Gesamtkardinalitaet ist 
+        $$3\cdot 8 = 24$$
     \end{enumerate}
 \end{document}
 

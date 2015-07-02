@@ -56,6 +56,19 @@
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item Task a
+        \begin{align*}
+            (R \Join S) \Join T &= \{(a,d) \, | \, \exists\, c \in C : (a,c) \in R \Join S \land (c,d) \in T \}\\
+            &=\{(a,d) \, | \, \exists\, c \in C : (a,c) \in \{(a,c) \,|\, \exists\, b \in B : (a,b) \in R \land (b,c) 
+            \in S \}  \land (c,d) \in T \}\\
+            &=\{(a,d) \, | \, \exists\, c \in C \, \exists\, b \in B : (a,b) \in R \land (b,c) \in S   \land (c,d) \in T \}\\
+            &=\{(a,d) \, |  \, \exists\, b \in B \, \exists\, c \in C :  (b,c) \in S   \land (c,d) \in T \land (a,b) 
+            \in R  \}\\
+            &=\{(a,d) \, |  \, \exists\, b \in B : (b,d) \in \{(b,d) \,|\, \exists\, c \in C :  (b,c) \in S   
+            \land (c,d) \in T\} \land (a,b) \in R  \}\\
+            &=\{(a,d) \, |  \, \exists\, b \in B : (b,d) \in S\Join T \land (a,b) \in R  \}\\
+            &=\{(a,d) \, |  \, \exists\, b \in B : (a,b) \in R \land (b,d) \in S\Join T  \}\\
+            &=R \Join (S \Join T)
+        \end{align*}
     \end{enumerate}
 \end{document}
 

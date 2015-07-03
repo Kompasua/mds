@@ -3,6 +3,8 @@
 
 \input{../template.tex}
 \DeclareMathOperator{\kgV}{kgV}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \begin{document}
     \maketitle
@@ -23,7 +25,7 @@
         % Task (c)
         \item
          Ist$\langle \mathbb{Z}_8 \setminus \{0\}, \cdot_k \rangle $ eine Algebra – und wenn nein, warum nicht? \\
-         Nach dem Beispiel auf Seite 68 ist die Multiplikation $\cdot_k$ auf der Menge $\mathbb{Z}_k := \{0, 1, ..., k-1\}$ definiert. Folglich kann hier keine Algebra definiert sein.
+         Nach dem Beispiel auf Seite 68 ist die Multiplikation $\cdot_k$ auf der Menge $\mathbb{Z}_k := \{0, 1, ..., k-1\}$ definiert. Für $a \cdot_8 b = mod(a \cdot b ,8) $ mit $ a = 2, b = 4 $ gilt $mod(2\cdot 4, 8) = 0$. Es gilt aber $0 \not \in \mathbb{Z}_8 \setminus {0}.$ Folglich kann hier keine Algebra definiert sein.
         % Task (d)
         \item
         Bestimmen Sie eine Teilmenge $A \subseteq \mathbb{Z}_{10} \setminus \{0\} $ mit maximaler Anzahl von Elementen, sodass$\langle A, \cdot_{10} \rangle$ eine Algebra ist. 
@@ -32,31 +34,70 @@
         % Task (e)
         \item 
         Das neutrale Element ist 1.
-        Da Algebra $\langle\mathbb{N}_+; kgV \rangle$ kommutativ ist, reicht die Linksneutralität von 1. Sei $x \in \mathbb{ N}_+, n \setminus \{1\}$ beliebig aber fest.  Da 1 kein Vielfaches von x ist, gilt also $kgV (1, x) = 1 \cdot x =  x$. Da außerdem gilt $kgV (1, 1) = 1$ folgt, dass das neutrale Element 1 ist.
+        Da die Algebra $\langle\mathbb{N}_+; kgV \rangle$ kommutativ ist, reicht die Linksneutralität von 1. Sei $x \in \mathbb{ N}_+, n \setminus \{1\}$ beliebig aber fest.  Da 1 kein Vielfaches von x ist, gilt also $kgV (1, x) = 1 \cdot x =  x$. Da außerdem gilt $kgV (1, 1) = 1$, folgt nun, dass das neutrale Element 1 ist.
+        
         % Task (f)
         \item Wie viele inverse Elemente besitzt 2 in der Algebra $\langle \mathbb{N}_+ , \kgV \rangle$?\\
-        Überhaupt kein einziges.
+        Überhaupt kein einziges, denn nach Definition 4.5 muss eine Inverse $x \in \mathbb{N}_+ $ mit $kgV(x,2) = 1$ existieren, aber der kgV von irgendwas und der 2 ist nicht 1 sondern 2. Aus diesem Widerspruch folgt, dass kein einziges inverses Element existieren kann.
         
         % Task (g)
         \item 
-        
+         Ist der Operator kgV assoziativ für die Algebra $\langle \mathbb{N}_+; kgV \rangle$ – und wenn nein, warum
+         nicht?
+         Der Operator kgV ist für die beschriebene Algebra assoziativ.\\
+         Beweis: \\
+         Seien $x, y, z \in \mathbb{N}_{+}$ beliebig und $\circ$ mit $\circ : (x,y) \mapsto kgv(x,y)$ definiert. Es folgt:\\
+         \begin{align*} 
+         	(x \circ y) \circ z &= \prod_{i=1}^{k} p_i^{\max(x_i,y_i)} \circ z \\
+         	&=\prod_{i=1}^{k} p_i^{\max(\max(x_i,y_i),z_i)} \\
+         	&=\prod_{i=1}^{k} p_i^{\max(x_i \max(y_i,z_i))} \\
+         	&=x \circ \prod_{i=1}^{k} p_i^{\max(y_i,z_i)} \\
+         	& x \circ (y \circ z)  
+         \end{align*} 
+         
         % Task (h)
         \item Können Sie die gegebene Verknüpfungstabelle für $\circ$ so ergänzen, dass $\circ$ assoziativ 
         auf \{a, b, c, d\} ist?\\
-        Das geht nicht auf.
-        
+        Das geht nicht auf weil $\circ$ nicht assoziativ ist. Aus der Tabelle würde folgendes gelten, wenn $\circ$ assoziativ wäre: $$d = d \circ d = (b \circ c) \circ a = b \circ (c \circ a) = b \circ b = b$$
+        Da $d \neq b$ ist kann keine Assoziativität für $\circ$ definiert sein.
+       
         % Task (i)
         \item
+         Gibt es eine Verknüpfung $\circ$ für die Algebra $\langle \{1, \dots, n\}, \circ \rangle$ an, so dass jedes $k \in \{1,\dots,n\}$ genau $k-1$ linksinverse Elemente besitzt? - Und wenn ja, welche?\\
+         Es gibt eine solche Verknüpfung.
+         Betrachte hierzu die Verknüpfung $\tilde{\circ}$  mit
+         \begin{align*}
+         \tilde{\circ}: ~~ & (\{1,\dots , n\},\{1,\dots, n\}) \rightarrow  \{1,\dots, n\}\\
+         & (x,y) \mapsto \begin{cases}
+         y, & falls x=n  \\
+        \lfloor{\frac{n+1}{2}} & falls x = 1 \land y =n\rfloor \\
+        n, & falls y > x\\
+        \lfloor{\frac{x+y}{2}}, & \text{sonst.}\rfloor \\
+        \end{cases}
+        \end{align*}
+        Das linksneutrale Element ist $n$, denn $(n,y)=y$ gilt für beliebige $y$. Sei $k\ne n$ fest und beliebig und gelte $k > x_0$. Dann kann $x_0$ $k-1$ mögliche Werte annehmen. Zudem folgt aus $\tilde{\circ}$, das $(x_0,k)=n$ gilt. Für $k = n$ gilt $(1,n) \ne n$ und sonst $(x,n) = n$. Damit folgt, dass es eine solche Verknüpfung gibt.       
         
         % Task (j)
         \item         
-        
+         Gibt es eine Verknüpfung $\circ$ für die Algebra $\langle \{1, \dots, n\}, \circ \rangle$ an, so dass jedes $k \in \{1,\dots,n\}$ genau $k-1$ rechtsinverse Elemente besitzt? - Und wenn ja, welche?\\
+         Es gibt eine solche Verknüpfung. Betrachte hierzu die Verknüpfung $\tilde{\circ}$ 
+         \begin{align*}
+         \tilde{\circ}: ~~ & (\{1,\dots , n\},\{1,\dots, n\}) \rightarrow  \{1,\dots, n\}\\
+         & (x,y) \mapsto \begin{cases}
+         x, & y=n  \\
+         \lfloor{\frac{n+1}{2}}\rfloor, & x = n \land y =1\\
+         n, & x > y\\
+         \lfloor{\frac{x+y}{2}}\rfloor, & \text{sonst.}\\
+         \end{cases}
+         \end{align*}
+         Das rechtsneutrale Element ist $n$, da $(x,n)=x$ ($x$ beliebig) gilt. Sei $k\ne n$ fest und beliebig und gelte $k > y_0$. Dann kann $y_0$ $k-1$ mögliche Werte annehmen. Zudem folgt aus $\tilde{\circ}$, das $(k,y_0)=n$ gilt. Für $k = n$ gilt $(n,1) \ne n$ und und sonst $(n,y) = n$. Damit folgt die Behauptung.
     \end{enumerate}
     \section*{Kreativität:}
     \begin{enumerate}[label=(\alph*)]
     	%Task (a)
-    	\item Task a
+    	\item %sorry, ich glaube das geht generell nicht...
     \end{enumerate}
+    \clearpage
     \section*{Transfer:}
     \begin{enumerate}[label=(\alph*)]
     	\item
@@ -74,15 +115,16 @@
             &=R \Join (S \Join T)
         \end{align*}
         \item
-        Die Kardinalitet von alle Joins in die Tabelle ist 8. Wenn wir folglich so klammern:
-        $$  (E \Join E) \Join (E \Join E) \Join W$$
-        dann muss die $(E \Join E)$ nur einmal usgefuert werden. Dann die Gesamtkardinalitaet ist 
+        Die Kardinalitet aller Joins in der Tabelle ist 8 wenn wir so klammern:
+        $$  \bigg( (E \Join E) \Join (E \Join E) \bigg) \Join W$$
+        und nach der Regel 'innere Klammer zuerst' vorgehen. Dann wird $(E \Join E)$ nur einmal ausgefuert. 
+        Aus der Definition des Joins (und nach der Vorlesung in Datenbanksysteme ) folgt schließlich, die Idempotenz für $\Join$, also $E \Join E = E$ und damit auch $||E \Join E|| = ||E||$. Somit gilt folgendes:\\
+        Für die beiden kleinen inneren Klammern erhalten wir jeweils 8 Tupel aufgrund der Idempotenz.\\
+        Für die große äußere Klammer erhalten wir auch wieder 8 Tupel aufgrund der Idempotenz.
+        Für den letzten Join unserer errechneten 8 Tupel mit der Relation W erhalten wir ebenfalls wieder 8 Tupel in der Ergebnisrelation. 
+        Da wir in jeder Ausführungsfolge 8 Tupel erhalten, betragen die Gesamtplatzkosten 
         $$3\cdot 8 = 24$$
+        
+        
     \end{enumerate}
 \end{document}
-
-
-
-
-
-

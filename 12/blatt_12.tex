@@ -6,9 +6,41 @@
 \begin{document}
     \maketitle
     \section*{Vertiefung:}
+    Ordnen Sie den nachfolgenden Algebren jeweils den speziellsten Algebratyp \textsl{Gruppoid}, \textsl{Halbgruppe},
+    \textsl{Monoid}, \textsl{Gruppe}, \textsl{Loop} oder \textsl{Gruppoid} mit Eins zu. Geben Sie auch an, ob es sich um
+    einen abelschen Gruppoid handelt. \\
+    Begründen Sie Ihre Aussagen.
     \begin{enumerate}[label=(\alph*)]
         % Task (a)
-        \item Task a
+        \item $\langle \{5\}, \circ \rangle$ mit $\circ : \{5\}^2 \mapsto \{5\} $ beliebig \\
+        Es handelt sich um eine abelsche Gruppe
+        % Task (b)
+        \item $\langle \mathbb{N}, \circ \rangle$ mit $\circ : (x,y) \mapsto x $ \\
+        Für diese Algebra gilt nicht die Kommutativität aber dafür die Assoziativität. Des Weiteren sind alle Elemente in der Menge der natürlichen Zahlen rechtsneutral. Es gibt dabei kein linksneutrales Element, weshalb kein (allgemein) neutrales Element existieren kann. D.h. es gibt nicht für alle Elemente in den natürlichen Zahlen ein Inverses. Es ist folglich eine Halbgruppe.
+        % Task (c)
+        \item $\langle \mathbb{N}, min \rangle$\\ 
+        Hier gelten sowohl Assoziativität als auch Kommutativität. Es gibt kein neutrales Element, weshalb hier eine abelsche Gruppe vorliegt.
+        % Task (d)
+        \item $\langle \mathbb{N}, \circ \rangle$ mit $\circ : (x,y) \mapsto (x+y)^2 - (x-y)^2  $ \\
+        % Task (e)
+        \item $\langle \mathbb{N}, \circ \rangle$ mit $\circ : (x,y) \mapsto y^x $ \\
+        Diese Algebra weder kommutativ noch assoziativ. Sie hat kein rechtsneutrales Element, aber dafür ein ein linksneutrales. D.h. es kann auch kein Inverses geben. Somit muss das hier ein Gruppoid sein.
+        % Task (f)
+        \item $\langle \mathbb{N}, \circ \rangle$ mit $\circ : (x,y) \mapsto 42 $ \\
+        Hier besitzt die Algebra sowohl die Eigenschaft der Kommutativität und der  Assoziativität. Allerdings hat sie kein neutrales Element. Somit muss es sich um eine abelsche Halbgruppe handeln.
+        % Task (g)
+        \item $\langle \mathbb{Z}_6, {+}_6 \rangle$ \\
+        Diese Algebra ist sowohl kommutativ als auch assoziativ. Die Algebra besitzt ein neutrales Element und zu jedem Element gibt es eine eindeutige Inverse. Es ist somit eine abelsche Suppe, äh ich meine Gruppe. % sorry Anton, das musste grade sein :)
+        %Task h
+        \item $\langle \mathbb{Z}_6, {\cdot}_6 \rangle$ \\
+        Diese Algebra ist sowohl kommutativ als auch assoziativ. Sie besitzt ein neutrales Element, womit es sich um einen abelschen Monoiden handeln muss.
+        % Task (i)
+        \item $\langle \mathbb{Z}_6 \setminus \{0\}, {\cdot}_6 \rangle$ \\
+        Diese Algebra ist sowohl kommutativ als auch assoziativ. Sie besitzt ein neutrales Element, jedoch nicht für jedes Element eine eindeutige Inverse. Also muss dies ein abelscher Monoid sein.
+        % Task (j)
+        \item $\langle \mathbb{Z}_7 \setminus \{0\}, {\cdot}_7 \rangle$ \\
+        Diese Algebra ist sowohl kommutativ als auch assoziativ. Sie besitzt ein neutrales Element und für jedes Element ein eindeutiges Inverses. Damit handelt es sich um eine  abelsche Gruppe.
+        
     \end{enumerate}
     \section*{Kreativität:}
     \begin{enumerate}[label=(\alph*)]
